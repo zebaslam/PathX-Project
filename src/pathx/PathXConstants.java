@@ -30,11 +30,20 @@ public class PathXConstants {
     public static final String BACKGROUND_TYPE = "BACKGROUND_TYPE";
     
     // THIS REPRESENTS THE BUTTONS ON THE MENU SCREEN FOR LEVEL SELECTION
-    public static final String LEVEL_SELECT_BUTTON_TYPE = "LEVEL_SELECT_BUTTON_TYPE";
+    //public static final String LEVEL_SELECT_BUTTON_TYPE = "LEVEL_SELECT_BUTTON_TYPE";
+    public static final String HELP_BUTTON_TYPE= "HELP_BUTTON_TYPE";
+    public static final String CLOSE_BUTTON_TYPE= "CLOSE_BUTTON_TYPE";
+    public static final String HOME_BUTTON_TYPE= "HOME_BUTTON_TYPE";
+    public static final String PLAY_BUTTON_TYPE= "PLAY_BUTTON_TYPE";
+    public static final String RESET_BUTTON_TYPE= "RESET_BUTTON_TYPE"; 
+    public static final String SETTINGS_BUTTON_TYPE= "SETTINGS_BUTTON_TYPE";
     
-    // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE TWO
+    // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE FIVE SCREENS
     public static final String MENU_SCREEN_STATE = "MENU_SCREEN_STATE";
+    public static final String LEVEL_SELECT_SCREEN_STATE= "LEVEL_SELECT_STATE";
     public static final String GAME_SCREEN_STATE = "GAME_SCREEN_STATE";   
+    public static final String SETTINGS_SCREEN_STATE= "SETTINGS_SCREEN_STATE";
+    public static final String HELP_SCREEN_STATE="HELP_SCREEN_STATE";
     
     public static final int FPS = 30;
 

@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package pathx.ui;
+
 import java.awt.Cursor;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -33,13 +28,42 @@ import mini_game.Viewport;
 import properties_manager.PropertiesManager;
 import pathx.PathXConstants;
 import pathx.PathX.PathXPropertyType;
+import pathx.file.PathXFileManager;
 //import sorting_hat.file.SortingHatFileManager;
 //import sorting_hat.data.SortingHatRecord;
+
 /**
  *
  * @author zeb
+ * @author Richard Mckenna
  */
-public class PathXMiniGame extends MiniGame{
+public class PathXMiniGame extends MiniGame {
+
+    private PathXErrorHandler errorHandler;
+    private PathXEventHandler eventHandler;
+    private PathXFileManager  fileManager;
+    // THE SCREEN CURRENTLY BEING PLAYED
+    private String currentScreenState;
+    static PathXMiniGame miniGame = new PathXMiniGame();
+    
+    
+    public PathXErrorHandler getErrorHandler()
+    {
+        return errorHandler;
+    }
+
+      public PathXFileManager getFileManager()
+    {
+        return fileManager;
+    }
+     
+      public void savePlayerRecord()
+    {
+        //TODO 
+    }
+    public boolean isCurrentScreenState(String testScreenState) {
+        return testScreenState.equals(currentScreenState);
+    }
 
     @Override
     public void initAudioContent() {
@@ -70,5 +94,5 @@ public class PathXMiniGame extends MiniGame{
     public void updateGUI() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
