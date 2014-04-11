@@ -28,4 +28,15 @@ public class PathXEventHandler {
         // AND CLOSE THE ALL
         System.exit(0);        
     }
+           
+           public void respondToHomeRequest()
+    {
+        // IF A GAME IS IN PROGRESS, THE PLAYER LOSES
+        if (game.getDataModel().inProgress())
+            game.getDataModel().endGameAsLoss();
+        
+        // SWITCH BACK TO THE MENU SCREEN SO THE 
+        // USER MAY CHOOSE ANOTHER LEVEL
+        game.switchToSplashScreen();        
+    }
 }

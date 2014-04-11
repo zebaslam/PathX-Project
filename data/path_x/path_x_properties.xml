@@ -12,8 +12,9 @@
         <property name="IMAGE_BUTTON_HELP"                  value="./path_x/ButtonHelp.png"></property>
         <property name="IMAGE_BUTTON_HELP_MOUSE_OVER"       value="./path_x/HelpButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_CLOSE"                 value="./path_x/ButtonClose.png"></property>
-        <property name="IMAGE_BUTTON_CLOSE_MOUSE_OVER"     value="./path_x/CloseButtonMouseOver.png"></property>
+        <property name="IMAGE_BUTTON_CLOSE_MOUSE_OVER"      value="./path_x/CloseButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_HOME"                  value="./path_x/ButtonHome.png"></property>
+        <property name="IMAGE_BUTTON_HOME_MOUSE_OVER"       value="./path_x/HomeButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_PLAY"                  value="./path_x/ButtonPlay.png"></property>
         <property name="IMAGE_BUTTON_PLAY_MOUSE_OVER"       value="./path_x/PlayButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_RESET"                 value="./path_x/ButtonReset.png"></property>

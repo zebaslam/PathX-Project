@@ -67,19 +67,48 @@ public class PathXMiniGame extends MiniGame {
 
   
  public void switchToSplashScreen(){
-     System.out.println("IN SWITCH TO SPLAXH SCREEN");
+     System.out.println("IN SWITCH TO SPLASH SCREEN");
+     //Determines which buttons to display on splash screen
      guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
-     guiButtons.get(PLAY_BUTTON_TYPE).setState(PathXCarState.INVISIBLE_STATE.toString());
+     guiButtons.get(PLAY_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
      guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(CLOSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(HELP_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(HELP_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(RESET_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(RESET_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(HOME_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(HOME_BUTTON_TYPE).setEnabled(false);
      
      currentScreenState = MENU_SCREEN_STATE;
      data.setGameState(MiniGameState.NOT_STARTED);
      
-      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
-      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString());
-     
-     
+     audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
+     audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
  }
+ 
+public void switchToHelpScreen(){
+     guiDecor.get(BACKGROUND_TYPE).setState(HELP_SCREEN_STATE);
+     guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(CLOSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(HELP_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(HELP_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(RESET_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(RESET_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(HOME_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(HOME_BUTTON_TYPE).setEnabled(true);
+     
+      currentScreenState = HELP_SCREEN_STATE;
+      
+      
+} 
     @Override
     public void initGUIControls() {
         BufferedImage img;
@@ -156,6 +185,16 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, EXIT_X, EXIT_Y, 0, 0, VISIBLE_STATE.toString());
         guiButtons.put(CLOSE_BUTTON_TYPE, s);
         
+        String homeButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_HOME);
+        sT = new SpriteType(HOME_BUTTON_TYPE);
+	img = loadImage(imgPath + homeButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String homeMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_HOME_MOUSE_OVER);
+        img = loadImage(imgPath + homeMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, HOME_X, HOME_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(HOME_BUTTON_TYPE, s);
+        
     }
 
     @Override
@@ -165,6 +204,18 @@ public class PathXMiniGame extends MiniGame {
         window.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent we) 
             { eventHandler.respondToExitRequest(); }
+        });
+        
+        //Event handler for close button
+           guiButtons.get(CLOSE_BUTTON_TYPE).setActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae)
+            {   eventHandler.respondToExitRequest();     }
+        });
+           
+        //Event Handler for home button
+           guiButtons.get(HOME_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   eventHandler.respondToHomeRequest();        }
         });
     }
   
