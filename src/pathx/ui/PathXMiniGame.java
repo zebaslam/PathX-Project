@@ -92,7 +92,7 @@ public class PathXMiniGame extends MiniGame {
         } 
     }
 
-       private void loadAudioCue(PathXPropertyType audioCueType) 
+    private void loadAudioCue(PathXPropertyType audioCueType) 
             throws  UnsupportedAudioFileException, IOException, LineUnavailableException, 
                     InvalidMidiDataException, MidiUnavailableException
     {
@@ -109,10 +109,14 @@ public class PathXMiniGame extends MiniGame {
     }
  public void switchToSplashScreen(){
      guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
+     guiButtons.get(PLAY_BUTTON_TYPE).setState(PathXCarState.INVISIBLE_STATE.toString());
+     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(true);
      
      currentScreenState = MENU_SCREEN_STATE;
      data.setGameState(MiniGameState.NOT_STARTED);
      
+      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
+      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString());
      
      
  }
@@ -155,17 +159,44 @@ public class PathXMiniGame extends MiniGame {
 
     @Override
     public void initGUIHandlers() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        eventHandler = new PathXEventHandler(this);
+        window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        window.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent we) 
+            { eventHandler.respondToExitRequest(); }
+        });
     }
 
     @Override
     public void reset() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        data.reset(this);
     }
 
     @Override
     public void updateGUI() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // GO THROUGH THE VISIBLE BUTTONS TO TRIGGER MOUSE OVERS
+        Iterator<Sprite> buttonsIt = guiButtons.values().iterator();
+        while (buttonsIt.hasNext())
+        {
+            Sprite button = buttonsIt.next();
+            
+            // ARE WE ENTERING A BUTTON?
+            if (button.getState().equals(PathXCarState.VISIBLE_STATE.toString()))
+            {
+                if (button.containsPoint(data.getLastMouseX(), data.getLastMouseY()))
+                {
+                    button.setState(PathXCarState.MOUSE_OVER_STATE.toString());
+                }
+            }
+            // ARE WE EXITING A BUTTON?
+            else if (button.getState().equals(PathXCarState.MOUSE_OVER_STATE.toString()))
+            {
+                 if (!button.containsPoint(data.getLastMouseX(), data.getLastMouseY()))
+                {
+                    button.setState(PathXCarState.VISIBLE_STATE.toString());
+                }
+            }
+        }
+    }    
     }
 
-}
