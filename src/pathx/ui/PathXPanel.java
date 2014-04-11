@@ -46,7 +46,23 @@ public class PathXPanel extends JPanel{
         numberFormatter.setMaximumFractionDigits(3);
     }
     
-
+  public void renderBackground(Graphics g)
+    {
+        // THERE IS ONLY ONE CURRENTLY SET
+        Sprite bg = game.getGUIDecor().get(BACKGROUND_TYPE);
+        renderSprite(g, bg);
+    }
+  
+  public void renderSprite(Graphics g, Sprite s)
+    {
+        // ONLY RENDER THE VISIBLE ONES
+        if (!s.getState().equals(PathXCarState.INVISIBLE_STATE.toString()))
+        {
+            SpriteType bgST = s.getSpriteType();
+            Image img = bgST.getStateImage(s.getState());
+            g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null); 
+        }
+    }
    
     public void renderDebuggingText(Graphics g)
     {

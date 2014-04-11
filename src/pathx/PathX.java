@@ -88,7 +88,7 @@ public class PathX {
         TEXT_TITLE_BAR_GAME,
         TEXT_TITLE_BAR_ERROR,
         
-        /* AUDIO CUES 
+       //Audio stuff
         AUDIO_CUE_BAD_MOVE,
         AUDIO_CUE_CHEAT,
         AUDIO_CUE_DESELECT_TILE,
@@ -98,7 +98,7 @@ public class PathX {
         AUDIO_CUE_WIN,
         SONG_CUE_GAME_SCREEN,
         SONG_CUE_MENU_SCREEN,
-        */
+        
         
         /* TILE LOADING STUFF 
         LEVEL_OPTIONS,

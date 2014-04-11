@@ -30,8 +30,8 @@ import pathx.PathXConstants;
 import pathx.PathX.PathXPropertyType;
 import pathx.file.PathXFileManager;
 import pathx.ui.PathXCarState;
-//import sorting_hat.file.SortingHatFileManager;
-//import sorting_hat.data.SortingHatRecord;
+//import sorting_hat.file.PathXFileManager;
+//import sorting_hat.data.PathXRecord;
 
 /**
  *
@@ -67,9 +67,40 @@ public class PathXMiniGame extends MiniGame {
 
     @Override
     public void initAudioContent() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+              try
+        {
+            PropertiesManager props = PropertiesManager.getPropertiesManager();
+            String audioPath = props.getProperty(PathXPropertyType.PATH_AUDIO);
+
+            // LOAD ALL THE AUDIO
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_SELECT_TILE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_DESELECT_TILE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_GOOD_MOVE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_BAD_MOVE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_CHEAT);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_UNDO);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_WIN);
+            loadAudioCue(PathXPropertyType.SONG_CUE_MENU_SCREEN);
+            loadAudioCue(PathXPropertyType.SONG_CUE_GAME_SCREEN);
+
+            // PLAY THE WELCOME SCREEN SONG
+            audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true);
+        }
+        catch(UnsupportedAudioFileException | IOException | LineUnavailableException | InvalidMidiDataException | MidiUnavailableException e)
+        {
+            errorHandler.processError(PathXPropertyType.TEXT_ERROR_LOADING_AUDIO);
+        } 
     }
 
+       private void loadAudioCue(PathXPropertyType audioCueType) 
+            throws  UnsupportedAudioFileException, IOException, LineUnavailableException, 
+                    InvalidMidiDataException, MidiUnavailableException
+    {
+        PropertiesManager props = PropertiesManager.getPropertiesManager();
+        String audioPath = props.getProperty(PathXPropertyType.PATH_AUDIO);
+        String cue = props.getProperty(audioCueType.toString());
+        audio.loadAudio(audioCueType.toString(), audioPath + cue);        
+    }
     @Override
     public void initData() {
          errorHandler = new PathXErrorHandler(window);
@@ -80,7 +111,7 @@ public class PathXMiniGame extends MiniGame {
      guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
      
      currentScreenState = MENU_SCREEN_STATE;
-     
+     data.setGameState(MiniGameState.NOT_STARTED);
      
      
      
@@ -100,15 +131,14 @@ public class PathXMiniGame extends MiniGame {
         
         // CONSTRUCT THE PANEL WHERE WE'LL DRAW EVERYTHING
         canvas = new PathXPanel(this, (PathXDataModel)data);
+        
           // LOAD THE BACKGROUNDS, WHICH ARE GUI DECOR
         currentScreenState = MENU_SCREEN_STATE;
         img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_MENU));
         sT = new SpriteType(BACKGROUND_TYPE);
-        sT.addState(MENU_SCREEN_STATE, img);
-        
+        sT.addState(MENU_SCREEN_STATE, img); 
         img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
-        sT.addState(GAME_SCREEN_STATE, img);
-        
+        sT.addState(GAME_SCREEN_STATE, img);       
         s = new Sprite(sT, 0, 0, 0, 0, MENU_SCREEN_STATE);
         guiDecor.put(BACKGROUND_TYPE, s);
         
