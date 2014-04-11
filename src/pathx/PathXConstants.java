@@ -56,10 +56,16 @@ public class PathXConstants {
     public static final int VIEWPORT_INC = 5;
     
     public static final int PLAY_BUTTON_X = 140;
-    public static final int PLAY_BUTTON_Y = 580;
+    public static final int PLAY_BUTTON_Y = 585;
     
-    public static final int RESET_X= PLAY_BUTTON_X +20;
-    public static final int RESET_Y= 580;
+    public static final int RESET_X= PLAY_BUTTON_X +100;
+    public static final int RESET_Y= 585;
+    
+    public static final int HELP_X= RESET_X +110;
+    public static final int HELP_Y= 585;
+    
+    public static final int SETTINGS_X= RESET_X+210;
+    public static final int SETTINGS_Y=585;
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
     // LOADING ART.

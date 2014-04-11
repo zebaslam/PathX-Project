@@ -104,7 +104,6 @@ public class PathXMiniGame extends MiniGame {
         //img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
         //sT.addState(GAME_SCREEN_STATE, img);       
         s = new Sprite(sT, 0, 0, 0, 0, MENU_SCREEN_STATE);
-        System.out.println("DID I GET HERE?"); // DEBUG TEST
         guiDecor.put(BACKGROUND_TYPE, s);
         
         String playButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PLAY);
@@ -116,6 +115,37 @@ public class PathXMiniGame extends MiniGame {
         sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
         s = new Sprite(sT, PLAY_BUTTON_X, PLAY_BUTTON_Y, 0, 0, VISIBLE_STATE.toString());
         guiButtons.put(PLAY_BUTTON_TYPE, s);
+        
+        String resetButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_RESET);
+        sT = new SpriteType(RESET_BUTTON_TYPE);
+	img = loadImage(imgPath + resetButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String resetMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_RESET_MOUSE_OVER);
+        img = loadImage(imgPath + resetMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, RESET_X, RESET_Y, 0, 0, VISIBLE_STATE.toString());
+        guiButtons.put(RESET_BUTTON_TYPE, s);
+        
+        String helpButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_HELP);
+        sT = new SpriteType(HELP_BUTTON_TYPE);
+	img = loadImage(imgPath + helpButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String helpMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_HELP_MOUSE_OVER);
+        img = loadImage(imgPath + helpMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, HELP_X, HELP_Y, 0, 0, VISIBLE_STATE.toString());
+        guiButtons.put(HELP_BUTTON_TYPE, s);
+        
+        String settingsButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_SETTINGS);
+        sT = new SpriteType(SETTINGS_BUTTON_TYPE);
+	img = loadImage(imgPath + settingsButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String settingsMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_SETTINGS_MOUSE_OVER);
+        img = loadImage(imgPath + settingsMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, SETTINGS_X, SETTINGS_Y, 0, 0, VISIBLE_STATE.toString());
+        guiButtons.put(SETTINGS_BUTTON_TYPE, s);
+        
     }
 
     @Override
