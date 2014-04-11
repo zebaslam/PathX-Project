@@ -5,11 +5,31 @@
  */
 
 package pathx.file;
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import mini_game.Viewport;
+import pathx.PathX.PathXPropertyType;
+import pathx.data.PathXDataModel;
+import pathx.data.PathXRecord;
+import pathx.ui.PathXMiniGame;
+import properties_manager.PropertiesManager;
 
 /**
  *
  * @author zeb
  */
 public class PathXFileManager {
+    private PathXMiniGame miniGame;
     
+    public PathXFileManager(PathXMiniGame initMiniGame)
+    {
+        // KEEP IT FOR LATER
+        miniGame = initMiniGame;
+    }
 }

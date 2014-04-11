@@ -6,7 +6,7 @@
 -->
 <properties>
     <property_list>    
-        <property name="FILE_GAME_PROPERTIES"   value="./sorting_hat/sorting_hat_properties.xml"></property>
+        <property name="FILE_GAME_PROPERTIES"   value="./path_x/path_x_properties.xml"></property>
         <property name="FILE_PLAYER_RECORD"     value="PlayerRecord.dat"></property>
         <property name="PATH_AUDIO"             value="./audio/"></property>
         <property name="PATH_IMG"               value="./img/"></property>

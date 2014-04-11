@@ -7,7 +7,7 @@
 <properties>
     <property_list>
         <!-- ALL THE IMAGES TO BE USED IN THE GAME -->
-        <property name="IMAGE_BACKGROUND_GAME"              value="./path_x/BackgroundGame.png"></property>
+        <property name="IMAGE_BACKGROUND_GAME"              value="./path_x/BackgroundMenu.png"></property>
         <property name="IMAGE_BACKGROUND_MENU"              value="./path_x/BackgroundMenu.png"></property>
         <property name="IMAGE_BUTTON_HELP"                  value="./path_x/ButtonHelp.png"></property>
         <property name="IMAGE_BUTTON_HELP_MOUSE_OVER"       value="./path_x/HelpButtonMouseOver.png"></property>
@@ -34,7 +34,7 @@
         <property name="TEXT_TITLE_BAR_GAME"                    value="PathX"></property>
         <property name="TEXT_TITLE_BAR_ERROR"                   value="An error has occurred"></property>                
         
-        <!-- AUDIO FILES -->
+        <!-- AUDIO FILES 
         <property name="AUDIO_CUE_BAD_MOVE"                 value="./path_x/BadMove.wav"></property>
         <property name="AUDIO_CUE_CHEAT"                    value="./path_x/Cheat.wav"></property>
         <property name="AUDIO_CUE_DESELECT_TILE"            value="./path_x/DeselectTile.wav"></property>
@@ -44,9 +44,10 @@
         <property name="AUDIO_CUE_WIN"                      value="./path_x/Win.mid"></property>
         <property name="SONG_CUE_GAME_SCREEN"               value="./path_x/GameSong.mid"></property>        
         <property name="SONG_CUE_MENU_SCREEN"               value="./path_x/MenuSong.mid"></property>
+        -->
     </property_list>
     
-    <!-- PLAYABLE LEVELS CREATED WITH THE LEVEL EDITOR -->
+    <!-- PLAYABLE LEVELS CREATED WITH THE LEVEL EDITOR 
     <property_options_list>
         <property_options name="LEVEL_OPTIONS">
             <option>./path_x/BubbleSortCoil.sort</option>
@@ -67,4 +68,5 @@
             <option>./path_x/ButtonSelectionSortUMouseOver.png</option>
         </property_options>
     </property_options_list>
+    -->
 </properties>

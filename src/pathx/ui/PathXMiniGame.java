@@ -67,14 +67,22 @@ public class PathXMiniGame extends MiniGame {
 
     @Override
     public void initAudioContent() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void initData() {
          errorHandler = new PathXErrorHandler(window);
+         fileManager= new PathXFileManager(this);
+         data= new PathXDataModel(this);
     }
  public void switchToSplashScreen(){
+     guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
+     
+     currentScreenState = MENU_SCREEN_STATE;
+     
+     
+     
      
  }
     @Override
@@ -97,8 +105,10 @@ public class PathXMiniGame extends MiniGame {
         img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_MENU));
         sT = new SpriteType(BACKGROUND_TYPE);
         sT.addState(MENU_SCREEN_STATE, img);
+        
         img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
         sT.addState(GAME_SCREEN_STATE, img);
+        
         s = new Sprite(sT, 0, 0, 0, 0, MENU_SCREEN_STATE);
         guiDecor.put(BACKGROUND_TYPE, s);
         
@@ -115,17 +125,17 @@ public class PathXMiniGame extends MiniGame {
 
     @Override
     public void initGUIHandlers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void reset() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void updateGUI() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
