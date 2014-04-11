@@ -37,7 +37,7 @@ public class PathX {
         {
             // LET THE ERROR HANDLER PROVIDE THE RESPONSE
            PathXErrorHandler errorHandler = miniGame.getErrorHandler();
-            errorHandler.processError(PathXPropertyType.TEXT_ERROR_LOADING_XML_FILE);
+           errorHandler.processError(PathXPropertyType.TEXT_ERROR_LOADING_XML_FILE);
         }
         
     }
@@ -60,11 +60,16 @@ public class PathX {
         IMAGE_BACKGROUND_GAME,
         IMAGE_BACKGROUND_MENU,
         IMAGE_BUTTON_HELP,
+        IMAGE_BUTTON_HELP_MOUSE_OVER,
         IMAGE_BUTTON_CLOSE,
         IMAGE_BUTTON_HOME,
         IMAGE_BUTTON_PLAY,
+        IMAGE_BUTTON_PLAY_MOUSE_OVER,
         IMAGE_BUTTON_RESET,
+        IMAGE_BUTTON_RESET_MOUSE_OVER,
         IMAGE_BUTTON_SETTINGS,
+        IMAGE_BUTTON_SETTINGS_MOUSE_OVER,
+        IMAGE_WINDOW_ICON,
      
         
         /* GAME TEXT */

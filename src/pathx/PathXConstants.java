@@ -42,8 +42,8 @@ public class PathXConstants {
     public static final int FPS = 30;
 
     // UI CONTROL SIZE AND POSITION SETTINGS
-    public static final int WINDOW_WIDTH = 640;
-    public static final int WINDOW_HEIGHT = 480;
+    public static final int WINDOW_WIDTH = 750;
+    public static final int WINDOW_HEIGHT = 650;
     public static final int VIEWPORT_MARGIN_LEFT = 20;
     public static final int VIEWPORT_MARGIN_RIGHT = 20;
     public static final int VIEWPORT_MARGIN_TOP = 20;
@@ -52,5 +52,20 @@ public class PathXConstants {
     public static final int LEVEL_BUTTON_MARGIN = 5;
     public static final int LEVEL_BUTTON_Y = 570;
     public static final int VIEWPORT_INC = 5;
+    
+    public static final int PLAY_BUTTON_X = 0;
+    public static final int PLAY_BUTTON_Y = 0;
+    
+    // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
+    // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
+    // LOADING ART.
+    public static final Color COLOR_KEY = new Color(255, 174, 201);
+    public static final Color COLOR_DEBUG_TEXT = Color.BLACK;
+    public static final Color COLOR_TEXT_DISPLAY = new Color (10, 160, 10);
+    
+    // FONTS USED DURING FOR TEXTUAL GAME DISPLAYS
+    public static final Font FONT_TEXT_DISPLAY = new Font(Font.SANS_SERIF, Font.BOLD, 48);
+    public static final Font FONT_DEBUG_TEXT = new Font(Font.MONOSPACED, Font.BOLD, 14);
+    public static final Font FONT_STATS = new Font(Font.MONOSPACED, Font.BOLD, 20);
         
 }

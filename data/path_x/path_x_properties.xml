@@ -10,11 +10,18 @@
         <property name="IMAGE_BACKGROUND_GAME"              value="./path_x/BackgroundGame.png"></property>
         <property name="IMAGE_BACKGROUND_MENU"              value="./path_x/BackgroundMenu.png"></property>
         <property name="IMAGE_BUTTON_HELP"                  value="./path_x/ButtonHelp.png"></property>
+        <property name="IMAGE_BUTTON_HELP_MOUSE_OVER"       value="./path_x/HelpButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_CLOSE"                 value="./path_x/ButtonClose.png"></property>
         <property name="IMAGE_BUTTON_HOME"                  value="./path_x/ButtonHome.png"></property>
         <property name="IMAGE_BUTTON_PLAY"                  value="./path_x/ButtonPlay.png"></property>
+        <property name="IMAGE_BUTTON_PLAY_MOUSE_OVER"       value="./path_x/PlayButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_RESET"                 value="./path_x/ButtonReset.png"></property>
+        <property name="IMAGE_BUTTON_RESET_MOUSE_OVER"      value="./path_x/ResetButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_SETTINGS"              value="./path_x/ButtonSettings.png"></property>
+        <property name="IMAGE_BUTTON_SETTINGS_MOUSE_OVER"   value="./path_x/SettingsButtonMouseOver.png"></property>
+        
+        
+        <property name="IMAGE_WINDOW_ICON"                  value="./path_x/WindowIcon.png"></property>
  
 
         <!-- ALL THE TEXT TO BE DISPLAYED -->
