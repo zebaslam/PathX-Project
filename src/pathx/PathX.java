@@ -7,6 +7,10 @@
 package pathx;
 import xml_utilities.InvalidXMLFileFormatException;
 import properties_manager.PropertiesManager;
+import pathx.ui.PathXMiniGame;
+import pathx.ui.PathXErrorHandler;
+import static pathx.PathXConstants.*;
+
 
 /**
  *
@@ -17,8 +21,25 @@ public class PathX {
     /**
      * @param args the command line arguments
      */
+     static PathXMiniGame miniGame = new PathXMiniGame();
     public static void main(String[] args) {
-        // TODO code application logic here
+        try{
+        PropertiesManager props = PropertiesManager.getPropertiesManager();
+            props.addProperty(PropertiesManager.DATA_PATH_PROPERTY, PATH_DATA);
+            props.loadProperties(PROPERTIES_FILE_NAME, PROPERTIES_SCHEMA_FILE_NAME);
+            
+            // THEN WE'LL LOAD THE GAME FLAVOR AS SPECIFIED BY THE PROPERTIES FILE
+            String gameFlavorFile = props.getProperty(PathXPropertyType.FILE_GAME_PROPERTIES);
+            props.loadProperties(gameFlavorFile, PROPERTIES_SCHEMA_FILE_NAME);
+        }
+        
+            catch(InvalidXMLFileFormatException ixmlffe)
+        {
+            // LET THE ERROR HANDLER PROVIDE THE RESPONSE
+           PathXErrorHandler errorHandler = miniGame.getErrorHandler();
+            errorHandler.processError(PathXPropertyType.TEXT_ERROR_LOADING_XML_FILE);
+        }
+        
     }
     
    public enum PathXPropertyType {
