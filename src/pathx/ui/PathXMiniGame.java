@@ -65,6 +65,107 @@ public class PathXMiniGame extends MiniGame {
         return testScreenState.equals(currentScreenState);
     }
 
+  
+ public void switchToSplashScreen(){
+     System.out.println("IN SWITCH TO SPLAXH SCREEN");
+     guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
+     guiButtons.get(PLAY_BUTTON_TYPE).setState(PathXCarState.INVISIBLE_STATE.toString());
+     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(true);
+     
+     currentScreenState = MENU_SCREEN_STATE;
+     data.setGameState(MiniGameState.NOT_STARTED);
+     
+      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
+      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString());
+     
+     
+ }
+    @Override
+    public void initGUIControls() {
+        BufferedImage img;
+        float x, y;
+        SpriteType sT;
+        Sprite s;
+        
+        PropertiesManager props = PropertiesManager.getPropertiesManager();
+        String imgPath = props.getProperty(PathXPropertyType.PATH_IMG);        
+        String windowIconFile = props.getProperty(PathXPropertyType.IMAGE_WINDOW_ICON);
+        img = loadImage(imgPath + windowIconFile);
+        window.setIconImage(img);
+        
+        // CONSTRUCT THE PANEL WHERE WE'LL DRAW EVERYTHING
+        canvas = new PathXPanel(this, (PathXDataModel)data);
+        
+          // LOAD THE BACKGROUNDS, WHICH ARE GUI DECOR
+        currentScreenState = MENU_SCREEN_STATE;
+        img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_MENU));
+        sT = new SpriteType(BACKGROUND_TYPE);
+        sT.addState(MENU_SCREEN_STATE, img); 
+        //img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
+        //sT.addState(GAME_SCREEN_STATE, img);       
+        s = new Sprite(sT, 0, 0, 0, 0, MENU_SCREEN_STATE);
+        System.out.println("DID I GET HERE?"); // DEBUG TEST
+        guiDecor.put(BACKGROUND_TYPE, s);
+        
+        String playButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PLAY);
+        sT = new SpriteType(PLAY_BUTTON_TYPE);
+	img = loadImage(imgPath + playButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String newMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PLAY_MOUSE_OVER);
+        img = loadImage(imgPath + newMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAY_BUTTON_X, PLAY_BUTTON_Y, 0, 0, VISIBLE_STATE.toString());
+        guiButtons.put(PLAY_BUTTON_TYPE, s);
+    }
+
+    @Override
+    public void initGUIHandlers() {
+        eventHandler = new PathXEventHandler(this);
+        window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        window.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent we) 
+            { eventHandler.respondToExitRequest(); }
+        });
+    }
+  
+    @Override
+    public void initData() {
+         errorHandler = new PathXErrorHandler(window);
+         fileManager= new PathXFileManager(this);
+         data= new PathXDataModel(this);
+    }
+    @Override
+    public void reset() {
+        data.reset(this);
+    }
+
+    @Override
+    public void updateGUI() {
+        // GO THROUGH THE VISIBLE BUTTONS TO TRIGGER MOUSE OVERS
+        Iterator<Sprite> buttonsIt = guiButtons.values().iterator();
+        while (buttonsIt.hasNext())
+        {
+            Sprite button = buttonsIt.next();
+            
+            // ARE WE ENTERING A BUTTON?
+            if (button.getState().equals(PathXCarState.VISIBLE_STATE.toString()))
+            {
+                if (button.containsPoint(data.getLastMouseX(), data.getLastMouseY()))
+                {
+                    button.setState(PathXCarState.MOUSE_OVER_STATE.toString());
+                }
+            }
+            // ARE WE EXITING A BUTTON?
+            else if (button.getState().equals(PathXCarState.MOUSE_OVER_STATE.toString()))
+            {
+                 if (!button.containsPoint(data.getLastMouseX(), data.getLastMouseY()))
+                {
+                    button.setState(PathXCarState.VISIBLE_STATE.toString());
+                }
+            }
+        }
+    }    
+    
     @Override
     public void initAudioContent() {
               try
@@ -101,102 +202,5 @@ public class PathXMiniGame extends MiniGame {
         String cue = props.getProperty(audioCueType.toString());
         audio.loadAudio(audioCueType.toString(), audioPath + cue);        
     }
-    @Override
-    public void initData() {
-         errorHandler = new PathXErrorHandler(window);
-         fileManager= new PathXFileManager(this);
-         data= new PathXDataModel(this);
-    }
- public void switchToSplashScreen(){
-     guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
-     guiButtons.get(PLAY_BUTTON_TYPE).setState(PathXCarState.INVISIBLE_STATE.toString());
-     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(true);
-     
-     currentScreenState = MENU_SCREEN_STATE;
-     data.setGameState(MiniGameState.NOT_STARTED);
-     
-      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
-      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString());
-     
-     
- }
-    @Override
-    public void initGUIControls() {
-        BufferedImage img;
-        float x, y;
-        SpriteType sT;
-        Sprite s;
-        
-        PropertiesManager props = PropertiesManager.getPropertiesManager();
-        String imgPath = props.getProperty(PathXPropertyType.PATH_IMG);        
-        String windowIconFile = props.getProperty(PathXPropertyType.IMAGE_WINDOW_ICON);
-        img = loadImage(imgPath + windowIconFile);
-        window.setIconImage(img);
-        
-        // CONSTRUCT THE PANEL WHERE WE'LL DRAW EVERYTHING
-        canvas = new PathXPanel(this, (PathXDataModel)data);
-        
-          // LOAD THE BACKGROUNDS, WHICH ARE GUI DECOR
-        currentScreenState = MENU_SCREEN_STATE;
-        img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_MENU));
-        sT = new SpriteType(BACKGROUND_TYPE);
-        sT.addState(MENU_SCREEN_STATE, img); 
-        img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
-        sT.addState(GAME_SCREEN_STATE, img);       
-        s = new Sprite(sT, 0, 0, 0, 0, MENU_SCREEN_STATE);
-        guiDecor.put(BACKGROUND_TYPE, s);
-        
-        String playButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PLAY);
-        sT = new SpriteType(PLAY_BUTTON_TYPE);
-	img = loadImage(imgPath + playButton);
-        sT.addState(PathXCarState.VISIBLE_STATE.toString(), img);
-        String newMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PLAY_MOUSE_OVER);
-        img = loadImage(imgPath + newMouseOverButton);
-        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
-        s = new Sprite(sT, PLAY_BUTTON_X, PLAY_BUTTON_Y, 0, 0, PathXCarState.INVISIBLE_STATE.toString());
-        guiButtons.put(PLAY_BUTTON_TYPE, s);
-    }
-
-    @Override
-    public void initGUIHandlers() {
-        eventHandler = new PathXEventHandler(this);
-        window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        window.addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent we) 
-            { eventHandler.respondToExitRequest(); }
-        });
-    }
-
-    @Override
-    public void reset() {
-        data.reset(this);
-    }
-
-    @Override
-    public void updateGUI() {
-        // GO THROUGH THE VISIBLE BUTTONS TO TRIGGER MOUSE OVERS
-        Iterator<Sprite> buttonsIt = guiButtons.values().iterator();
-        while (buttonsIt.hasNext())
-        {
-            Sprite button = buttonsIt.next();
-            
-            // ARE WE ENTERING A BUTTON?
-            if (button.getState().equals(PathXCarState.VISIBLE_STATE.toString()))
-            {
-                if (button.containsPoint(data.getLastMouseX(), data.getLastMouseY()))
-                {
-                    button.setState(PathXCarState.MOUSE_OVER_STATE.toString());
-                }
-            }
-            // ARE WE EXITING A BUTTON?
-            else if (button.getState().equals(PathXCarState.MOUSE_OVER_STATE.toString()))
-            {
-                 if (!button.containsPoint(data.getLastMouseX(), data.getLastMouseY()))
-                {
-                    button.setState(PathXCarState.VISIBLE_STATE.toString());
-                }
-            }
-        }
-    }    
     }
 

@@ -45,7 +45,45 @@ public class PathXPanel extends JPanel{
         numberFormatter.setMinimumFractionDigits(3);
         numberFormatter.setMaximumFractionDigits(3);
     }
+    public void paintComponent(Graphics g){
+        try{
+        game.beginUsingData();
+        
+            // CLEAR THE PANEL
+            super.paintComponent(g);
+        
+            // RENDER THE BACKGROUND, WHICHEVER SCREEN WE'RE ON
+            renderBackground(g);
+            
+            renderGUIControls(g);
+        
+        
+        
+        }
+         finally
+        {
+            // RELEASE THE LOCK
+            game.endUsingData();    
+        }
+    }
     
+      public void renderGUIControls(Graphics g)
+    {
+        // GET EACH DECOR IMAGE ONE AT A TIME
+        Collection<Sprite> decorSprites = game.getGUIDecor().values();
+        for (Sprite s : decorSprites)
+        {
+            if (s.getSpriteType().getSpriteTypeID() != BACKGROUND_TYPE)
+                renderSprite(g, s);
+        }
+        
+        // AND NOW RENDER THE BUTTONS
+        Collection<Sprite> buttonSprites = game.getGUIButtons().values();
+        for (Sprite s : buttonSprites)
+        {
+            renderSprite(g, s);
+        }
+    }  
   public void renderBackground(Graphics g)
     {
         // THERE IS ONLY ONE CURRENTLY SET
@@ -56,7 +94,7 @@ public class PathXPanel extends JPanel{
   public void renderSprite(Graphics g, Sprite s)
     {
         // ONLY RENDER THE VISIBLE ONES
-        if (!s.getState().equals(PathXCarState.INVISIBLE_STATE.toString()))
+        if (!s.getState().equals(INVISIBLE_STATE.toString()))
         {
             SpriteType bgST = s.getSpriteType();
             Image img = bgST.getStateImage(s.getState());

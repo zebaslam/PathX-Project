@@ -32,7 +32,7 @@ public class PathX {
             String gameFlavorFile = props.getProperty(PathXPropertyType.FILE_GAME_PROPERTIES);
             props.loadProperties(gameFlavorFile, PROPERTIES_SCHEMA_FILE_NAME);
             
-             String appTitle = props.getProperty(PathXPropertyType.TEXT_TITLE_BAR_GAME);
+            String appTitle = props.getProperty(PathXPropertyType.TEXT_TITLE_BAR_GAME);
             miniGame.initMiniGame(appTitle, FPS, WINDOW_WIDTH, WINDOW_HEIGHT);
             
             // GET THE PROPER WINDOW DIMENSIONS

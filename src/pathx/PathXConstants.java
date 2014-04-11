@@ -39,6 +39,8 @@ public class PathXConstants {
     public static final String SETTINGS_SCREEN_STATE= "SETTINGS_SCREEN_STATE";
     public static final String HELP_SCREEN_STATE="HELP_SCREEN_STATE";
     
+    public static final String INVISIBLE_STATE="INVISIBLE_STATE";
+    public static final String VISIBLE_STATE="VISIBLE_STATE";
     public static final int FPS = 30;
 
     // UI CONTROL SIZE AND POSITION SETTINGS
@@ -53,9 +55,11 @@ public class PathXConstants {
     public static final int LEVEL_BUTTON_Y = 570;
     public static final int VIEWPORT_INC = 5;
     
-    public static final int PLAY_BUTTON_X = 0;
-    public static final int PLAY_BUTTON_Y = 0;
+    public static final int PLAY_BUTTON_X = 140;
+    public static final int PLAY_BUTTON_Y = 580;
     
+    public static final int RESET_X= PLAY_BUTTON_X +20;
+    public static final int RESET_Y= 580;
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
     // LOADING ART.
