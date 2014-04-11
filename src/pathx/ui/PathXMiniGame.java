@@ -146,6 +146,16 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, SETTINGS_X, SETTINGS_Y, 0, 0, VISIBLE_STATE.toString());
         guiButtons.put(SETTINGS_BUTTON_TYPE, s);
         
+        String closeButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_CLOSE);
+        sT = new SpriteType(CLOSE_BUTTON_TYPE);
+	img = loadImage(imgPath + closeButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String closeMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_CLOSE_MOUSE_OVER);
+        img = loadImage(imgPath + closeMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, EXIT_X, EXIT_Y, 0, 0, VISIBLE_STATE.toString());
+        guiButtons.put(CLOSE_BUTTON_TYPE, s);
+        
     }
 
     @Override

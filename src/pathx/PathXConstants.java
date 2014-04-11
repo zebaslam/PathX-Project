@@ -55,6 +55,10 @@ public class PathXConstants {
     public static final int LEVEL_BUTTON_Y = 570;
     public static final int VIEWPORT_INC = 5;
     
+    public static final int EXIT_X=650;
+    public static final int EXIT_Y=30;
+    
+    
     public static final int PLAY_BUTTON_X = 140;
     public static final int PLAY_BUTTON_Y = 585;
     
