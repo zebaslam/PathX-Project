@@ -56,6 +56,8 @@ public class PathXPanel extends JPanel{
             renderBackground(g);
             
             renderGUIControls(g);
+            
+            renderDialogs(g);
         
         
         
@@ -107,7 +109,17 @@ public class PathXPanel extends JPanel{
             g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null); 
         }
     }
-   
+  
+  public void renderDialogs(Graphics g)
+    {
+        // GET EACH DECOR IMAGE ONE AT A TIME
+        Collection<Sprite> dialogSprites = game.getGUIDialogs().values();
+        for (Sprite s : dialogSprites)
+        {
+            // RENDER THE DIALOG, NOTE IT WILL ONLY DO IT IF IT'S VISIBLE
+            renderSprite(g, s);
+        }
+    }
     public void renderDebuggingText(Graphics g)
     {
         // IF IT'S ACTIVATED

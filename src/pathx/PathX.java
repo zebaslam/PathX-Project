@@ -115,6 +115,8 @@ public class PathX {
         SONG_CUE_MENU_SCREEN,
         SONG_CUE_LEVEL_SCREEN,
         
+        //dialogs
+        IMAGE_DIALOG_SETTINGS,
         
         /* TILE LOADING STUFF 
         LEVEL_OPTIONS,

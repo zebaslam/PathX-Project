@@ -58,6 +58,7 @@ public class PathXEventHandler {
 
     public void respondToSettingsSelect() {
         game.switchToSettingsScreen();
+        game.displaySettings();
     }
 
     public void respondToLevelSelect() {

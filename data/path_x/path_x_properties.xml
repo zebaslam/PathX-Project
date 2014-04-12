@@ -26,7 +26,12 @@
         <property name="IMAGE_BUTTON_SETTINGS_MOUSE_OVER"   value="./path_x/SettingsButtonMouseOver.png"></property>
         <property name="IMAGE_WINDOW_ICON"                  value="./path_x/WindowIcon.png"></property>
  
-        <property name="HELP_FILE_NAME"                         value="Help.html"></property>
+        <property name="HELP_FILE_NAME"                     value="Help.html"></property>
+        
+        <!-- Dialog stuff -->
+        <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
+        <property name="IMAGE_DIALOG_WIN"                   value="./sorting_hat/DialogWin.png"></property>
+        
         
         
         <!--Viewport Arrow stuff -->
