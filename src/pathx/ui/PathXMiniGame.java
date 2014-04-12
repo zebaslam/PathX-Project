@@ -51,7 +51,14 @@ public class PathXMiniGame extends MiniGame {
     static PathXMiniGame miniGame = new PathXMiniGame();
     private float background_x=0;
     private float background_y=0;
-   
+    private boolean scroll;
+    
+    public boolean getScroll(){
+        return scroll;
+    }
+    public void setScroll (boolean TF){
+        scroll=TF;
+    }
     public PathXErrorHandler getErrorHandler()
     {
         return errorHandler;
@@ -241,6 +248,7 @@ public void switchToHelpScreen(){
      float x= getX();
      float y= getY();
      resetBackground(x,y);
+     setScroll(false);
 } 
 
 public void switchToSettingsScreen(){
@@ -275,6 +283,7 @@ public void switchToSettingsScreen(){
      float x= getX();
      float y= getY();
      resetBackground(x,y);
+     setScroll(false);
 }
  public void switchToLevelSelectScreen(){
      guiDecor.get(BACKGROUND_TYPE).setState(LEVEL_SELECT_SCREEN_STATE);
@@ -304,6 +313,7 @@ public void switchToSettingsScreen(){
         audio.stop(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString()); 
         audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
         audio.play(PathXPropertyType.SONG_CUE_LEVEL_SCREEN.toString(), true); 
+    setScroll(true);
  }
  public void switchToSplashScreen(){
      //System.out.println("IN SWITCH TO SPLASH SCREEN");
@@ -340,6 +350,7 @@ public void switchToSettingsScreen(){
      float x= getX();
      float y= getY();
      resetBackground(x,y);
+     setScroll(false);
  }
     @Override
     public void initGUIHandlers() {
@@ -393,7 +404,40 @@ public void switchToSettingsScreen(){
              guiButtons.get(UP_BUTTON_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae)
             {   
-                ScrollUp();        }
+                ScrollUp();  
+            ScrollUp();
+            ScrollUp();}
+            
+            
+            
+        });
+            guiButtons.get(DOWN_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   
+                ScrollDown(); 
+                ScrollDown(); 
+                ScrollDown(); 
+            }
+            
+            
+            
+        });
+            guiButtons.get(LEFT_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   
+                ScrollLeft();   
+            ScrollLeft(); 
+            ScrollLeft(); }
+            
+            
+            
+        });
+            guiButtons.get(RIGHT_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   
+                ScrollRight();    
+            ScrollRight();  
+            ScrollRight();  }
             
             
             
@@ -485,11 +529,59 @@ public void switchToSettingsScreen(){
     
     
     public void ScrollUp(){
+        boolean scrollvalue=getScroll();
+        if(scrollvalue==true){
         float x=guiDecor.get(BACKGROUND_TYPE).getX();
         float y= guiDecor.get(BACKGROUND_TYPE).getY();
+        if ((y)<0){
         guiDecor.get(BACKGROUND_TYPE).setX(x);
-        guiDecor.get(BACKGROUND_TYPE).setY(y+150);
+        guiDecor.get(BACKGROUND_TYPE).setY(y+15);}
+       
+        }
+        
+         updateGUI();
+    }
+    
+    public void ScrollDown(){
+        boolean scrollvalue=getScroll();
+        if(scrollvalue==true){
+        float x=guiDecor.get(BACKGROUND_TYPE).getX();
+        float y= guiDecor.get(BACKGROUND_TYPE).getY();
+        if (y>-468){
+        guiDecor.get(BACKGROUND_TYPE).setX(x);
+        guiDecor.get(BACKGROUND_TYPE).setY(y-15);}
+        
+    }
         updateGUI();
+    }
+    
+     public void ScrollLeft(){
+        boolean scrollvalue=getScroll();
+        if(scrollvalue==true){
+        float x=guiDecor.get(BACKGROUND_TYPE).getX();
+        float y= guiDecor.get(BACKGROUND_TYPE).getY();
+        if (Math.abs(x)>0.0){
+        guiDecor.get(BACKGROUND_TYPE).setX(x+15);
+        guiDecor.get(BACKGROUND_TYPE).setY(y);
+        }
+       
+        
+        }
+        updateGUI();
+    }
+     
+       public void ScrollRight(){
+        boolean scrollvalue=getScroll();
+        if(scrollvalue==true){
+        float x=guiDecor.get(BACKGROUND_TYPE).getX();
+        float y= guiDecor.get(BACKGROUND_TYPE).getY();
+        if ((x)>-1245){
+        guiDecor.get(BACKGROUND_TYPE).setX(x-15);
+        guiDecor.get(BACKGROUND_TYPE).setY(y);}
+       
+         
+        }
+         updateGUI();
     }
     /**
      * This method resets the background image to that of it's original locations
@@ -520,6 +612,7 @@ public void switchToSettingsScreen(){
         guiDecor.get(BACKGROUND_TYPE).setY(y);
         updateGUI();
     }
+    
     }
 
 

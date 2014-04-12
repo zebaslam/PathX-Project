@@ -67,14 +67,15 @@ public class PathXEventHandler {
 
     public void respondToKeyPress(int keyCode) {
         PathXDataModel data = (PathXDataModel) game.getDataModel();
-        if (keyCode == KeyEvent.VK_W) {
-            data.getViewport().scroll(0, -VIEWPORT_INC);
-        } else if (keyCode == KeyEvent.VK_A) {
-            data.getViewport().scroll(-VIEWPORT_INC, 0);
-        } else if (keyCode == KeyEvent.VK_S) {
-            data.getViewport().scroll(0, VIEWPORT_INC);
-        } else if (keyCode == KeyEvent.VK_D) {
-            data.getViewport().scroll(VIEWPORT_INC, 0);
+        if (keyCode == KeyEvent.VK_UP) {
+            game.ScrollUp();
+        } else if (keyCode == KeyEvent.VK_DOWN) {
+            game.ScrollDown();
+        } else if (keyCode == KeyEvent.VK_LEFT) {
+            game.ScrollLeft();
+        } else if (keyCode == KeyEvent.VK_RIGHT) {
+            game.ScrollRight();
         }
+       
     }
 }
