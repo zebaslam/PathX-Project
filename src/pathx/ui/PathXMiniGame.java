@@ -49,7 +49,8 @@ public class PathXMiniGame extends MiniGame {
     // THE SCREEN CURRENTLY BEING PLAYED
     private String currentScreenState;
     static PathXMiniGame miniGame = new PathXMiniGame();
-    
+    private float background_x=0;
+    private float background_y=0;
    
     public PathXErrorHandler getErrorHandler()
     {
@@ -203,6 +204,10 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, RIGHT_X, RIGHT_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(RIGHT_BUTTON_TYPE, s);
         
+        x=guiDecor.get(BACKGROUND_TYPE).getX();
+        y= guiDecor.get(BACKGROUND_TYPE).getY();
+        setInitialValues(x,y);
+        
     }
 public void switchToHelpScreen(){
        System.out.println("IN SWITCH TO HELP SCREEN");
@@ -229,11 +234,13 @@ public void switchToHelpScreen(){
      guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(false);
      currentScreenState = HELP_SCREEN_STATE;
       
-      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
+     audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
      audio.stop(PathXPropertyType.SONG_CUE_LEVEL_SCREEN.toString()); 
      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
 
-        
+     float x= getX();
+     float y= getY();
+     resetBackground(x,y);
 } 
 
 public void switchToSettingsScreen(){
@@ -265,6 +272,9 @@ public void switchToSettingsScreen(){
      audio.stop(PathXPropertyType.SONG_CUE_LEVEL_SCREEN.toString()); 
      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
         
+     float x= getX();
+     float y= getY();
+     resetBackground(x,y);
 }
  public void switchToLevelSelectScreen(){
      guiDecor.get(BACKGROUND_TYPE).setState(LEVEL_SELECT_SCREEN_STATE);
@@ -327,6 +337,9 @@ public void switchToSettingsScreen(){
      audio.stop(PathXPropertyType.SONG_CUE_LEVEL_SCREEN.toString()); 
      audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
      
+     float x= getX();
+     float y= getY();
+     resetBackground(x,y);
  }
     @Override
     public void initGUIHandlers() {
@@ -373,6 +386,14 @@ public void switchToSettingsScreen(){
             public void actionPerformed(ActionEvent ae)
             {   
                 eventHandler.respondToSettingsSelect();        }
+            
+            
+            
+        });
+             guiButtons.get(UP_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   
+                ScrollUp();        }
             
             
             
@@ -459,6 +480,45 @@ public void switchToSettingsScreen(){
         String audioPath = props.getProperty(PathXPropertyType.PATH_AUDIO);
         String cue = props.getProperty(audioCueType.toString());
         audio.loadAudio(audioCueType.toString(), audioPath + cue);        
+    }
+    
+    
+    
+    public void ScrollUp(){
+        float x=guiDecor.get(BACKGROUND_TYPE).getX();
+        float y= guiDecor.get(BACKGROUND_TYPE).getY();
+        guiDecor.get(BACKGROUND_TYPE).setX(x);
+        guiDecor.get(BACKGROUND_TYPE).setY(y+150);
+        updateGUI();
+    }
+    /**
+     * This method resets the background image to that of it's original locations
+     * @param x  x coordinate for background image
+     * @param y  y coordinate for background image
+     */
+    public void setInitialValues(float x, float y){
+        background_x=x;
+        background_y=y;
+    }
+    /**
+     * get the initial y coordinate 
+     * @return 
+     */
+    public float getY(){
+        return background_y;
+    }
+    public float getX(){
+        return background_x;
+    }
+    /**
+     * This resets the background to its initial value 
+     * @param x x coordinate
+     * @param y y coordinate 
+     */
+    public void resetBackground(float x, float y){
+        guiDecor.get(BACKGROUND_TYPE).setX(x);
+        guiDecor.get(BACKGROUND_TYPE).setY(y);
+        updateGUI();
     }
     }
 

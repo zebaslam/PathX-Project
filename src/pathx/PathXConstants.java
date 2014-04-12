@@ -50,6 +50,8 @@ public class PathXConstants {
     // UI CONTROL SIZE AND POSITION SETTINGS
     public static final int WINDOW_WIDTH = 750;
     public static final int WINDOW_HEIGHT = 650;
+    public static final int GAME_PICTURE_HEIGHT=1997;
+    public static final int GAME_PICTURE_WIDTH=1001;
     public static final int VIEWPORT_MARGIN_LEFT = 20;
     public static final int VIEWPORT_MARGIN_RIGHT = 20;
     public static final int VIEWPORT_MARGIN_TOP = 20;
