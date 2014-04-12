@@ -39,4 +39,15 @@ public class PathXEventHandler {
         // USER MAY CHOOSE ANOTHER LEVEL
         game.switchToSplashScreen();        
     }
+    
+             public void respondToHelpRequest()
+    {
+        // IF A GAME IS IN PROGRESS, THE PLAYER LOSES
+        if (game.getDataModel().inProgress())
+            game.getDataModel().endGameAsLoss();
+        
+        // SWITCH BACK TO THE MENU SCREEN SO THE 
+        // USER MAY CHOOSE ANOTHER LEVEL
+        game.switchToHelpScreen();        
+    }       
 }

@@ -71,7 +71,7 @@ public class PathXConstants {
     public static final int SETTINGS_X= RESET_X+210;
     public static final int SETTINGS_Y=500;
     
-    public static final int HOME_X= EXIT_X-110;
+    public static final int HOME_X= EXIT_X-43;
     public static final int HOME_Y=30;
     
     

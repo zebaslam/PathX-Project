@@ -17,7 +17,10 @@ import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import pathx.data.PathXDataModel;
 import mini_game.MiniGame;
 import mini_game.MiniGameState;
@@ -46,6 +49,7 @@ public class PathXMiniGame extends MiniGame {
     // THE SCREEN CURRENTLY BEING PLAYED
     private String currentScreenState;
     static PathXMiniGame miniGame = new PathXMiniGame();
+    
    
     public PathXErrorHandler getErrorHandler()
     {
@@ -66,49 +70,7 @@ public class PathXMiniGame extends MiniGame {
     }
 
   
- public void switchToSplashScreen(){
-     System.out.println("IN SWITCH TO SPLASH SCREEN");
-     //Determines which buttons to display on splash screen
-     guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
-     guiButtons.get(PLAY_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(true);
-     guiButtons.get(CLOSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(CLOSE_BUTTON_TYPE).setEnabled(true);
-     guiButtons.get(HELP_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(HELP_BUTTON_TYPE).setEnabled(true);
-     guiButtons.get(RESET_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(RESET_BUTTON_TYPE).setEnabled(true);
-     guiButtons.get(SETTINGS_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(true);
-     guiButtons.get(HOME_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-     guiButtons.get(HOME_BUTTON_TYPE).setEnabled(false);
-     
-     currentScreenState = MENU_SCREEN_STATE;
-     data.setGameState(MiniGameState.NOT_STARTED);
-     
-     audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
-     audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
- }
  
-public void switchToHelpScreen(){
-     guiDecor.get(BACKGROUND_TYPE).setState(HELP_SCREEN_STATE);
-     guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
-     guiButtons.get(CLOSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(CLOSE_BUTTON_TYPE).setEnabled(true);
-     guiButtons.get(HELP_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-     guiButtons.get(HELP_BUTTON_TYPE).setEnabled(false);
-     guiButtons.get(RESET_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-     guiButtons.get(RESET_BUTTON_TYPE).setEnabled(false);
-     guiButtons.get(SETTINGS_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-     guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(false);
-     guiButtons.get(HOME_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
-     guiButtons.get(HOME_BUTTON_TYPE).setEnabled(true);
-     
-      currentScreenState = HELP_SCREEN_STATE;
-      
-      
-} 
     @Override
     public void initGUIControls() {
         BufferedImage img;
@@ -130,8 +92,11 @@ public void switchToHelpScreen(){
         img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_MENU));
         sT = new SpriteType(BACKGROUND_TYPE);
         sT.addState(MENU_SCREEN_STATE, img); 
-        //img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
-        //sT.addState(GAME_SCREEN_STATE, img);       
+        img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_GAME));
+        sT.addState(GAME_SCREEN_STATE, img);
+        img = loadImage(imgPath + props.getProperty(PathXPropertyType.IMAGE_BACKGROUND_HELP));
+        sT.addState(HELP_SCREEN_STATE, img);
+        
         s = new Sprite(sT, 0, 0, 0, 0, MENU_SCREEN_STATE);
         guiDecor.put(BACKGROUND_TYPE, s);
         
@@ -196,7 +161,50 @@ public void switchToHelpScreen(){
         guiButtons.put(HOME_BUTTON_TYPE, s);
         
     }
+public void switchToHelpScreen(){
+       System.out.println("IN SWITCH TO HELP SCREEN");
+     guiDecor.get(BACKGROUND_TYPE).setState(HELP_SCREEN_STATE);
+     guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(CLOSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(HELP_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(HELP_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(RESET_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(RESET_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(HOME_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(HOME_BUTTON_TYPE).setEnabled(true);
+     
+      currentScreenState = HELP_SCREEN_STATE;
+      
 
+        
+} 
+ public void switchToSplashScreen(){
+     System.out.println("IN SWITCH TO SPLASH SCREEN");
+     //Determines which buttons to display on splash screen
+     guiDecor.get(BACKGROUND_TYPE).setState(MENU_SCREEN_STATE);
+     guiButtons.get(PLAY_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(CLOSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(HELP_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(HELP_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(RESET_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(RESET_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(HOME_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(HOME_BUTTON_TYPE).setEnabled(false);
+     
+     currentScreenState = MENU_SCREEN_STATE;
+     data.setGameState(MiniGameState.NOT_STARTED);
+     
+     audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
+     audio.stop(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString()); 
+ }
     @Override
     public void initGUIHandlers() {
         eventHandler = new PathXEventHandler(this);
@@ -215,7 +223,20 @@ public void switchToHelpScreen(){
         //Event Handler for home button
            guiButtons.get(HOME_BUTTON_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae)
-            {   eventHandler.respondToHomeRequest();        }
+            {  
+                eventHandler.respondToHomeRequest();        }
+            
+            
+            
+        });
+           
+            guiButtons.get(HELP_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   
+                eventHandler.respondToHelpRequest();        }
+            
+            
+            
         });
     }
   
@@ -294,4 +315,5 @@ public void switchToHelpScreen(){
         audio.loadAudio(audioCueType.toString(), audioPath + cue);        
     }
     }
+
 

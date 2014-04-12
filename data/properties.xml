@@ -10,6 +10,7 @@
         <property name="FILE_PLAYER_RECORD"     value="PlayerRecord.dat"></property>
         <property name="PATH_AUDIO"             value="./audio/"></property>
         <property name="PATH_IMG"               value="./img/"></property>
+        <property name="PATH_DATA"              value="./data/"></property>
     </property_list>
 
     <property_options_list>

@@ -58,13 +58,14 @@ public class PathX {
         /* DIRECTORY PATHS FOR FILE LOADING */
         PATH_AUDIO,
         PATH_IMG,
-        
+        PATH_DATA,
         // LOADED FROM THE GAME FLAVOR PROPERTIES XML FILE
             // path_x_properties.xml
                 
         /* IMAGE FILE NAMES */
         IMAGE_BACKGROUND_GAME,
         IMAGE_BACKGROUND_MENU,
+        IMAGE_BACKGROUND_HELP,
         IMAGE_BUTTON_HELP,
         IMAGE_BUTTON_HELP_MOUSE_OVER,
         IMAGE_BUTTON_CLOSE,
@@ -79,7 +80,7 @@ public class PathX {
         IMAGE_BUTTON_SETTINGS_MOUSE_OVER,
         IMAGE_WINDOW_ICON,
      
-        
+        HELP_FILE_NAME,
         /* GAME TEXT */
         TEXT_ERROR_LOADING_AUDIO,
         TEXT_ERROR_LOADING_LEVEL,
@@ -89,6 +90,7 @@ public class PathX {
         TEXT_PROMPT_EXIT,
         TEXT_TITLE_BAR_GAME,
         TEXT_TITLE_BAR_ERROR,
+        INVALID_URL_ERROR_TEXT,
         
        //Audio stuff
         AUDIO_CUE_BAD_MOVE,

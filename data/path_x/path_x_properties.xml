@@ -9,6 +9,7 @@
         <!-- ALL THE IMAGES TO BE USED IN THE GAME -->
         <property name="IMAGE_BACKGROUND_GAME"              value="./path_x/BackgroundMenu.png"></property>
         <property name="IMAGE_BACKGROUND_MENU"              value="./path_x/BackgroundMenu.png"></property>
+        <property name="IMAGE_BACKGROUND_HELP"              value="./path_x/BackgroundHelp.png"></property>
         <property name="IMAGE_BUTTON_HELP"                  value="./path_x/ButtonHelp.png"></property>
         <property name="IMAGE_BUTTON_HELP_MOUSE_OVER"       value="./path_x/HelpButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_CLOSE"                 value="./path_x/ButtonClose.png"></property>
@@ -23,9 +24,9 @@
         <property name="IMAGE_BUTTON_SETTINGS_MOUSE_OVER"   value="./path_x/SettingsButtonMouseOver.png"></property>
         
         
-        <property name="IMAGE_WINDOW_ICON"                  value="./path_x/WindowIcon.png"></property>
+        <property name="IMAGE_WINDOW_ICON"                      value="./path_x/WindowIcon.png"></property>
  
-
+        <property name="HELP_FILE_NAME"                         value="Help.html"></property>
         <!-- ALL THE TEXT TO BE DISPLAYED -->
         <property name="TEXT_ERROR_LOADING_AUDIO"               value="Error Loading an Audio File"></property>
         <property name="TEXT_ERROR_LOADING_LEVEL"               value="Error Loading a Level File"></property>
@@ -34,7 +35,8 @@
         <property name="TEXT_ERROR_SAVING_RECORD"               value="Error Saving the Player Record"></property>
         <property name="TEXT_PROMPT_EXIT"                       value="Are you sure you wish to exit?"></property>
         <property name="TEXT_TITLE_BAR_GAME"                    value="PathX"></property>
-        <property name="TEXT_TITLE_BAR_ERROR"                   value="An error has occurred"></property>                
+        <property name="TEXT_TITLE_BAR_ERROR"                   value="An error has occurred"></property>    
+        <property name="INVALID_URL_ERROR_TEXT"         value="Attempting to load a page with an invalid URL"></property>            
         
         <!-- AUDIO FILES -->
         <property name="AUDIO_CUE_BAD_MOVE"                 value="./path_x/BadMove.wav"></property>
