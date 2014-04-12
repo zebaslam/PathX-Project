@@ -11,6 +11,7 @@
         <property name="IMAGE_BACKGROUND_MENU"              value="./path_x/BackgroundMenu.png"></property>
         <property name="IMAGE_BACKGROUND_HELP"              value="./path_x/BackgroundHelp.png"></property>
         <property name="IMAGE_BACKGROUND_LEVEL_SELECT"      value="./path_x/BackgroundLevelSelect.png"></property>
+        <property name="IMAGE_BACKGROUND_SETTINGS"          value="./path_x/BackgroundSettings.png"></property>
         <property name="IMAGE_BUTTON_HELP"                  value="./path_x/ButtonHelp.png"></property>
         <property name="IMAGE_BUTTON_HELP_MOUSE_OVER"       value="./path_x/HelpButtonMouseOver.png"></property>
         <property name="IMAGE_BUTTON_CLOSE"                 value="./path_x/ButtonClose.png"></property>
@@ -59,6 +60,7 @@
         <property name="AUDIO_CUE_WIN"                      value="./path_x/Win.mid"></property>
         <property name="SONG_CUE_GAME_SCREEN"               value="./path_x/GameSong.mid"></property>        
         <property name="SONG_CUE_MENU_SCREEN"               value="./path_x/MenuSong.mid"></property>
+        <property name="SONG_CUE_LEVEL_SCREEN"              value="./path_x/LevelSong.mid"></property>
         
     </property_list>
     

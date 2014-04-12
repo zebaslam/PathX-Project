@@ -31,6 +31,10 @@ public class PathXConstants {
     public static final String PLAY_BUTTON_TYPE= "PLAY_BUTTON_TYPE";
     public static final String RESET_BUTTON_TYPE= "RESET_BUTTON_TYPE"; 
     public static final String SETTINGS_BUTTON_TYPE= "SETTINGS_BUTTON_TYPE";
+    public static final String UP_BUTTON_TYPE="UP_BUTTON_TYPE";
+    public static final String DOWN_BUTTON_TYPE="DOWN_BUTTON_TYPE";
+    public static final String LEFT_BUTTON_TYPE="LEFT_BUTTON_TYPE";
+    public static final String RIGHT_BUTTON_TYPE="RIGHT_BUTTON_TYPE";
     
     // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE FIVE SCREENS
     public static final String MENU_SCREEN_STATE = "MENU_SCREEN_STATE";
@@ -74,7 +78,23 @@ public class PathXConstants {
     public static final int HOME_X= EXIT_X-43;
     public static final int HOME_Y=30;
     
+    public static final int UP_X=85;
+    public static final int UP_Y=499;
     
+    public static final int DOWN_X=85;
+    public static final int DOWN_Y=550;
+    
+    public static final int LEFT_X=55;
+    public static final int LEFT_Y=520;
+    
+    public static final int RIGHT_X=115;
+    public static final int RIGHT_Y=520;
+    
+    //For dialogs
+    public static final String LEVEL_INFO_DIALOG_TYPE = "LEVEL_INFO_DIALOG_TYPE";
+    public static final String LEVEL_COMPLETE_DIALOG_TYPE = "LEVEL_COMPLETE_DIALOG_TYPE";
+    public static final String LEVEL_FAIL_DIALOG_TYPE = "LEVEL_FAIL_DIALOG_TYPE";
+    public static final String SETTINGS_DIALOG_TYPE = "SETTINGS_DIALOG_TYPE";
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
     // LOADING ART.

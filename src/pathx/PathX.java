@@ -66,6 +66,8 @@ public class PathX {
         IMAGE_BACKGROUND_GAME,
         IMAGE_BACKGROUND_MENU,
         IMAGE_BACKGROUND_HELP,
+        IMAGE_BACKGROUND_LEVEL_SELECT,
+        IMAGE_BACKGROUND_SETTINGS,
         IMAGE_BUTTON_HELP,
         IMAGE_BUTTON_HELP_MOUSE_OVER,
         IMAGE_BUTTON_CLOSE,
@@ -80,7 +82,16 @@ public class PathX {
         IMAGE_BUTTON_SETTINGS_MOUSE_OVER,
         IMAGE_WINDOW_ICON,
      
-        HELP_FILE_NAME,
+        /*Direction Buttons*/
+        IMAGE_BUTTON_UP,
+        IMAGE_BUTTON_UP_MOUSE_OVER,
+        IMAGE_BUTTON_DOWN,
+        IMAGE_BUTTON_DOWN_MOUSE_OVER,
+        IMAGE_BUTTON_LEFT,
+        IMAGE_BUTTON_LEFT_MOUSE_OVER,
+        IMAGE_BUTTON_RIGHT,
+        IMAGE_BUTTON_RIGHT_MOUSE_OVER,
+        //HELP_FILE_NAME,
         /* GAME TEXT */
         TEXT_ERROR_LOADING_AUDIO,
         TEXT_ERROR_LOADING_LEVEL,
@@ -102,6 +113,7 @@ public class PathX {
         AUDIO_CUE_WIN,
         SONG_CUE_GAME_SCREEN,
         SONG_CUE_MENU_SCREEN,
+        SONG_CUE_LEVEL_SCREEN,
         
         
         /* TILE LOADING STUFF 

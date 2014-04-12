@@ -89,6 +89,12 @@ public class PathXPanel extends JPanel{
         // THERE IS ONLY ONE CURRENTLY SET
         Sprite bg = game.getGUIDecor().get(BACKGROUND_TYPE);
         renderSprite(g, bg);
+           if (!bg.getState().equals(INVISIBLE_STATE.toString()))
+        {
+            SpriteType bgST = bg.getSpriteType();
+            Image img = bgST.getStateImage(bg.getState());
+            g.drawImage(img, (int)bg.getX(), (int)bg.getY(),null); 
+        }
     }
   
   public void renderSprite(Graphics g, Sprite s)
