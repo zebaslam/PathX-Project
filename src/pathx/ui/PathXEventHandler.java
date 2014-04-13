@@ -31,9 +31,17 @@ public class PathXEventHandler {
             game.getDataModel().endGameAsLoss();
         }
         // AND CLOSE THE ALL
+        if (game.isCurrentScreenState(GAME_SCREEN_STATE)){
+            game.switchToLevelSelectScreen();
+        }
+        else{
         System.exit(0);
+        }
     }
-
+    
+    public void respondToCloseDialog(){
+        game.makeDialogInvisible();
+    }
     public void respondToHomeRequest() {
         // IF A GAME IS IN PROGRESS, THE PLAYER LOSES
         if (game.getDataModel().inProgress()) {

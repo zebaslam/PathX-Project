@@ -110,6 +110,13 @@ public class PathXPanel extends JPanel{
         }
     }
   
+  public void renderLevelDialog(Graphics g, Sprite s){
+      if (((PathXMiniGame)game).isCurrentScreenState(GAME_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())){
+          SpriteType bgST = s.getSpriteType();
+          Image img = bgST.getStateImage(s.getState());
+         g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null); 
+      }
+  }
   public void renderDialogs(Graphics g)
     {
         // GET EACH DECOR IMAGE ONE AT A TIME

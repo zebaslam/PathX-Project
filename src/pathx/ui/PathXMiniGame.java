@@ -212,6 +212,8 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, RIGHT_X, RIGHT_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(RIGHT_BUTTON_TYPE, s);
         
+       
+        
         String availableButton = props.getProperty(PathXPropertyType.IMAGE_MAP_AVAILABLE);
         sT = new SpriteType(AVAILABLE_BUTTON_TYPE);
 	img = loadImage(imgPath + availableButton);
@@ -238,10 +240,19 @@ public class PathXMiniGame extends MiniGame {
         sT.addState(PathXCarState.VISIBLE_STATE.toString(), img);
         //change around maybe
         ex = (WINDOW_WIDTH/2- 200);
-        why = (WINDOW_HEIGHT/2-165);
+        why = (WINDOW_HEIGHT/2-200);
         s = new Sprite(sT, ex, why, 0, 0, INVISIBLE_STATE.toString());
         guiDialogs.put(LEVEL_INFO_DIALOG_TYPE, s);
         
+        String closeLevelButton = props.getProperty(PathXPropertyType.LEVEL_CLOSE_BUTTON);
+        sT = new SpriteType(CLOSE_DIALOG_BUTTON_TYPE);
+	img = loadImage(imgPath + closeLevelButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String closeLevelButtonMouseOverButton = props.getProperty(PathXPropertyType.LEVEL_CLOSE_BUTTON_MOUSE_OVER);
+        img = loadImage(imgPath + closeLevelButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_CLOSE_X, LEVEL_CLOSE_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(CLOSE_DIALOG_BUTTON_TYPE, s);
         
         
         x=guiDecor.get(BACKGROUND_TYPE).getX();
@@ -274,6 +285,8 @@ public void switchToHelpScreen(){
      guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(false);
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
      currentScreenState = HELP_SCREEN_STATE;
       
      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
@@ -318,6 +331,8 @@ public void switchToSettingsScreen(){
      guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(false);
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
      currentScreenState = SETTINGS_SCREEN_STATE;
       
      audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true); 
@@ -358,6 +373,7 @@ public void switchToGameScreen(){
      guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(false);
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setEnabled(false);
+     
      currentScreenState = GAME_SCREEN_STATE;
       
      audio.play(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString(), true); 
@@ -366,6 +382,8 @@ public void switchToGameScreen(){
      
      guiDialogs.get(SETTINGS_DIALOG_TYPE).setState(INVISIBLE_STATE.toString());
      guiDialogs.get(LEVEL_INFO_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(true);
         
      float x= getX();
      float y= getY();
@@ -396,6 +414,8 @@ public void switchToGameScreen(){
      guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(true);
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setEnabled(true);
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
      currentScreenState = LEVEL_SELECT_SCREEN_STATE;
      
      guiDialogs.get(SETTINGS_DIALOG_TYPE).setState(INVISIBLE_STATE.toString());
@@ -433,6 +453,8 @@ public void switchToGameScreen(){
      guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(false);
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
      guiButtons.get(AVAILABLE_BUTTON_TYPE).setEnabled(false);
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
      
      currentScreenState = MENU_SCREEN_STATE;
      data.setGameState(MiniGameState.NOT_STARTED);
@@ -447,6 +469,13 @@ public void switchToGameScreen(){
      float y= getY();
      resetBackground(x,y);
      setScroll(false);
+ }
+ 
+ public void makeDialogInvisible(){
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+     guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
+     
+     guiDialogs.get(LEVEL_INFO_DIALOG_TYPE).setState(INVISIBLE_STATE.toString());
  }
     @Override
     public void initGUIHandlers() {
@@ -543,6 +572,14 @@ public void switchToGameScreen(){
                 ScrollRight();    
             ScrollRight();  
             ScrollRight();  }
+            
+            
+            
+        });
+            guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+            {   
+                eventHandler.respondToCloseDialog(); }
             
             
             

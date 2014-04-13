@@ -108,7 +108,7 @@ public class PathXConstants {
     
     //close values for the close button on the level info diaglog
     public static final int LEVEL_CLOSE_X=300;
-    public static final int LEVEL_CLOSE_Y=100;
+    public static final int LEVEL_CLOSE_Y=500;
     
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
