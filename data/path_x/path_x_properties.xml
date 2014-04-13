@@ -7,7 +7,7 @@
 <properties>
     <property_list>
         <!-- ALL THE IMAGES TO BE USED IN THE GAME -->
-        <property name="IMAGE_BACKGROUND_GAME"              value="./path_x/BackgroundMenu.png"></property>
+        <property name="IMAGE_BACKGROUND_GAME"              value="./path_x/BackgroundGame.png"></property>
         <property name="IMAGE_BACKGROUND_MENU"              value="./path_x/BackgroundMenu.png"></property>
         <property name="IMAGE_BACKGROUND_HELP"              value="./path_x/BackgroundHelp.png"></property>
         <property name="IMAGE_BACKGROUND_LEVEL_SELECT"      value="./path_x/BackgroundLevelSelect.png"></property>
@@ -30,10 +30,15 @@
         
         <!-- Dialog stuff -->
         <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
-        <property name="IMAGE_DIALOG_WIN"                   value="./sorting_hat/DialogWin.png"></property>
+        <property name="IMAGE_DIALOG_LEVEL_SELECT"          value="./path_x/LevelDialog.png"></property>
+        <property name="LEVEL_CLOSE_BUTTON"                 value="./path_x/LevelCloseButton.png"></property>
+        <property name="LEVEL_CLOSE_BUTTON_MOUSE_OVER"      value="./path_x/LevelCloseButtonMouseOver.png"></property>
         
         
-        
+         <!-- Dot stuff -->
+        <property name="IMAGE_MAP_AVAILABLE"                value="./path_x/unvisited.png"></property>
+        <property name="IMAGE_MAP_AVAILABLE_MOUSE_OVER"     value="./path_x/unvisitedMouseOver.png"></property>
+         
         <!--Viewport Arrow stuff -->
         <property name="IMAGE_BUTTON_UP"                        value="./path_x/UpArrow.png"></property>
         <property name="IMAGE_BUTTON_UP_MOUSE_OVER"             value="./path_x/UpArrowMouseOver.png"></property>

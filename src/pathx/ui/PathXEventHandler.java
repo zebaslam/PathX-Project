@@ -66,6 +66,9 @@ public class PathXEventHandler {
 
     }
 
+    public void respondToGameScreenSelect(){
+        game.switchToGameScreen();
+    }
     public void respondToKeyPress(int keyCode) {
         PathXDataModel data = (PathXDataModel) game.getDataModel();
         if (keyCode == KeyEvent.VK_UP) {

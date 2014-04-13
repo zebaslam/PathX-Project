@@ -35,6 +35,9 @@ public class PathXConstants {
     public static final String DOWN_BUTTON_TYPE="DOWN_BUTTON_TYPE";
     public static final String LEFT_BUTTON_TYPE="LEFT_BUTTON_TYPE";
     public static final String RIGHT_BUTTON_TYPE="RIGHT_BUTTON_TYPE";
+    public static final String AVAILABLE_BUTTON_TYPE="AVAILABLE_BUTTON_TYPE";
+    public static final String CLOSE_DIALOG_BUTTON_TYPE="CLOSE_DIALOG_BUTTON_TYPE";
+    
     
     // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE FIVE SCREENS
     public static final String MENU_SCREEN_STATE = "MENU_SCREEN_STATE";
@@ -92,11 +95,20 @@ public class PathXConstants {
     public static final int RIGHT_X=115;
     public static final int RIGHT_Y=520;
     
+    //change later
+    public static final int BUTTON_X=50;
+    public static final int BUTTON_Y=250;
+    
+    
     //For dialogs
     public static final String LEVEL_INFO_DIALOG_TYPE = "LEVEL_INFO_DIALOG_TYPE";
     public static final String LEVEL_COMPLETE_DIALOG_TYPE = "LEVEL_COMPLETE_DIALOG_TYPE";
     public static final String LEVEL_FAIL_DIALOG_TYPE = "LEVEL_FAIL_DIALOG_TYPE";
     public static final String SETTINGS_DIALOG_TYPE = "SETTINGS_DIALOG_TYPE";
+    
+    //close values for the close button on the level info diaglog
+    public static final int LEVEL_CLOSE_X=300;
+    public static final int LEVEL_CLOSE_Y=100;
     
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN

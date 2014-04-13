@@ -117,7 +117,13 @@ public class PathX {
         
         //dialogs
         IMAGE_DIALOG_SETTINGS,
+        IMAGE_DIALOG_LEVEL_SELECT,
+        LEVEL_CLOSE_BUTTON,
+        LEVEL_CLOSE_BUTTON_MOUSE_OVER,
         
+        //map shit
+        IMAGE_MAP_AVAILABLE,
+        IMAGE_MAP_AVAILABLE_MOUSE_OVER,
         /* TILE LOADING STUFF 
         LEVEL_OPTIONS,
         LEVEL_IMAGE_OPTIONS,
