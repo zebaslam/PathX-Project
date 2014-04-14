@@ -148,7 +148,7 @@ public class PathXPanel extends JPanel{
       PropertiesManager props = PropertiesManager.getPropertiesManager(); 
       String level1Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
       
-     if( game.guiButtons.get(AVAILABLE_BUTTON_TYPE).getState().equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+     if( game.guiButtons.get(LEVEL_1_BUTTON_TYPE).getState().equals(PathXCarState.MOUSE_OVER_STATE.toString())){
           g.setFont(FONT_TEXT_DISPLAY);
           g.setColor(FONT_COLOR);
          g.drawString(level1Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);

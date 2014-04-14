@@ -35,7 +35,7 @@ public class PathXConstants {
     public static final String DOWN_BUTTON_TYPE="DOWN_BUTTON_TYPE";
     public static final String LEFT_BUTTON_TYPE="LEFT_BUTTON_TYPE";
     public static final String RIGHT_BUTTON_TYPE="RIGHT_BUTTON_TYPE";
-    public static final String AVAILABLE_BUTTON_TYPE="AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_1_BUTTON_TYPE="LEVEL_1_BUTTON_TYPE";
     public static final String CLOSE_DIALOG_BUTTON_TYPE="CLOSE_DIALOG_BUTTON_TYPE";
     
     
@@ -96,8 +96,8 @@ public class PathXConstants {
     public static final int RIGHT_Y=520;
     
     //change later
-    public static final int BUTTON_X=50;
-    public static final int BUTTON_Y=250;
+    public static final int LEVEL_1_X=50;
+    public static final int LEVEL_1_Y=250;
     
     //level information
     public static final int LEVEL_INFO_X=530;
