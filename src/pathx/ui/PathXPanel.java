@@ -23,6 +23,7 @@ import pathx.ui.PathXErrorHandler;
 import static pathx.PathXConstants.*;
 import pathx.PathX.PathXPropertyType;
 import pathx.data.PathXDataModel;
+import pathx.ui.PathXMiniGame;
 
 /**
  *
@@ -59,7 +60,9 @@ public class PathXPanel extends JPanel{
             
             renderDialogs(g);
         
-        
+             if (((PathXMiniGame)game).isCurrentScreenState(LEVEL_SELECT_SCREEN_STATE) ){
+            renderLevelInfo(g);
+        }
         
         }
          finally
@@ -127,6 +130,18 @@ public class PathXPanel extends JPanel{
             renderSprite(g, s);
         }
     }
+  
+  public void renderLevelInfo(Graphics g){
+      PropertiesManager props = PropertiesManager.getPropertiesManager(); 
+      String level1Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
+      
+     if( game.guiButtons.get(AVAILABLE_BUTTON_TYPE).getState().equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level1Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+       
+  }
     public void renderDebuggingText(Graphics g)
     {
         // IF IT'S ACTIVATED

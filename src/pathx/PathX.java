@@ -101,6 +101,8 @@ public class PathX {
         TEXT_PROMPT_EXIT,
         TEXT_TITLE_BAR_GAME,
         TEXT_TITLE_BAR_ERROR,
+        TEXT_LABEL_BALANCE,
+        TEXT_LABEL_GOAL,
         INVALID_URL_ERROR_TEXT,
         
        //Audio stuff
@@ -124,6 +126,11 @@ public class PathX {
         //map shit
         IMAGE_MAP_AVAILABLE,
         IMAGE_MAP_AVAILABLE_MOUSE_OVER,
+        
+        
+        //LEVEL INFORMATION
+        TEXT_LABEL_LEVEL_1_INFO,
+        
         /* TILE LOADING STUFF 
         LEVEL_OPTIONS,
         LEVEL_IMAGE_OPTIONS,

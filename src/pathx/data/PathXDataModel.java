@@ -40,6 +40,8 @@ public class PathXDataModel extends MiniGameDataModel {
     private int gameTileHeight;
     private int numGameGridColumns;
     private int numGameGridRows;
+    private int balance=0;
+    private int goal=0;
 
     // THESE ARE THE TILES STACKED AT THE START OF THE GAME
     //private ArrayList<SortingHatTile> stackTiles;
@@ -165,6 +167,22 @@ public class PathXDataModel extends MiniGameDataModel {
         }
     }
 
+    
+    public void setBalance (int x){
+        balance=x;
+    }
+    
+    public int getBalance (){
+        return balance;
+    }
+    
+    public void setGoal (int x){
+        goal=x;
+    }
+    
+    public int getGoal(){
+        return goal;
+    }
     /**
      * This method is for updating any debug text to present to the screen. In a
      * graphical application like this it's sometimes useful to display data in

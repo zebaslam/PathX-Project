@@ -307,7 +307,6 @@ public void displaySettings(){
 }
 
 public void switchToSettingsScreen(){
-     System.out.println("IN SWITCH TO HELP SCREEN");
      guiDecor.get(BACKGROUND_TYPE).setState(SETTINGS_SCREEN_STATE);
      guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
      guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);

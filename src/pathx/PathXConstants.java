@@ -99,6 +99,9 @@ public class PathXConstants {
     public static final int BUTTON_X=50;
     public static final int BUTTON_Y=250;
     
+    //level information
+    public static final int LEVEL_INFO_X=530;
+    public static final int LEVEL_INFO_Y=600;
     
     //For dialogs
     public static final String LEVEL_INFO_DIALOG_TYPE = "LEVEL_INFO_DIALOG_TYPE";
@@ -114,11 +117,12 @@ public class PathXConstants {
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
     // LOADING ART.
     public static final Color COLOR_KEY = new Color(255, 174, 201);
+    public static final Color FONT_COLOR = Color.WHITE;
     public static final Color COLOR_DEBUG_TEXT = Color.BLACK;
     public static final Color COLOR_TEXT_DISPLAY = new Color (10, 160, 10);
     
     // FONTS USED DURING FOR TEXTUAL GAME DISPLAYS
-    public static final Font FONT_TEXT_DISPLAY = new Font(Font.SANS_SERIF, Font.BOLD, 48);
+    public static final Font FONT_TEXT_DISPLAY = new Font(Font.SANS_SERIF, Font.BOLD, 20);
     public static final Font FONT_DEBUG_TEXT = new Font(Font.MONOSPACED, Font.BOLD, 14);
     public static final Font FONT_STATS = new Font(Font.MONOSPACED, Font.BOLD, 20);
         

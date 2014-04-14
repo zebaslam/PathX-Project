@@ -57,8 +57,14 @@
         <property name="TEXT_ERROR_SAVING_RECORD"               value="Error Saving the Player Record"></property>
         <property name="TEXT_PROMPT_EXIT"                       value="Are you sure you wish to exit?"></property>
         <property name="TEXT_TITLE_BAR_GAME"                    value="PathX"></property>
+        <property name="TEXT_LABEL_BALANCE"                     value="Balance: $ "></property>
+        <property name="TEXT_LABEL_GOAL"                        value="Goal: $ "></property>
+        <property name="TEXT_LABEL_STATS_FASTEST_PERFECT_WIN"   value="Fastest Perfect Win: "></property>
         <property name="TEXT_TITLE_BAR_ERROR"                   value="An error has occurred"></property>    
         <property name="INVALID_URL_ERROR_TEXT"                 value="Attempting to load a page with an invalid URL"></property>            
+        
+        <!--LEVEL INFORMATION -->
+        <property name="TEXT_LABEL_LEVEL_1_INFO"                value="Portland, OR- $20"></property>
         
         <!-- AUDIO FILES -->
         <property name="AUDIO_CUE_BAD_MOVE"                 value="./path_x/BadMove.wav"></property>
