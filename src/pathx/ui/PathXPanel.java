@@ -62,6 +62,7 @@ public class PathXPanel extends JPanel{
         
              if (((PathXMiniGame)game).isCurrentScreenState(LEVEL_SELECT_SCREEN_STATE) ){
             renderLevelInfo(g);
+            renderLevelHeader(g);
         }
         
         }
@@ -119,6 +120,18 @@ public class PathXPanel extends JPanel{
           Image img = bgST.getStateImage(s.getState());
          g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null); 
       }
+  }
+  
+  public void renderLevelHeader(Graphics g){
+      PropertiesManager props = PropertiesManager.getPropertiesManager(); 
+      String balance = props.getProperty(PathXPropertyType.TEXT_LABEL_BALANCE);
+      String goal=props.getProperty(PathXPropertyType.TEXT_LABEL_GOAL);
+      int bal=data.getBalance();
+      int gol=data.getGoal();
+      g.setFont(FONT_HEADER);
+      g.setColor(COLOR_BLACK);
+      g.drawString(balance+bal, BALANCE_X, BALANCE_Y);
+      g.drawString(goal+gol, GOAL_X, GOAL_Y);
   }
   public void renderDialogs(Graphics g)
     {
