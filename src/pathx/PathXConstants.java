@@ -118,6 +118,8 @@ public class PathXConstants {
     public static final int RIGHT_Y=520;
     
     //Level locations for dots 
+    
+    //portland, oregon
     public static final int LEVEL_1_X=50;
     public static final int LEVEL_1_Y=250;
     
@@ -148,6 +150,46 @@ public class PathXConstants {
     public static final int LEVEL_10_X=LEVEL_1_X+600;
     public static final int LEVEL_10_Y=LEVEL_3_Y+150;
     
+    //north dakota
+    public static final int LEVEL_11_X=LEVEL_1_X+700;
+    public static final int LEVEL_11_Y=LEVEL_1_Y-200;
+    
+    //south dakota
+    public static final int LEVEL_12_X=LEVEL_11_X;
+    public static final int LEVEL_12_Y=LEVEL_11_Y+150;
+    
+    //nebraska
+    public static final int LEVEL_13_X=LEVEL_12_X+50;
+    public static final int LEVEL_13_Y=LEVEL_11_Y+250;
+    
+    //kansas
+    public static final int LEVEL_14_X=LEVEL_13_X;
+    public static final int LEVEL_14_Y=LEVEL_13_Y+150;
+    
+    //oaklahoma 
+    public static final int LEVEL_15_X=LEVEL_14_X+100;
+    public static final int LEVEL_15_Y=LEVEL_14_Y+150;
+   
+    //dallas, texas
+    public static final int LEVEL_16_X=LEVEL_15_X+50;
+    public static final int LEVEL_16_Y=LEVEL_15_Y+100;
+    
+    //san antonio, texas
+    public static final int LEVEL_17_X=LEVEL_15_X;
+    public static final int LEVEL_17_Y=LEVEL_15_Y+280;
+    
+    //minnesota
+    public static final int LEVEL_18_X=LEVEL_11_X+250;
+    public static final int LEVEL_18_Y=LEVEL_11_Y;
+    
+    //iowa
+    public static final int LEVEL_19_X=LEVEL_18_X;
+    public static final int LEVEL_19_Y=LEVEL_18_Y+260;
+    
+    //MISSOURI
+    public static final int LEVEL_20_X=LEVEL_18_X+100;
+    public static final int LEVEL_20_Y=LEVEL_19_Y+150;
+    
     //level information
     public static final int LEVEL_INFO_X=530;
     public static final int LEVEL_INFO_Y=600;
@@ -166,7 +208,7 @@ public class PathXConstants {
     
     //close values for the close button on the level info diaglog
     public static final int LEVEL_CLOSE_X=300;
-    public static final int LEVEL_CLOSE_Y=500;
+    public static final int LEVEL_CLOSE_Y=400;
     
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN

@@ -312,6 +312,108 @@ public class PathXMiniGame extends MiniGame {
         sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
         s = new Sprite(sT, LEVEL_10_X, LEVEL_10_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(LEVEL_10_BUTTON_TYPE, s);
+        
+        String level11Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_11_BUTTON_TYPE);
+        img = loadImage(imgPath + level11Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level11ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level11ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_11_X, LEVEL_11_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_11_BUTTON_TYPE, s);
+        
+        String level12Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_12_BUTTON_TYPE);
+        img = loadImage(imgPath + level12Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level12ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level12ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_12_X, LEVEL_12_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_12_BUTTON_TYPE, s);
+        
+        String level13Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_13_BUTTON_TYPE);
+        img = loadImage(imgPath + level13Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level13ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level13ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_13_X, LEVEL_13_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_13_BUTTON_TYPE, s);
+        
+        String level14Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_14_BUTTON_TYPE);
+        img = loadImage(imgPath + level14Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level14ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level14ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_14_X, LEVEL_14_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_14_BUTTON_TYPE, s);
+        
+        String level15Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_15_BUTTON_TYPE);
+        img = loadImage(imgPath + level15Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level15ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level15ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_15_X, LEVEL_15_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_15_BUTTON_TYPE, s);
+        
+        String level16Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_16_BUTTON_TYPE);
+        img = loadImage(imgPath + level16Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level16ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level16ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_16_X, LEVEL_16_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_16_BUTTON_TYPE, s);
+        
+        String level17Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_17_BUTTON_TYPE);
+        img = loadImage(imgPath + level17Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level17ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level17ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_17_X, LEVEL_17_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_17_BUTTON_TYPE, s);
+        
+        String level18Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_18_BUTTON_TYPE);
+        img = loadImage(imgPath + level18Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level18ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level18ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_18_X, LEVEL_18_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_18_BUTTON_TYPE, s);
+        
+        
+        String level19Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_19_BUTTON_TYPE);
+        img = loadImage(imgPath + level19Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level19ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level19ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_19_X, LEVEL_19_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_19_BUTTON_TYPE, s);
+        
+        String level20Button = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED);
+        sT = new SpriteType(LEVEL_20_BUTTON_TYPE);
+        img = loadImage(imgPath + level20Button);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String level20ButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_MAP_LOCKED_MOUSE_OVER);
+        img = loadImage(imgPath + level20ButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, LEVEL_20_X, LEVEL_20_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(LEVEL_20_BUTTON_TYPE, s);
+        
         //Dialogs
         String settingsDialog = props.getProperty(PathXPropertyType.IMAGE_DIALOG_SETTINGS);
         sT = new SpriteType(SETTINGS_DIALOG_TYPE);
@@ -391,6 +493,24 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_9_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         currentScreenState = HELP_SCREEN_STATE;
@@ -454,6 +574,26 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_9_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         currentScreenState = SETTINGS_SCREEN_STATE;
@@ -514,6 +654,26 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_9_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         currentScreenState = GAME_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString(), true);
@@ -574,6 +734,27 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_9_BUTTON_TYPE).setEnabled(true);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
+        
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         currentScreenState = LEVEL_SELECT_SCREEN_STATE;
@@ -632,6 +813,26 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_9_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
 
@@ -817,6 +1018,10 @@ public class PathXMiniGame extends MiniGame {
         String cue = props.getProperty(audioCueType.toString());
         audio.loadAudio(audioCueType.toString(), audioPath + cue);
     }
+    
+      /**
+       * The scrolling methods for the level screen viewport
+       */
 
     public void ScrollUp() {
         scrollNum = 0;
@@ -944,6 +1149,127 @@ public class PathXMiniGame extends MiniGame {
             guiButtons.get(LEVEL_9_BUTTON_TYPE).setY(LEVEL_9_Y + y);
 
         }
+           if (x < -660 || y < -480) {
+            guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_10_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_10_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_10_BUTTON_TYPE).setX(LEVEL_10_X + x);
+            guiButtons.get(LEVEL_10_BUTTON_TYPE).setY(LEVEL_10_Y + y);
+
+        }
+            if (x < -765 || y < -485) {
+            guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_11_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_11_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_11_BUTTON_TYPE).setX(LEVEL_11_X + x);
+            guiButtons.get(LEVEL_11_BUTTON_TYPE).setY(LEVEL_11_Y + y);
+
+        }
+            if (x < -765 || y < -485) {
+            guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_12_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_12_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_12_BUTTON_TYPE).setX(LEVEL_12_X + x);
+            guiButtons.get(LEVEL_12_BUTTON_TYPE).setY(LEVEL_12_Y + y);
+
+        }
+          if (x < -795 || y < -485) {
+            guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_13_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_13_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_13_BUTTON_TYPE).setX(LEVEL_13_X + x);
+            guiButtons.get(LEVEL_13_BUTTON_TYPE).setY(LEVEL_13_Y + y);
+
+        }
+          if (x < -795 || y < -485) {
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setX(LEVEL_14_X + x);
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setY(LEVEL_14_Y + y);
+
+        }
+           if (x < -960 || y < -485) {
+            guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_15_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_15_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_15_BUTTON_TYPE).setX(LEVEL_15_X + x);
+            guiButtons.get(LEVEL_15_BUTTON_TYPE).setY(LEVEL_15_Y + y);
+
+        }
+            if (x < -990 || y < -485) {
+            guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_16_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_16_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_16_BUTTON_TYPE).setX(LEVEL_16_X + x);
+            guiButtons.get(LEVEL_16_BUTTON_TYPE).setY(LEVEL_16_Y + y);
+
+        }
+            if (x < -990 || y < -485) {
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setX(LEVEL_17_X + x);
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setY(LEVEL_17_Y + y);
+
+        }
+             if (x < -1050 || y < -485) {
+            guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_18_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_18_BUTTON_TYPE).setX(LEVEL_18_X + x);
+            guiButtons.get(LEVEL_18_BUTTON_TYPE).setY(LEVEL_18_Y + y);
+
+        }
+            if (x < -1050 || y < -485) {
+            guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_19_BUTTON_TYPE).setX(LEVEL_19_X + x);
+            guiButtons.get(LEVEL_19_BUTTON_TYPE).setY(LEVEL_19_Y + y);
+
+        }
+            if (x < -1050 || y < -485) {
+            guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
+        } else {
+            guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(true);
+
+            guiButtons.get(LEVEL_20_BUTTON_TYPE).setX(LEVEL_20_X + x);
+            guiButtons.get(LEVEL_20_BUTTON_TYPE).setY(LEVEL_20_Y + y);
+
+        }
         updateGUI();
     }
 
@@ -1052,6 +1378,26 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_9_BUTTON_TYPE).setY(LEVEL_9_Y);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setX(LEVEL_10_X);
         guiButtons.get(LEVEL_10_BUTTON_TYPE).setY(LEVEL_10_Y);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setX(LEVEL_11_X);
+        guiButtons.get(LEVEL_11_BUTTON_TYPE).setY(LEVEL_11_Y);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setX(LEVEL_12_X);
+        guiButtons.get(LEVEL_12_BUTTON_TYPE).setY(LEVEL_12_Y);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setX(LEVEL_13_X);
+        guiButtons.get(LEVEL_13_BUTTON_TYPE).setY(LEVEL_13_Y);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setX(LEVEL_14_X);
+        guiButtons.get(LEVEL_14_BUTTON_TYPE).setY(LEVEL_14_Y);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setX(LEVEL_15_X);
+        guiButtons.get(LEVEL_15_BUTTON_TYPE).setY(LEVEL_15_Y);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setX(LEVEL_16_X);
+        guiButtons.get(LEVEL_16_BUTTON_TYPE).setY(LEVEL_16_Y);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setX(LEVEL_17_X);
+        guiButtons.get(LEVEL_17_BUTTON_TYPE).setY(LEVEL_17_Y);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setX(LEVEL_18_X);
+        guiButtons.get(LEVEL_18_BUTTON_TYPE).setY(LEVEL_18_Y);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setX(LEVEL_19_X);
+        guiButtons.get(LEVEL_19_BUTTON_TYPE).setY(LEVEL_19_Y);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setX(LEVEL_20_X);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setY(LEVEL_20_Y);
         updateGUI();
     }
 

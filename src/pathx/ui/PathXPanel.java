@@ -87,6 +87,10 @@ public class PathXPanel extends JPanel{
         Collection<Sprite> buttonSprites = game.getGUIButtons().values();
         for (Sprite s : buttonSprites)
         {
+            if(s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(CLOSE_DIALOG_BUTTON_TYPE)){
+                continue;
+            }
+            
             renderSprite(g, s);
         }
     }  
@@ -111,6 +115,9 @@ public class PathXPanel extends JPanel{
             SpriteType bgST = s.getSpriteType();
             Image img = bgST.getStateImage(s.getState());
             g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null); 
+            
+            
+            
         }
     }
   
@@ -119,6 +126,8 @@ public class PathXPanel extends JPanel{
           SpriteType bgST = s.getSpriteType();
           Image img = bgST.getStateImage(s.getState());
          g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null); 
+         
+        
       }
   }
   
@@ -142,6 +151,12 @@ public class PathXPanel extends JPanel{
             // RENDER THE DIALOG, NOTE IT WILL ONLY DO IT IF IT'S VISIBLE
             renderSprite(g, s);
         }
+        if (((PathXMiniGame)game).isCurrentScreenState(GAME_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())){
+        Sprite x=game.getGUIButtons().get(CLOSE_DIALOG_BUTTON_TYPE);
+        renderSprite(g,x);
+         
+        
+      }
     }
   
   public void renderLevelInfo(Graphics g){
