@@ -126,7 +126,10 @@ public class PathX {
         //map shit
         IMAGE_MAP_AVAILABLE,
         IMAGE_MAP_AVAILABLE_MOUSE_OVER,
-        
+        IMAGE_MAP_COMPLETED,
+        IMAGE_MAP_COMPLETED_MOUSE_OVER,
+        IMAGE_MAP_LOCKED,
+        IMAGE_MAP_LOCKED_MOUSE_OVER,
         
         //LEVEL INFORMATION
         TEXT_LABEL_LEVEL_1_INFO,

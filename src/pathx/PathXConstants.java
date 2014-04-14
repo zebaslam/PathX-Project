@@ -17,6 +17,8 @@ public class PathXConstants {
     public static String PROPERTIES_SCHEMA_FILE_NAME = "properties_schema.xsd";    
     public static String PATH_DATA = "./data/";
     
+    
+    public static final String LEVEL_SELECT_BUTTON_TYPE = "LEVEL_SELECT_BUTTON_TYPE";
     // THESE ARE THE TYPES OF CONTROLS, WE USE THESE CONSTANTS BECAUSE WE'LL
     // STORE THEM BY TYPE, SO THESE WILL PROVIDE A MEANS OF IDENTIFYING THEM
     
@@ -35,8 +37,28 @@ public class PathXConstants {
     public static final String DOWN_BUTTON_TYPE="DOWN_BUTTON_TYPE";
     public static final String LEFT_BUTTON_TYPE="LEFT_BUTTON_TYPE";
     public static final String RIGHT_BUTTON_TYPE="RIGHT_BUTTON_TYPE";
-    public static final String LEVEL_1_BUTTON_TYPE="LEVEL_1_BUTTON_TYPE";
     public static final String CLOSE_DIALOG_BUTTON_TYPE="CLOSE_DIALOG_BUTTON_TYPE";
+    
+    public static final String LEVEL_1_BUTTON_TYPE="LEVEL_1_BUTTON_TYPE";
+    public static final String LEVEL_2_BUTTON_TYPE="LEVEL_2_BUTTON_TYPE";
+    public static final String LEVEL_3_BUTTON_TYPE="LEVEL_3_BUTTON_TYPE";
+    public static final String LEVEL_4_BUTTON_TYPE="LEVEL_4_BUTTON_TYPE";
+    public static final String LEVEL_5_BUTTON_TYPE="LEVEL_5_BUTTON_TYPE";
+    public static final String LEVEL_6_BUTTON_TYPE="LEVEL_6_BUTTON_TYPE";
+    public static final String LEVEL_7_BUTTON_TYPE="LEVEL_7_BUTTON_TYPE";
+    public static final String LEVEL_8_BUTTON_TYPE="LEVEL_8_BUTTON_TYPE";
+    public static final String LEVEL_9_BUTTON_TYPE="LEVEL_9_BUTTON_TYPE";
+    public static final String LEVEL_10_BUTTON_TYPE="LEVEL_10_BUTTON_TYPE";
+    public static final String LEVEL_11_BUTTON_TYPE="LEVEL_11_BUTTON_TYPE";
+    public static final String LEVEL_12_BUTTON_TYPE="LEVEL_12_BUTTON_TYPE";
+    public static final String LEVEL_13_BUTTON_TYPE="LEVEL_13_BUTTON_TYPE";
+    public static final String LEVEL_14_BUTTON_TYPE="LEVEL_14_BUTTON_TYPE";
+    public static final String LEVEL_15_BUTTON_TYPE="LEVEL_15_BUTTON_TYPE";
+    public static final String LEVEL_16_BUTTON_TYPE="LEVEL_16_BUTTON_TYPE";
+    public static final String LEVEL_17_BUTTON_TYPE="LEVEL_17_BUTTON_TYPE";
+    public static final String LEVEL_18_BUTTON_TYPE="LEVEL_18_BUTTON_TYPE";
+    public static final String LEVEL_19_BUTTON_TYPE="LEVEL_19_BUTTON_TYPE";
+    public static final String LEVEL_20_BUTTON_TYPE="LEVEL_20_BUTTON_TYPE";
     
     
     // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE FIVE SCREENS
@@ -95,9 +117,12 @@ public class PathXConstants {
     public static final int RIGHT_X=115;
     public static final int RIGHT_Y=520;
     
-    //change later
+    //Level locations for dots 
     public static final int LEVEL_1_X=50;
     public static final int LEVEL_1_Y=250;
+    
+    public static final int LEVEL_2_X=LEVEL_1_X;
+    public static final int LEVEL_2_Y=LEVEL_1_Y+100;
     
     //level information
     public static final int LEVEL_INFO_X=530;

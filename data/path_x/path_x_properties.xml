@@ -38,7 +38,10 @@
          <!-- Dot stuff -->
         <property name="IMAGE_MAP_AVAILABLE"                value="./path_x/unvisited.png"></property>
         <property name="IMAGE_MAP_AVAILABLE_MOUSE_OVER"     value="./path_x/unvisitedMouseOver.png"></property>
-         
+        <property name="IMAGE_MAP_LOCKED"                   value="./path_x/locked.png"></property>
+        <property name="IMAGE_MAP_LOCKED_MOUSE_OVER"        value="./path_x/lockedMouseOver.png"></property>
+        <property name="IMAGE_MAP_COMPLETED"                value="./path_x/completed.png"></property>
+        <property name="IMAGE_MAP_COMPLETED"                value="./path_x/completedMouseOver.png"></property>
         <!--Viewport Arrow stuff -->
         <property name="IMAGE_BUTTON_UP"                        value="./path_x/UpArrow.png"></property>
         <property name="IMAGE_BUTTON_UP_MOUSE_OVER"             value="./path_x/UpArrowMouseOver.png"></property>
@@ -80,6 +83,25 @@
         
     </property_list>
     
-
+ <property_options_list>
+     <!-- IMPLEMENT LATER 
+        <property_options name="LEVEL_OPTIONS">
+            <option>./sorting_hat/BubbleSortCoil.sort</option>
+            <option>./sorting_hat/SelectionSortSine.sort</option>
+            <option>./sorting_hat/BubbleSortO.sort</option>
+            <option>./sorting_hat/SelectionSortU.sort</option>
+        </property_options>
+        -->
+        <property_options name="LEVEL_IMAGE_OPTIONS">
+            <option>./path_x/unvisited.png</option>
+            <option>./path_x/completed.png</option>
+            <option>./path_x/unlocked.png</option>
+        </property_options>
+        <property_options name="LEVEL_MOUSE_OVER_IMAGE_OPTIONS">
+            <option>./path_x/unvisitedMouseOver.png</option>
+            <option>./path_x/completedMouseOver.png</option>
+            <option>./path_x/unlockedMouseOver.png</option>
+        </property_options>
+    </property_options_list>
   
 </properties>
