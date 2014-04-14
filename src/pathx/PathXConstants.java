@@ -124,6 +124,30 @@ public class PathXConstants {
     public static final int LEVEL_2_X=LEVEL_1_X;
     public static final int LEVEL_2_Y=LEVEL_1_Y+100;
     
+    public static final int LEVEL_3_X=LEVEL_2_X+30;
+    public static final int LEVEL_3_Y=LEVEL_2_Y+100;
+    
+    public static final int LEVEL_4_X=LEVEL_1_X+300;
+    public static final int LEVEL_4_Y=LEVEL_1_Y;
+    
+    public static final int LEVEL_5_X=LEVEL_4_X-75;
+    public static final int LEVEL_5_Y=LEVEL_4_Y+200;
+    
+    public static final int LEVEL_6_X=LEVEL_1_X+500;
+    public static final int LEVEL_6_Y=LEVEL_1_Y;
+    
+    public static final int LEVEL_7_X=LEVEL_1_X+400;
+    public static final int LEVEL_7_Y=LEVEL_3_Y;
+    
+    public static final int LEVEL_8_X=LEVEL_1_X+400;
+    public static final int LEVEL_8_Y=LEVEL_3_Y+150;
+    
+    public static final int LEVEL_9_X=LEVEL_6_X+100;
+    public static final int LEVEL_9_Y=LEVEL_3_Y;
+    
+    public static final int LEVEL_10_X=LEVEL_1_X+600;
+    public static final int LEVEL_10_Y=LEVEL_3_Y+150;
+    
     //level information
     public static final int LEVEL_INFO_X=530;
     public static final int LEVEL_INFO_Y=600;
