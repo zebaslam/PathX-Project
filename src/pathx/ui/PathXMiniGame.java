@@ -451,7 +451,7 @@ public class PathXMiniGame extends MiniGame {
     }
 
     public void switchToHelpScreen() {
-        System.out.println("IN SWITCH TO HELP SCREEN");
+        //System.out.println("IN SWITCH TO HELP SCREEN");
         guiDecor.get(BACKGROUND_TYPE).setState(HELP_SCREEN_STATE);
         guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
@@ -511,6 +511,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         currentScreenState = HELP_SCREEN_STATE;
@@ -612,7 +614,7 @@ public class PathXMiniGame extends MiniGame {
     }
 
     public void switchToGameScreen() {
-        System.out.println("IN SWITCH TO GAME SCREEN");
+        //System.out.println("IN SWITCH TO GAME SCREEN");
         guiDecor.get(BACKGROUND_TYPE).setState(GAME_SCREEN_STATE);
         guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
@@ -752,8 +754,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_18_BUTTON_TYPE).setEnabled(true);
         guiButtons.get(LEVEL_19_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(true);
-        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(true);
         
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
@@ -1034,7 +1036,7 @@ public class PathXMiniGame extends MiniGame {
                 guiDecor.get(BACKGROUND_TYPE).setY(y + 15);
             }
 
-            System.out.println("y:" + y);
+            //System.out.println("y:" + y);
         }
         setLevelVisibility();
         updateGUI();
@@ -1283,7 +1285,7 @@ public class PathXMiniGame extends MiniGame {
                 guiDecor.get(BACKGROUND_TYPE).setX(x);
                 guiDecor.get(BACKGROUND_TYPE).setY(y - 15);
             }
-            System.out.println("y:" + y);
+            //System.out.println("y:" + y);
         }
         setLevelVisibility();
 
@@ -1300,7 +1302,7 @@ public class PathXMiniGame extends MiniGame {
                 guiDecor.get(BACKGROUND_TYPE).setX(x + 15);
                 guiDecor.get(BACKGROUND_TYPE).setY(y);
             }
-            System.out.println("x:" + x);
+            //System.out.println("x:" + x);
 
         }
         setLevelVisibility();
@@ -1317,7 +1319,7 @@ public class PathXMiniGame extends MiniGame {
                 guiDecor.get(BACKGROUND_TYPE).setX(x - 15);
                 guiDecor.get(BACKGROUND_TYPE).setY(y);
             }
-            System.out.println("x:" + x);
+            //System.out.println("x:" + x);
 
         }
         setLevelVisibility();

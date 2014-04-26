@@ -68,7 +68,25 @@
         
         <!--LEVEL INFORMATION -->
         <property name="TEXT_LABEL_LEVEL_1_INFO"                value="Portland, OR- $20"></property>
-        
+        <property name="TEXT_LABEL_LEVEL_2_INFO"                value="Sacramento,CA- $40"></property>
+        <property name="TEXT_LABEL_LEVEL_3_INFO"                value="San Jose,CA- $60"></property>
+        <property name="TEXT_LABEL_LEVEL_4_INFO"                value="Boise,ID- $80"></property>
+        <property name="TEXT_LABEL_LEVEL_5_INFO"                value="Las Vegas,NV- $100"></property>
+        <property name="TEXT_LABEL_LEVEL_6_INFO"                value="Cheyenne,WY- $120"></property>
+        <property name="TEXT_LABEL_LEVEL_7_INFO"                value="Salt Lake City- $140"></property>
+        <property name="TEXT_LABEL_LEVEL_8_INFO"                value="Pheonix,AZ- $160"></property>
+        <property name="TEXT_LABEL_LEVEL_9_INFO"                value="Denver,CO- $180"></property>
+        <property name="TEXT_LABEL_LEVEL_10_INFO"               value="Santa Fe,NM- $200"></property>
+        <property name="TEXT_LABEL_LEVEL_11_INFO"               value="Bismark,ND- $220"></property>
+        <property name="TEXT_LABEL_LEVEL_12_INFO"               value="Pierre,SD- $240"></property>
+        <property name="TEXT_LABEL_LEVEL_13_INFO"               value="Lincoln,NB- $260"></property>
+        <property name="TEXT_LABEL_LEVEL_14_INFO"               value="Topeka,KS- $280"></property>
+        <property name="TEXT_LABEL_LEVEL_15_INFO"               value="Oaklahoma City- $300"></property>
+        <property name="TEXT_LABEL_LEVEL_16_INFO"               value="Dallas,TX- $320"></property>
+        <property name="TEXT_LABEL_LEVEL_17_INFO"               value="San Antonio,TX- $340"></property>
+        <property name="TEXT_LABEL_LEVEL_18_INFO"               value="Minnesota- $360"></property>
+        <property name="TEXT_LABEL_LEVEL_19_INFO"               value="Iowa- $380"></property>
+        <property name="TEXT_LABEL_LEVEL_20_INFO"               value="Missouri- $400"></property>
         <!-- AUDIO FILES -->
         <property name="AUDIO_CUE_BAD_MOVE"                 value="./path_x/BadMove.wav"></property>
         <property name="AUDIO_CUE_CHEAT"                    value="./path_x/Cheat.wav"></property>

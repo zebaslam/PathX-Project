@@ -138,7 +138,7 @@ public class PathXPanel extends JPanel{
       int bal=data.getBalance();
       int gol=data.getGoal();
       g.setFont(FONT_HEADER);
-      g.setColor(COLOR_BLACK);
+      g.setColor(FONT_COLOR);
       g.drawString(balance+bal, BALANCE_X, BALANCE_Y);
       g.drawString(goal+gol, GOAL_X, GOAL_Y);
   }
@@ -163,13 +163,145 @@ public class PathXPanel extends JPanel{
   public void renderLevelInfo(Graphics g){
       PropertiesManager props = PropertiesManager.getPropertiesManager(); 
       String level1Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
-      String state= game.getGUIButtons().get(LEVEL_1_BUTTON_TYPE).getState();
-     if( state.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+      String level2Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_2_INFO);
+      String level3Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_3_INFO);
+      String level4Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_4_INFO);
+      String level5Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_5_INFO);
+      String level6Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_6_INFO);
+      String level7Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_7_INFO);
+      String level8Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_8_INFO);
+      String level9Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_9_INFO);
+      String level10Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_10_INFO);
+      String level11Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_11_INFO);
+      String level12Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_12_INFO);
+      String level13Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_13_INFO);
+      String level14Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_14_INFO);
+      String level15Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_15_INFO);
+      String level16Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_16_INFO);
+      String level17Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_17_INFO);
+      String level18Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_18_INFO);
+      String level19Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_19_INFO);
+      String level20Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_20_INFO);
+      String state1= game.getGUIButtons().get(LEVEL_1_BUTTON_TYPE).getState();
+      String state2= game.getGUIButtons().get(LEVEL_2_BUTTON_TYPE).getState();
+      String state3= game.getGUIButtons().get(LEVEL_3_BUTTON_TYPE).getState();
+      String state4= game.getGUIButtons().get(LEVEL_4_BUTTON_TYPE).getState();
+      String state5= game.getGUIButtons().get(LEVEL_5_BUTTON_TYPE).getState();
+      String state6= game.getGUIButtons().get(LEVEL_6_BUTTON_TYPE).getState();
+      String state7= game.getGUIButtons().get(LEVEL_7_BUTTON_TYPE).getState();
+      String state8= game.getGUIButtons().get(LEVEL_8_BUTTON_TYPE).getState();
+      String state9= game.getGUIButtons().get(LEVEL_9_BUTTON_TYPE).getState();
+      String state10= game.getGUIButtons().get(LEVEL_10_BUTTON_TYPE).getState();
+      String state11= game.getGUIButtons().get(LEVEL_11_BUTTON_TYPE).getState();
+      String state12= game.getGUIButtons().get(LEVEL_12_BUTTON_TYPE).getState();
+      String state13= game.getGUIButtons().get(LEVEL_13_BUTTON_TYPE).getState();
+      String state14= game.getGUIButtons().get(LEVEL_14_BUTTON_TYPE).getState();
+      String state15= game.getGUIButtons().get(LEVEL_15_BUTTON_TYPE).getState();
+      String state16= game.getGUIButtons().get(LEVEL_16_BUTTON_TYPE).getState();
+      String state17= game.getGUIButtons().get(LEVEL_17_BUTTON_TYPE).getState();
+      String state18= game.getGUIButtons().get(LEVEL_18_BUTTON_TYPE).getState();
+      String state19= game.getGUIButtons().get(LEVEL_19_BUTTON_TYPE).getState();
+      String state20= game.getGUIButtons().get(LEVEL_20_BUTTON_TYPE).getState();
+     if( state1.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
           g.setFont(FONT_TEXT_DISPLAY);
           g.setColor(FONT_COLOR);
          g.drawString(level1Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
      }
-       
+     if( state2.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level2Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+      if( state3.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level3Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+      if( state4.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level4Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+       if( state5.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level5Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+        if( state6.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level6Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+         if( state7.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level7Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state8.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level8Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+           if( state9.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level9Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+           if( state10.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level10Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state11.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level11Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state12.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level12Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if(state13.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level13Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state14.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level14Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+           if( state15.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level15Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state16.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level16Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state17.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level17Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+           if( state18.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level18Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state19.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level19Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
+          if( state20.equals(PathXCarState.MOUSE_OVER_STATE.toString())){
+          g.setFont(FONT_TEXT_DISPLAY);
+          g.setColor(FONT_COLOR);
+         g.drawString(level20Info,                                     LEVEL_INFO_X, LEVEL_INFO_Y);
+     }
   }
   
     public void renderDebuggingText(Graphics g)

@@ -123,50 +123,59 @@ public class PathXConstants {
     public static final int LEVEL_1_X=50;
     public static final int LEVEL_1_Y=250;
     
+    //sacremento,california
     public static final int LEVEL_2_X=LEVEL_1_X;
     public static final int LEVEL_2_Y=LEVEL_1_Y+100;
     
+    //san jose, california 
     public static final int LEVEL_3_X=LEVEL_2_X+30;
     public static final int LEVEL_3_Y=LEVEL_2_Y+100;
     
+    //boise, idaho
     public static final int LEVEL_4_X=LEVEL_1_X+300;
     public static final int LEVEL_4_Y=LEVEL_1_Y;
     
+    //las vegas, nevada
     public static final int LEVEL_5_X=LEVEL_4_X-75;
     public static final int LEVEL_5_Y=LEVEL_4_Y+200;
     
+    //cheyenne, wyoming
     public static final int LEVEL_6_X=LEVEL_1_X+500;
     public static final int LEVEL_6_Y=LEVEL_1_Y;
     
+    //salt like city, utah
     public static final int LEVEL_7_X=LEVEL_1_X+400;
     public static final int LEVEL_7_Y=LEVEL_3_Y;
     
+    //phoenix, arizona
     public static final int LEVEL_8_X=LEVEL_1_X+400;
     public static final int LEVEL_8_Y=LEVEL_3_Y+150;
     
+    //denver, colorado
     public static final int LEVEL_9_X=LEVEL_6_X+100;
     public static final int LEVEL_9_Y=LEVEL_3_Y;
     
+    //santa fe, new mexico
     public static final int LEVEL_10_X=LEVEL_1_X+600;
     public static final int LEVEL_10_Y=LEVEL_3_Y+150;
     
-    //north dakota
+    //Bismask, north dakota
     public static final int LEVEL_11_X=LEVEL_1_X+700;
     public static final int LEVEL_11_Y=LEVEL_1_Y-200;
     
-    //south dakota
+    //Pierre, south dakota
     public static final int LEVEL_12_X=LEVEL_11_X;
     public static final int LEVEL_12_Y=LEVEL_11_Y+150;
     
-    //nebraska
+    //Lincoln, nebraska
     public static final int LEVEL_13_X=LEVEL_12_X+50;
     public static final int LEVEL_13_Y=LEVEL_11_Y+250;
     
-    //kansas
+    //Topeka, kansas
     public static final int LEVEL_14_X=LEVEL_13_X;
     public static final int LEVEL_14_Y=LEVEL_13_Y+150;
     
-    //oaklahoma 
+    //oaklahoma city, oaklahoma
     public static final int LEVEL_15_X=LEVEL_14_X+100;
     public static final int LEVEL_15_Y=LEVEL_14_Y+150;
    
