@@ -86,8 +86,8 @@ public class PathXConstants {
     public static final int LEVEL_BUTTON_Y = 570;
     public static final int VIEWPORT_INC = 5;
     
-    public static final int EXIT_X=650;
-    public static final int EXIT_Y=30;
+    public static final int EXIT_X=690;
+    public static final int EXIT_Y=0;
     
     
     public static final int PLAY_BUTTON_X = 150;
@@ -103,7 +103,7 @@ public class PathXConstants {
     public static final int SETTINGS_Y=500;
     
     public static final int HOME_X= EXIT_X-43;
-    public static final int HOME_Y=30;
+    public static final int HOME_Y=0;
     
     public static final int UP_X=85;
     public static final int UP_Y=499;
@@ -206,6 +206,12 @@ public class PathXConstants {
     public static final int BALANCE_X=0;
     public static final int BALANCE_Y=DOWN_Y+50;
     
+    public static final int GAME_BALANCE_X=10;
+    public static final int GAME_BALANCE_Y=30;
+    
+    public static final int GAME_LEVEL_NAME_X=GAME_BALANCE_X+70;
+    public static final int GAME_LEVEL_NAME_Y=GAME_BALANCE_Y;
+    
     public static final int GOAL_X= 0;
     public static final int GOAL_Y= BALANCE_Y+20;
     
@@ -238,6 +244,7 @@ public class PathXConstants {
     // FONTS USED DURING FOR TEXTUAL GAME DISPLAYS
     public static final Font FONT_TEXT_DISPLAY = new Font(Font.SANS_SERIF, Font.BOLD, 20);
     public static final Font TEXT_FONT= new Font("Arial", Font.BOLD, 20);
+    public static final Font TOP_FONT= new Font("Arial", Font.BOLD, 22);
     public static final Font FONT_HEADER = new Font(Font.SANS_SERIF, Font.BOLD, 14);
     public static final Font FONT_DEBUG_TEXT = new Font(Font.MONOSPACED, Font.BOLD, 16);
     public static final Font FONT_STATS = new Font(Font.MONOSPACED, Font.BOLD, 20);

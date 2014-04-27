@@ -69,6 +69,9 @@ public class PathXPanel extends JPanel {
                 renderLevelInfo(g);
                 renderLevelHeader(g);
             }
+            if (((PathXMiniGame) game).isCurrentScreenState(GAME_SCREEN_STATE)) {
+             renderGameHeader(g);
+            }
 
         } finally {
             // RELEASE THE LOCK
@@ -125,7 +128,85 @@ public class PathXPanel extends JPanel {
 
         }
     }
-
+    public void renderGameHeader(Graphics g){
+        PropertiesManager props = PropertiesManager.getPropertiesManager();
+        int level = ((PathXMiniGame) game).getLevel();
+        String levelprompt="";
+        if(level==1){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_1_INFO);
+            
+            }
+            if (level==2){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_2_INFO);
+        
+            }
+            if (level==3){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_3_INFO);
+      
+            }
+            if (level==4){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_4_INFO);
+            
+            }
+            if (level==5){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_5_INFO);
+            
+            }
+             if (level==6){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_6_INFO);
+    
+            }
+            if (level==7){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_7_INFO);
+      
+            }
+            if (level==8){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_8_INFO);
+         
+            }
+            if (level==9){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_9_INFO);
+            }
+            if (level==10){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_10_INFO);
+            }
+             if (level==11){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_11_INFO);
+            }
+             if (level==12){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_12_INFO);
+            }
+             if (level==13){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_13_INFO);
+            }
+              if (level==14){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_14_INFO);
+            }
+                if (level==15){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_15_INFO);
+            }
+                 if (level==16){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_16_INFO);
+            }
+                 if (level==17){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_17_INFO);
+            }
+              if (level==18){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_18_INFO);
+            }
+              if (level==19){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_19_INFO);
+            }
+              if (level==20){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_GAME_20_INFO);
+            }
+        String money = "$";
+        int bal = data.getBalance();
+        g.setFont(TOP_FONT);
+        g.setColor(FONT_COLOR);
+        g.drawString(money +bal, GAME_BALANCE_X, GAME_BALANCE_Y);
+        g.drawString(levelprompt,  GAME_LEVEL_NAME_X,  GAME_LEVEL_NAME_Y);
+    }
     public void renderLevelHeader(Graphics g) {
         PropertiesManager props = PropertiesManager.getPropertiesManager();
         String balance = props.getProperty(PathXPropertyType.TEXT_LABEL_BALANCE);
