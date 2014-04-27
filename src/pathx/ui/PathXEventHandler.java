@@ -74,7 +74,7 @@ public class PathXEventHandler {
 
     }
 
-    public void respondToGameScreenSelect(){
+    public void respondToGameScreenSelect(int level){
         game.switchToGameScreen();
     }
     public void respondToKeyPress(int keyCode) {

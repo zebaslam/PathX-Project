@@ -28,10 +28,10 @@ import pathx.ui.PathXPanel;
 public class PathXDataModel extends MiniGameDataModel {
     private MiniGame miniGame;
     private String currentLevel;
+    private int levelNum;
     
     public PathXDataModel(MiniGame initMiniGame){
         miniGame= initMiniGame;
-        
     }
 
     
@@ -43,51 +43,22 @@ public class PathXDataModel extends MiniGameDataModel {
     private int balance=0;
     private int goal=0;
 
-    // THESE ARE THE TILES STACKED AT THE START OF THE GAME
-    //private ArrayList<SortingHatTile> stackTiles;
-    //private int stackTilesX;
-    //private int stackTilesY;
-
-    // THESE ARE THE TILES THAT ARE MOVING AROUND, AND SO WE HAVE TO UPDATE
-    //private ArrayList<SortingHatTile> movingTiles;
-
-    // THIS IS THE TILE THE USER IS DRAGGING
-    //private SortingHatTile selectedTile;
-   // private int selectedTileIndex;
-
-    // THIS IS THE TEMP TILE
-    //private SortingHatTile tempTile;
-
-    // KEEPS TRACK OF HOW MANY BAD SPELLS WERE CAST
-    private int badSpellsCounter;
-
-    // THESE ARE USED FOR TIMING THE GAME
-    private GregorianCalendar startTime;
-    private GregorianCalendar endTime;
-
-
-    // THE SORTING ALGORITHM WHICH GENERATES THE PROPER TRANSACTIONS
-    //private SortingHatAlgorithm sortingAlgorithm;
-
-    // THE PROPER TRANSACTIONS TO USE FOR COMPARISION AGAINST PLAYER MOVES
-    //private ArrayList<SortTransaction> properTransactionOrder;
-    //private int transactionCounter;
-
-  
-
-    
-
     public String getCurrentLevel()
     {
         return currentLevel;
     }
 
+    
+  
     // MUTATOR METHODS
+    
+   
     public void setCurrentLevel(String initCurrentLevel)
     {
         currentLevel = initCurrentLevel;
     }
 
+    
     // INIT METHODS - AFTER CONSTRUCTION, THESE METHODS SETUP A GAME FOR USE
     // - initLevel
     // - initTiles

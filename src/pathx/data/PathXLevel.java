@@ -11,5 +11,5 @@ package pathx.data;
  * @author zeb
  */
 public class PathXLevel {
- 
+    
 }

@@ -219,19 +219,27 @@ public class PathXConstants {
     public static final int LEVEL_CLOSE_X=300;
     public static final int LEVEL_CLOSE_Y=400;
     
+    //values for rendering text on the level info dialog
+    public static final int LEVEL_INFO_TEXT_X=LEVEL_CLOSE_X-100;
+    public static final int LEVEL_INFO_TEXT_Y=LEVEL_CLOSE_Y-225;
+    public static final int LEVEL_TEXT_X=LEVEL_INFO_TEXT_X;
+    public static final int LEVEL_TEXT_Y=LEVEL_INFO_TEXT_Y+50;
+    
     // COLORS USED FOR RENDERING VARIOUS THINGS, INCLUDING THE
     // COLOR KEY, WHICH REFERS TO THE COLOR TO IGNORE WHEN
     // LOADING ART.
     public static final Color COLOR_KEY = new Color(255, 174, 201);
     public static final Color FONT_COLOR = Color.WHITE;
     public static final Color COLOR_BLACK = Color.BLACK;
+    public static final Color COLOR_RED = Color.RED;
     public static final Color COLOR_DEBUG_TEXT = Color.BLACK;
     public static final Color COLOR_TEXT_DISPLAY = new Color (10, 160, 10);
     
     // FONTS USED DURING FOR TEXTUAL GAME DISPLAYS
     public static final Font FONT_TEXT_DISPLAY = new Font(Font.SANS_SERIF, Font.BOLD, 20);
+    public static final Font TEXT_FONT= new Font("Arial", Font.BOLD, 20);
     public static final Font FONT_HEADER = new Font(Font.SANS_SERIF, Font.BOLD, 14);
-    public static final Font FONT_DEBUG_TEXT = new Font(Font.MONOSPACED, Font.BOLD, 14);
+    public static final Font FONT_DEBUG_TEXT = new Font(Font.MONOSPACED, Font.BOLD, 16);
     public static final Font FONT_STATS = new Font(Font.MONOSPACED, Font.BOLD, 20);
         
 }

@@ -46,15 +46,26 @@ public class PathXMiniGame extends MiniGame {
     private PathXErrorHandler errorHandler;
     private PathXEventHandler eventHandler;
     private PathXFileManager fileManager;
+    
+    private int level;
+    
     // THE SCREEN CURRENTLY BEING PLAYED
     private String currentScreenState;
     static PathXMiniGame miniGame = new PathXMiniGame();
+    
     private float background_x = 0;
     private float background_y = 0;
+    
     //used for making sure the button doesnt move too much
     private int scrollNum = 0;
     private boolean scroll;
 
+    public int getLevel(){
+        return level;
+    }
+    public void setLevel(int lev){
+        level=lev;
+    }
     public boolean getScroll() {
         return scroll;
     }
@@ -612,9 +623,7 @@ public class PathXMiniGame extends MiniGame {
         resetBackground(x, y);
         setScroll(false);
     }
-
     public void switchToGameScreen() {
-        //System.out.println("IN SWITCH TO GAME SCREEN");
         guiDecor.get(BACKGROUND_TYPE).setState(GAME_SCREEN_STATE);
         guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
@@ -838,6 +847,7 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
 
+        
         currentScreenState = MENU_SCREEN_STATE;
         data.setGameState(MiniGameState.NOT_STARTED);
 
@@ -929,7 +939,141 @@ public class PathXMiniGame extends MiniGame {
         });
         guiButtons.get(LEVEL_1_BUTTON_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                eventHandler.respondToGameScreenSelect();
+                level=1;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+         guiButtons.get(LEVEL_2_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=2;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+           guiButtons.get(LEVEL_3_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=3;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+             guiButtons.get(LEVEL_4_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=4;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+              guiButtons.get(LEVEL_5_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=5;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+               guiButtons.get(LEVEL_6_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=6;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+                  guiButtons.get(LEVEL_7_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=7;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+                    guiButtons.get(LEVEL_8_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=8;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+                     guiButtons.get(LEVEL_9_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=9;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+                           guiButtons.get(LEVEL_10_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=10;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+                             guiButtons.get(LEVEL_11_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=11;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+                             guiButtons.get(LEVEL_12_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=12;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+           guiButtons.get(LEVEL_13_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=13;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+            guiButtons.get(LEVEL_14_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=14;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+             guiButtons.get(LEVEL_15_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=15;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+              guiButtons.get(LEVEL_16_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=16;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+            guiButtons.get(LEVEL_17_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=17;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+             guiButtons.get(LEVEL_18_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=18;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+              guiButtons.get(LEVEL_19_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=19;
+                eventHandler.respondToGameScreenSelect(level);
+            }
+
+        });
+               guiButtons.get(LEVEL_20_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                level=20;
+                eventHandler.respondToGameScreenSelect(level);
             }
 
         });

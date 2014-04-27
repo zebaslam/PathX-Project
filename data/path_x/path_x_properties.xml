@@ -81,7 +81,7 @@
         <property name="TEXT_LABEL_LEVEL_12_INFO"               value="Pierre,SD- $240"></property>
         <property name="TEXT_LABEL_LEVEL_13_INFO"               value="Lincoln,NB- $260"></property>
         <property name="TEXT_LABEL_LEVEL_14_INFO"               value="Topeka,KS- $280"></property>
-        <property name="TEXT_LABEL_LEVEL_15_INFO"               value="Oaklahoma City- $300"></property>
+        <property name="TEXT_LABEL_LEVEL_15_INFO"               value="Oaklahoma- $300"></property>
         <property name="TEXT_LABEL_LEVEL_16_INFO"               value="Dallas,TX- $320"></property>
         <property name="TEXT_LABEL_LEVEL_17_INFO"               value="San Antonio,TX- $340"></property>
         <property name="TEXT_LABEL_LEVEL_18_INFO"               value="Minnesota- $360"></property>

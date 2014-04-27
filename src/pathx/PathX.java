@@ -151,8 +151,10 @@ public class PathX {
         TEXT_LABEL_LEVEL_17_INFO,
         TEXT_LABEL_LEVEL_18_INFO,
         TEXT_LABEL_LEVEL_19_INFO,
-        TEXT_LABEL_LEVEL_20_INFO
+        TEXT_LABEL_LEVEL_20_INFO,
         
+        //level prompts
+        TEXT_LABEL_LEVEL_1_PROMPT,
         /* TILE LOADING STUFF 
         LEVEL_OPTIONS,
         LEVEL_IMAGE_OPTIONS,
