@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<level image="DeathValleyBackground.png" name="Boise">
+     <intersections>
+          <intersection id="0" open="true" x="304" y="225"/>
+          <intersection id="0" open="true" x="488" y="225"/>
+          <intersection id="0" open="true" x="303" y="90"/>
+          <intersection id="0" open="true" x="449" y="89"/>
+          <intersection id="0" open="true" x="590" y="89"/>
+          <intersection id="0" open="true" x="729" y="88"/>
+          <intersection id="0" open="true" x="274" y="379"/>
+          <intersection id="0" open="true" x="385" y="379"/>
+          <intersection id="0" open="true" x="516" y="379"/>
+          <intersection id="0" open="true" x="731" y="379"/>
+          <intersection id="0" open="true" x="731" y="240"/>
+          <intersection id="0" open="false" x="436" y="459"/>
+     </intersections>
+     <roads>
+          <road int_id1="2" int_id2="0" one_way="false" speed_limit="40"/>
+          <road int_id1="2" int_id2="3" one_way="false" speed_limit="40"/>
+          <road int_id1="3" int_id2="4" one_way="false" speed_limit="10"/>
+          <road int_id1="9" int_id2="10" one_way="false" speed_limit="40"/>
+          <road int_id1="8" int_id2="9" one_way="false" speed_limit="20"/>
+          <road int_id1="7" int_id2="8" one_way="false" speed_limit="40"/>
+          <road int_id1="6" int_id2="7" one_way="false" speed_limit="10"/>
+          <road int_id1="4" int_id2="5" one_way="false" speed_limit="20"/>
+          <road int_id1="4" int_id2="10" one_way="false" speed_limit="50"/>
+          <road int_id1="5" int_id2="10" one_way="true" speed_limit="10"/>
+          <road int_id1="1" int_id2="4" one_way="true" speed_limit="30"/>
+          <road int_id1="6" int_id2="1" one_way="false" speed_limit="10"/>
+          <road int_id1="3" int_id2="4" one_way="false" speed_limit="30"/>
+          <road int_id1="10" int_id2="8" one_way="false" speed_limit="10"/>
+          <road int_id1="8" int_id2="6" one_way="false" speed_limit="30"/>
+          <road int_id1="6" int_id2="9" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="8" one_way="false" speed_limit="30"/>
+          <road int_id1="7" int_id2="11" one_way="false" speed_limit="30"/>
+          <road int_id1="11" int_id2="8" one_way="false" speed_limit="30"/>
+     </roads>
+     <start_intersection id="0" image="DefaultStartLocation.png"/>
+     <destination_intersection id="1" image="DefaultDestination.png"/>
+     <money amount="80"/>
+     <police num="1"/>
+     <bandits num="1"/>
+     <zombies num="1"/>
+</level>

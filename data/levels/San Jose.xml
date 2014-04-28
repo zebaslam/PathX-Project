@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<level image="PortlandBackground.jpg" name="San Jose">
+     <intersections>
+          <intersection id="0" open="true" x="119" y="390"/>
+          <intersection id="0" open="false" x="780" y="271"/>
+          <intersection id="0" open="true" x="199" y="158"/>
+          <intersection id="0" open="true" x="398" y="156"/>
+          <intersection id="0" open="true" x="298" y="390"/>
+          <intersection id="0" open="true" x="565" y="168"/>
+          <intersection id="0" open="true" x="464" y="390"/>
+          <intersection id="0" open="true" x="661" y="390"/>
+     </intersections>
+     <roads>
+          <road int_id1="2" int_id2="0" one_way="false" speed_limit="10"/>
+          <road int_id1="2" int_id2="4" one_way="false" speed_limit="10"/>
+          <road int_id1="4" int_id2="3" one_way="false" speed_limit="10"/>
+          <road int_id1="3" int_id2="6" one_way="false" speed_limit="10"/>
+          <road int_id1="6" int_id2="5" one_way="false" speed_limit="10"/>
+          <road int_id1="5" int_id2="7" one_way="false" speed_limit="30"/>
+          <road int_id1="7" int_id2="1" one_way="false" speed_limit="100"/>
+          <road int_id1="0" int_id2="4" one_way="false" speed_limit="100"/>
+          <road int_id1="4" int_id2="6" one_way="false" speed_limit="100"/>
+          <road int_id1="6" int_id2="7" one_way="false" speed_limit="100"/>
+     </roads>
+     <start_intersection id="0" image="DefaultStartLocation.png"/>
+     <destination_intersection id="1" image="DefaultDestination.png"/>
+     <money amount="60"/>
+     <police num="3"/>
+     <bandits num="3"/>
+     <zombies num="3"/>
+</level>

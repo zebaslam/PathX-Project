@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<level image="PortlandBackground.jpg" name="Portland">
+     <intersections>
+          <intersection id="0" open="true" x="190" y="294"/>
+          <intersection id="0" open="true" x="723" y="190"/>
+          <intersection id="0" open="true" x="511" y="226"/>
+          <intersection id="0" open="true" x="379" y="186"/>
+          <intersection id="0" open="true" x="264" y="191"/>
+          <intersection id="0" open="true" x="430" y="322"/>
+     </intersections>
+     <roads>
+          <road int_id1="4" int_id2="0" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="3" one_way="false" speed_limit="30"/>
+          <road int_id1="2" int_id2="1" one_way="false" speed_limit="30"/>
+          <road int_id1="3" int_id2="2" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="5" one_way="false" speed_limit="30"/>
+          <road int_id1="5" int_id2="2" one_way="false" speed_limit="30"/>
+     </roads>
+     <start_intersection id="0" image="DefaultStartLocation.png"/>
+     <destination_intersection id="1" image="DefaultDestination.png"/>
+     <money amount="20"/>
+     <police num="1"/>
+     <bandits num="1"/>
+     <zombies num="1"/>
+</level>
