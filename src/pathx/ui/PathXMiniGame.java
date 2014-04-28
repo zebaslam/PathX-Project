@@ -698,6 +698,9 @@ public class PathXMiniGame extends MiniGame {
         float y = getY();
         resetBackground(x, y);
         setScroll(false);
+        
+        
+        
     }
 
     public void switchToLevelSelectScreen() {

@@ -12,6 +12,7 @@ import static pathx.PathXConstants.MENU_SCREEN_STATE;
 import static pathx.PathXConstants.VIEWPORT_INC;
 import pathx.PathX;
 import pathx.data.PathXDataModel;
+import pathx.file.PathXFileManager;
 
 /**
  *
@@ -20,9 +21,11 @@ import pathx.data.PathXDataModel;
 public class PathXEventHandler {
 
     private PathXMiniGame game;
+ private     PathXFileManager filemanager;
 
     public PathXEventHandler(PathXMiniGame initGame) {
         game = initGame;
+      filemanager = game.getFileManager();
     }
 
     public void respondToExitRequest() {
@@ -73,9 +76,14 @@ public class PathXEventHandler {
         game.switchToLevelSelectScreen();
 
     }
-
+   
     public void respondToGameScreenSelect(int level){
+        String name="";
+        if(level==1){
+            name="Portland.xml";
+        }
         game.switchToGameScreen();
+        filemanager.promptToOpen(name);
     }
     public void respondToKeyPress(int keyCode) {
         PathXDataModel data = (PathXDataModel) game.getDataModel();

@@ -60,7 +60,7 @@ public class PathXFileManager {
     {
         // KEEP IT FOR LATER
         view = initMiniGame;
-        model=initmodel;
+        model= (PathXDataModel)view.getDataModel();
         levelIO = new PathX_XMLLevelIO(new File(LEVELS_PATH + LEVEL_SCHEMA));
         
         // NOTHING YET
@@ -73,7 +73,7 @@ public class PathXFileManager {
      * This method lets the user open a level saved to a file. It will also make
      * sure data for the current level is not lost.
      */
-    public void processOpenLevelRequest()
+    public void processOpenLevelRequest(String name)
     {
         // WE MAY HAVE TO SAVE CURRENT WORK
         boolean continueToOpen = true;
@@ -87,7 +87,7 @@ public class PathXFileManager {
         if (continueToOpen)
         {
             // GO AHEAD AND PROCEED MAKING A NEW LEVEL
-            continueToOpen = promptToOpen();
+            //continueToOpen = promptToOpen();
             if (continueToOpen)
             {
                 //view.enableSaveButton(true);
@@ -102,17 +102,18 @@ public class PathXFileManager {
      * the open process, nothing is done. If an error occurs loading the file, a
      * message is displayed, but nothing changes.
      */
-    private boolean promptToOpen()
+    public boolean promptToOpen(String name)
     {
         // ASK THE USER FOR THE LEVEL TO OPEN
-        JFileChooser levelFileChooser = new JFileChooser(LEVELS_PATH);
+        //JFileChooser levelFileChooser = new JFileChooser(LEVELS_PATH);
         //levelFileChooser.setFileFilter(new XMLFilter());
         //int buttonPressed = levelFileChooser.showOpenDialog(view);
 
         // ONLY OPEN A NEW FILE IF THE USER SAYS OK
-        
+            String test=LEVELS_PATH+name;
+            System.out.println(test);
             // GET THE FILE THE USER ENTERED
-            File testFile = levelFileChooser.getSelectedFile();
+            File testFile = new File(test);
             if (testFile == null)
             {
                 // TELL THE USER ABOUT THE ERROR
@@ -155,6 +156,6 @@ public class PathXFileManager {
    
     private boolean load(File testFile)
     {
-        return levelIO.loadLevel(testFile, model);
+        return levelIO.loadLevel(testFile, model, view);
     }
 }

@@ -29,6 +29,7 @@ import xml_utilities.XMLUtilities;
 import static pathx.PathXConstants.*;
 import pathx.data.Intersection;
 import pathx.data.Road;
+import pathx.ui.PathXMiniGame;
 
 /**
  *
@@ -42,6 +43,8 @@ public class PathX_XMLLevelIO {
     // THIS IS THE SCHEMA WE'LL USE
     private File levelSchema;
      private XMLUtilities xmlUtil;
+     
+     private PathXMiniGame miniGame;
     /**
      * Constructor for making our importer/exporter. Note that it
      * initializes the XML utility for processing XML files and it
@@ -59,12 +62,19 @@ public class PathX_XMLLevelIO {
     /**
      * Reads the level data found in levelFile into levelToLoad.
      */
-    public boolean loadLevel(File levelFile, PathXDataModel model)
+    public boolean loadLevel(File levelFile, PathXDataModel model2, PathXMiniGame minigame)
     {
+        
+        
         try
         {
+            
             // WE'LL FILL IN SOME OF THE LEVEL OURSELVES
-            PathXLevel levelToLoad = model.getLevel();
+           PathXDataModel theData = (PathXDataModel)minigame.getDataModel();
+            
+          PathXDataModel model = theData;
+            PathXLevel levelToLoad = theData.getLevel();
+            
             levelToLoad.reset();
             
             // FIRST LOAD ALL THE XML INTO A TREE

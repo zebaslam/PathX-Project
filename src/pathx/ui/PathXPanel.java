@@ -62,7 +62,7 @@ public class PathXPanel extends JPanel {
     public PathXPanel(MiniGame initGame, PathXDataModel initData) {
         game = initGame;
         game1 = (PathXMiniGame) game;
-        data = initData;
+        data = (PathXDataModel)game.getDataModel();
         numberFormatter = NumberFormat.getNumberInstance();
         numberFormatter.setMinimumFractionDigits(3);
         numberFormatter.setMaximumFractionDigits(3);
@@ -88,7 +88,7 @@ public class PathXPanel extends JPanel {
     // WE'LL RECYCLE THESE DURING RENDERING
 
     }
-    private PathXDataModel model = data;
+    //private PathXDataModel model = data;
   
     public void paintComponent(Graphics g) {
         try {
@@ -112,6 +112,18 @@ public class PathXPanel extends JPanel {
             }
             if (((PathXMiniGame) game).isCurrentScreenState(GAME_SCREEN_STATE)) {
              renderGameHeader(g);
+              // RENDER THE BACKGROUND IMAGE
+             if(game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(INVISIBLE_STATE.toString())){
+                 renderLevelBackground(g2);
+                  renderRoads(g2);
+             }
+            
+
+            // RENDER THE ROADS
+           
+
+            // RENDER THE INTERSECTIONS
+            //renderIntersections(g2);
             }
 
         } finally {
@@ -574,37 +586,38 @@ public class PathXPanel extends JPanel {
    // HELPER METHOD FOR RENDERING THE LEVEL BACKGROUND
     private void renderLevelBackground(Graphics2D g2)
     {
-        Image backgroundImage = model.getBackgroundImage();
-        g2.drawImage(backgroundImage, 0, 0, null);
+        Image backgroundImage = data.getBackgroundImage();
+        g2.drawImage(backgroundImage, 0, 0, 400, 400, 0,0, 900, 900, null);
     }
 
     // HELPER METHOD FOR RENDERING THE LEVEL ROADS
     private void renderRoads(Graphics2D g2)
     {
+        data = (PathXDataModel)game.getDataModel();
         // GO THROUGH THE ROADS AND RENDER ALL OF THEM
-        Viewport viewport = model.getViewport();
-        Iterator<Road> it = model.roadsIterator();
+        Viewport viewport = data.getViewport();
+        Iterator<Road> it = data.roadsIterator();
         g2.setStroke(recyclableStrokes.get(INT_STROKE));
         while (it.hasNext())
         {
             Road road = it.next();
-            if (!model.isSelectedRoad(road))
+            if (!data.isSelectedRoad(road))
                 renderRoad(g2, road, INT_OUTLINE_COLOR);
         }
         
         // NOW DRAW THE LINE BEING ADDED, IF THERE IS ONE
        
         {
-            Intersection startRoadIntersection = model.getStartRoadIntersection();
-            recyclableLine.x1 = startRoadIntersection.x;
-            recyclableLine.y1 = startRoadIntersection.y;
-            recyclableLine.x2 = model.getLastMouseX();
-            recyclableLine.y2 = model.getLastMouseY();
+            Intersection startRoadIntersection = data.getStartRoadIntersection();
+            recyclableLine.x1 = startRoadIntersection.getX();
+            recyclableLine.y1 = startRoadIntersection.getY();
+            recyclableLine.x2 = data.getLastMouseX();
+            recyclableLine.y2 = data.getLastMouseY();
             g2.draw(recyclableLine);
         }
 
         // AND RENDER THE SELECTED ONE, IF THERE IS ONE
-        Road selectedRoad = model.getSelectedRoad();
+        Road selectedRoad = data.getSelectedRoad();
         if (selectedRoad != null)
         {
             renderRoad(g2, selectedRoad, HIGHLIGHTED_COLOR);
@@ -641,15 +654,15 @@ public class PathXPanel extends JPanel {
     // HELPER METHOD FOR RENDERING AN INTERSECTION
     private void renderIntersections(Graphics2D g2)
     {
-        Iterator<Intersection> it = model.intersectionsIterator();
+        Iterator<Intersection> it = data.intersectionsIterator();
         while (it.hasNext())
         {
             Intersection intersection = it.next();
 
             // ONLY RENDER IT THIS WAY IF IT'S NOT THE START OR DESTINATION
             // AND IT IS IN THE VIEWPORT
-            if ((!model.isStartingLocation(intersection))
-                    && (!model.isDestination(intersection))
+            if ((!data.isStartingLocation(intersection))
+                    && (!data.isDestination(intersection))
                     )
             {
                 // FIRST FILL
@@ -665,7 +678,7 @@ public class PathXPanel extends JPanel {
                 g2.fill(recyclableCircle);
 
                 // AND NOW THE OUTLINE
-                if (model.isSelectedIntersection(intersection))
+                if (data.isSelectedIntersection(intersection))
                 {
                     g2.setColor(HIGHLIGHTED_COLOR);
                 } else
@@ -679,12 +692,12 @@ public class PathXPanel extends JPanel {
         }
 
         // AND NOW RENDER THE START AND DESTINATION LOCATIONS
-        Image startImage = model.getStartingLocationImage();
-        Intersection startInt = model.getStartingLocation();
+        Image startImage = data.getStartingLocationImage();
+        Intersection startInt = data.getStartingLocation();
         renderIntersectionImage(g2, startImage, startInt);
 
-        Image destImage = model.getDesinationImage();
-        Intersection destInt = model.getDestination();
+        Image destImage = data.getDesinationImage();
+        Intersection destInt =data.getDestination();
         renderIntersectionImage(g2, destImage, destInt);
     }
 
