@@ -83,8 +83,8 @@ public class PathXDataModel extends MiniGameDataModel {
     public Intersection     getSelectedIntersection()   {   return selectedIntersection;    }
     public Road             getSelectedRoad()           {   return selectedRoad;            }
     public Intersection     getStartRoadIntersection()  {   return startRoadIntersection;   }
-    public int              getLastMouseX()             {   return lastMouseX;              }
-    public int              getLastMouseY()             {   return lastMouseY;              }
+    //public int              getLastMouseX()             {   return lastMouseX;              }
+    //public int              getLastMouseY()             {   return lastMouseY;              }
     public Intersection     getStartingLocation()       {   return level.startingLocation;  }
     public Intersection     getDestination()            {   return level.destination;       }
     public boolean          isDataUpdatedSinceLastSave(){   return dataUpdatedSinceLastSave;}    
