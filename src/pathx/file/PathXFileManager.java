@@ -205,7 +205,7 @@ public class PathXFileManager {
             levelToLoad.reset();
             
             // FIRST LOAD ALL THE XML INTO A TREE
-            Document doc = xmlUtil.loadXMLDocument( PATH_DATA+"Portland.xml", 
+            Document doc = xmlUtil.loadXMLDocument( PATH_DATA+fileToOpen, 
                                                     levelSchema.getAbsolutePath());
             
             // FIRST LOAD THE LEVEL INFO
