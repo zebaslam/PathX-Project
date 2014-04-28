@@ -64,18 +64,20 @@ public class PathXDataModel extends MiniGameDataModel {
 
     // THIS IS THE UI, WE'LL NOTIFY IT WHENEVER THE DATA CHANGES SO
     // THAT THE UI RENDERING CAN BE UPDATED AT THAT TIME
-    PathXMiniGame view;
+  //  PathXMiniGame view;
     public PathXDataModel(MiniGame initMiniGame){
         miniGame= initMiniGame;
-        level=new PathXLevel();
+        level = new PathXLevel();
          levelBeingEdited = false;
         startRoadIntersection = null;
+        
+      //  view = miniGame
     }
 
        // ACCESSOR METHODS
     public PathXLevel       getLevel()                  {   return level;                   }
     //POSSIBLE SOURCE OF ERROR!!!
-    public PathXMiniGame    getView()                   {   return view;                    }
+   // public PathXMiniGame    getView()                   {   return view;                    }
 
     //public Viewport         getViewport()             {   return viewport;                }
     public boolean          isLevelBeingEdited()        {   return levelBeingEdited;        }
@@ -85,8 +87,8 @@ public class PathXDataModel extends MiniGameDataModel {
     public Intersection     getSelectedIntersection()   {   return selectedIntersection;    }
     public Road             getSelectedRoad()           {   return selectedRoad;            }
     public Intersection     getStartRoadIntersection()  {   return startRoadIntersection;   }
-    //public int              getLastMouseX()             {   return lastMouseX;              }
-    //public int              getLastMouseY()             {   return lastMouseY;              }
+    public int              getLastMouseX()             {   return lastMouseX;              }
+    public int              getLastMouseY()             {   return lastMouseY;              }
     public Intersection     getStartingLocation()       {   return level.startingLocation;  }
     public Intersection     getDestination()            {   return level.destination;       }
     public boolean          isDataUpdatedSinceLastSave(){   return dataUpdatedSinceLastSave;}    
@@ -112,28 +114,28 @@ public class PathXDataModel extends MiniGameDataModel {
         return roads.iterator();
     }
     
-     public void setView(PathXMiniGame initView)
-    {   view = initView;    }  
+   //  public void setView(PathXMiniGame initView)
+   /// {   view = initView;    }  
      
-         public void setLevelBeingEdited(boolean initLevelBeingEdited)
-    {   levelBeingEdited = initLevelBeingEdited;    }
+   //      public void setLevelBeingEdited(boolean initLevelBeingEdited)
+   // {   levelBeingEdited = initLevelBeingEdited;    }
     public void setLastMousePosition(int initX, int initY)
     {
         lastMouseX = initX;
         lastMouseY = initY;
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }    
     public void setSelectedIntersection(Intersection i)
     {
         selectedIntersection = i;
         selectedRoad = null;
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }    
     public void setSelectedRoad(Road r)
     {
         selectedRoad = r;
         selectedIntersection = null;
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }
     
      public void selectStartRoadIntersection(int canvasX, int canvasY)
@@ -168,7 +170,7 @@ public class PathXDataModel extends MiniGameDataModel {
             startRoadIntersection = null;
 
             // RENDER
-            view.getCanvas().repaint();
+            miniGame.getCanvas().repaint();
         }
     }
     
@@ -190,9 +192,9 @@ public class PathXDataModel extends MiniGameDataModel {
                     DEFAULT_DEST_Y);
         
         // NOW MAKE THE LEVEL IMAGES
-        backgroundImage = view.loadImage(LEVELS_PATH + DEFAULT_BG_IMG);
-        startingLocationImage = view.loadImage(LEVELS_PATH + DEFAULT_START_IMG);
-        destinationImage = view.loadImage(LEVELS_PATH + DEFAULT_DEST_IMG);
+        //backgroundImage = view.loadImage(LEVELS_PATH + DEFAULT_BG_IMG);
+        //startingLocationImage = view.loadImage(LEVELS_PATH + DEFAULT_START_IMG);
+        //destinationImage = view.loadImage(LEVELS_PATH + DEFAULT_DEST_IMG);
 
         // NOW RESET THE VIEWPORT
         //viewport.reset();
@@ -209,7 +211,7 @@ public class PathXDataModel extends MiniGameDataModel {
         levelBeingEdited = true;     
         
         // AND NOW MAKE SURE IT GETS RENDERED FOR THE FIRST TIME
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }
      
       /**
@@ -287,7 +289,7 @@ public class PathXDataModel extends MiniGameDataModel {
         selectedIntersection = null;
         selectedRoad = null;
         startRoadIntersection = null;
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }
 
     /**
@@ -345,7 +347,7 @@ public class PathXDataModel extends MiniGameDataModel {
         int intY = canvasY ;
         Intersection newInt = new Intersection(intX, intY);
         level.intersections.add(newInt);
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }
     
     /**
@@ -360,7 +362,7 @@ public class PathXDataModel extends MiniGameDataModel {
             {
                 speedLimit += SPEED_LIMIT_STEP;
                 selectedRoad.setSpeedLimit(speedLimit);
-                view.getCanvas().repaint();
+                miniGame.getCanvas().repaint();
             }
         }
     }
@@ -377,7 +379,7 @@ public class PathXDataModel extends MiniGameDataModel {
             {
                 speedLimit -= SPEED_LIMIT_STEP;
                 selectedRoad.setSpeedLimit(speedLimit);
-                view.getCanvas().repaint();
+                miniGame.getCanvas().repaint();
             }
         }
     }    

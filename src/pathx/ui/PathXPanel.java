@@ -115,7 +115,8 @@ public class PathXPanel extends JPanel {
               // RENDER THE BACKGROUND IMAGE
              if(game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(INVISIBLE_STATE.toString())){
                  renderLevelBackground(g2);
-                  //renderRoads(g2);
+                  renderRoads(g2);
+                   renderIntersections(g2);
              }
             
 
@@ -123,7 +124,7 @@ public class PathXPanel extends JPanel {
            
 
             // RENDER THE INTERSECTIONS
-            //renderIntersections(g2);
+           
             }
 
         } finally {
@@ -608,12 +609,7 @@ public class PathXPanel extends JPanel {
         // NOW DRAW THE LINE BEING ADDED, IF THERE IS ONE
        
         {
-            Intersection startRoadIntersection = data.getStartRoadIntersection();
-            recyclableLine.x1 = startRoadIntersection.getX();
-            recyclableLine.y1 = startRoadIntersection.getY();
-            recyclableLine.x2 = data.getLastMouseX();
-            recyclableLine.y2 = data.getLastMouseY();
-            g2.draw(recyclableLine);
+        
         }
 
         // AND RENDER THE SELECTED ONE, IF THERE IS ONE

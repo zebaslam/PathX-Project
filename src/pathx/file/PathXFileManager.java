@@ -80,9 +80,9 @@ public class PathXFileManager {
     public PathXFileManager(PathXMiniGame initMiniGame, PathXDataModel initmodel)
     {
         // KEEP IT FOR LATER
-        view = initMiniGame;
-        minigame=view;
-        model= (PathXDataModel)view.getDataModel();
+        minigame=initMiniGame;
+        //minigame=view;
+        //model= minigame.getDataModel();
         levelIO = new PathX_XMLLevelIO(new File(LEVELS_PATH + LEVEL_SCHEMA));
         
         // NOTHING YET
@@ -167,7 +167,7 @@ public class PathXFileManager {
                 //view.enableEditButtons(true);
                 //model.setLevelBeingEdited(true);
                 
-                view.getCanvas().repaint();
+                minigame.getCanvas().repaint();
 
                 // TELL THE USER ABOUT OUR SUCCESS
                
@@ -199,8 +199,8 @@ public class PathXFileManager {
             // WE'LL FILL IN SOME OF THE LEVEL OURSELVES
            //PathXDataModel theData = (PathXDataModel)minigame.getDataModel();
             File fileToOpen = new File(levelFile);
-          
-            PathXLevel levelToLoad = ((PathXDataModel)model).getLevel();
+          model = (PathXDataModel)minigame.getDataModel();
+            PathXLevel levelToLoad = model.getLevel();
             levelSchema= new File(PATH_DATA+"PathXLevelSchema.xsd");
             levelToLoad.reset();
             
