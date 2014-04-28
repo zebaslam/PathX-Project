@@ -16,6 +16,8 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.text.html.HTMLDocument;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.parser.ParserDelegator;
@@ -25,6 +27,7 @@ import pathx.data.PathXDataModel;
 import pathx.data.PathXRecord;
 import pathx.ui.PathXMiniGame;
 import properties_manager.PropertiesManager;
+import static pathx.PathXConstants.*;
 
 /**
  *
@@ -34,58 +37,124 @@ public class PathXFileManager {
     public static String SPACE = " ";
     public static String NEW_LINE = "\n";
     public static String DELIMITER = "|";
-    private PathXMiniGame miniGame;
+    private PathXMiniGame view;
     
-    public PathXFileManager(PathXMiniGame initMiniGame)
+        // THIS DOEST THE ACTUAL FILE I/O
+    PathX_XMLLevelIO levelIO;
+
+    // THE VIEW AND DATA TO BE UPDATED DURING LOADING
+  
+    PathXDataModel model;
+
+    // WE'LL STORE THE FILE CURRENTLY BEING WORKED ON
+    // AND THE NAME OF THE FILE
+    private File currentFile;
+    private String currentFileName;
+
+    // WE WANT TO KEEP TRACK OF WHEN SOMETHING HAS NOT BEEN SAVED
+    private boolean saved;
+    
+    //potential source of ERROR
+    //bacon
+    public PathXFileManager(PathXMiniGame initMiniGame, PathXDataModel initmodel)
     {
         // KEEP IT FOR LATER
-        miniGame = initMiniGame;
+        view = initMiniGame;
+        model=initmodel;
+        levelIO = new PathX_XMLLevelIO(new File(LEVELS_PATH + LEVEL_SCHEMA));
+        
+        // NOTHING YET
+        currentFile = null;
+        currentFileName = null;
+        saved = true;
     }
     
-    public static String loadTextFile(String textFile) throws IOException
+     /**
+     * This method lets the user open a level saved to a file. It will also make
+     * sure data for the current level is not lost.
+     */
+    public void processOpenLevelRequest()
     {
-        // ADD THE PATH TO THE FILE
-        PropertiesManager props = PropertiesManager.getPropertiesManager();
-        textFile = props.getProperty(PathXPropertyType.PATH_DATA) + textFile;
-
-        // WE'LL ADD ALL THE CONTENTS OF THE TEXT FILE TO THIS STRING
-        String textToReturn = "";
-
-        // OPEN A STREAM TO READ THE TEXT FILE
-        FileReader fr = new FileReader(textFile);
-        BufferedReader reader = new BufferedReader(fr);
-
-        // READ THE FILE, ONE LINE OF TEXT AT A TIME
-        String inputLine = reader.readLine();
-        while (inputLine != null)
+        // WE MAY HAVE TO SAVE CURRENT WORK
+        boolean continueToOpen = true;
+        if (!saved)
         {
-            // APPEND EACH LINE TO THE STRING
-            textToReturn += inputLine + NEW_LINE;
-
-            // READ THE NEXT LINE
-            inputLine = reader.readLine();
+            // THE USER CAN OPT OUT HERE WITH A CANCEL
+            //continueToOpen = promptToSave();
         }
 
-        // RETURN THE TEXT
-        return textToReturn;
+        // IF THE USER REALLY WANTS TO OPEN A LEVEL
+        if (continueToOpen)
+        {
+            // GO AHEAD AND PROCEED MAKING A NEW LEVEL
+            continueToOpen = promptToOpen();
+            if (continueToOpen)
+            {
+                //view.enableSaveButton(true);
+                //view.enableSaveAsButton(true);
+                view.getCanvas().repaint();
+            }
+        }
     }
-    
-      public static void loadHTMLDocument(String htmlFile,
-            HTMLDocument doc) throws IOException
+    /**
+     * This helper method asks the user for a file to open. The user-selected
+     * file is then loaded and the GUI updated. Note that if the user cancels
+     * the open process, nothing is done. If an error occurs loading the file, a
+     * message is displayed, but nothing changes.
+     */
+    private boolean promptToOpen()
     {
-        // OPEN THE STREAM
-        FileReader fr = new FileReader(htmlFile);
-        BufferedReader br = new BufferedReader(fr);
+        // ASK THE USER FOR THE LEVEL TO OPEN
+        JFileChooser levelFileChooser = new JFileChooser(LEVELS_PATH);
+        //levelFileChooser.setFileFilter(new XMLFilter());
+        //int buttonPressed = levelFileChooser.showOpenDialog(view);
 
-        // WE'LL USE A SWING PARSER FOR PARSING THE
-        // HTML DOCUMENT SUCH THAT IT PROPERLY LOADS
-        // THE DOCUMENT
-        HTMLEditorKit.Parser parser = new ParserDelegator();
+        // ONLY OPEN A NEW FILE IF THE USER SAYS OK
+        
+            // GET THE FILE THE USER ENTERED
+            File testFile = levelFileChooser.getSelectedFile();
+            if (testFile == null)
+            {
+                // TELL THE USER ABOUT THE ERROR
+            System.out.println("TESTFILE IS NULL");
+                return false;
+            }
 
-        // THE CALLBACK KEEPS TRACK OF WHEN IT COMPLETES LOADING
-        HTMLEditorKit.ParserCallback callback = doc.getReader(0);
+            // AND LOAD THE LEVEL (XML FORMAT) FILE
+            boolean loadedSuccessfully = load(testFile);
 
-        // LOAD AND PARSE THE WEB PAGE
-        parser.parse(br, callback, true);
+            if (loadedSuccessfully)
+            {
+                currentFile = testFile;
+                currentFileName = currentFile.getName();
+                saved = true;
+
+                // AND PUT THE FILE NAME IN THE TITLE BAR
+                //view.setTitle(APP_NAME + APP_NAME_FILE_NAME_SEPARATOR + currentFileName);
+                
+                // MAKE SURE THE SPINNERS HAVE THE CORRRECT INFO
+                //view.refreshSpinners(model.getLevel());
+                
+                //view.enableEditButtons(true);
+                //model.setLevelBeingEdited(true);
+                
+                view.getCanvas().repaint();
+
+                // TELL THE USER ABOUT OUR SUCCESS
+               
+
+                return true;
+            } 
+            else
+            {
+                // TELL THE USER ABOUT THE ERROR
+              System.out.println("ERROR");
+                return false;
+            }
+    }
+   
+    private boolean load(File testFile)
+    {
+        return levelIO.loadLevel(testFile, model);
     }
 }
