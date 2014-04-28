@@ -697,7 +697,7 @@ public class PathXMiniGame extends MiniGame {
         float x = getX();
         float y = getY();
         resetBackground(x, y);
-        setScroll(false);
+        setScroll(true);
         
         
         
@@ -1191,7 +1191,7 @@ public class PathXMiniGame extends MiniGame {
     public void setLevelVisibility() {
         float x = guiDecor.get(BACKGROUND_TYPE).getX();
         float y = guiDecor.get(BACKGROUND_TYPE).getY();
-
+       if (currentScreenState.equals(LEVEL_SELECT_SCREEN_STATE)){
         //level 1
         if (x < -45 || y < -285) {
             guiButtons.get(LEVEL_1_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
@@ -1418,6 +1418,7 @@ public class PathXMiniGame extends MiniGame {
             guiButtons.get(LEVEL_20_BUTTON_TYPE).setY(LEVEL_20_Y + y);
 
         }
+       }
         updateGUI();
     }
 

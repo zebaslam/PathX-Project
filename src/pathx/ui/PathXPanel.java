@@ -588,7 +588,7 @@ public class PathXPanel extends JPanel {
     private void renderLevelBackground(Graphics2D g2)
     {
         Image backgroundImage = data.getBackgroundImage();
-        g2.drawImage(backgroundImage, 0, 0, 400, 400, 0,0, 900, 900, null);
+        g2.drawImage(backgroundImage, 0, 75, 750, 650, 0,0, 750, 650, null);
     }
 
     // HELPER METHOD FOR RENDERING THE LEVEL ROADS
