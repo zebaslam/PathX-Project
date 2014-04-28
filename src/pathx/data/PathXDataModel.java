@@ -23,6 +23,7 @@ import properties_manager.PropertiesManager;
 import static pathx.PathXConstants.*;
 import pathx.ui.PathXMiniGame;
 import pathx.ui.PathXPanel;
+
 /**
  *
  * @author zeb
@@ -75,6 +76,7 @@ public class PathXDataModel extends MiniGameDataModel {
     public PathXLevel       getLevel()                  {   return level;                   }
     //POSSIBLE SOURCE OF ERROR!!!
     public PathXMiniGame    getView()                   {   return view;                    }
+
     //public Viewport         getViewport()             {   return viewport;                }
     public boolean          isLevelBeingEdited()        {   return levelBeingEdited;        }
     public Image            getBackgroundImage()        {   return backgroundImage;         }

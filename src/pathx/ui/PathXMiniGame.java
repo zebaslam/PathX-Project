@@ -33,8 +33,7 @@ import pathx.PathXConstants;
 import pathx.PathX.PathXPropertyType;
 import pathx.file.PathXFileManager;
 import pathx.ui.PathXCarState;
-//import sorting_hat.file.PathXFileManager;
-//import sorting_hat.data.PathXRecord;
+
 
 /**
  *
@@ -46,7 +45,6 @@ public class PathXMiniGame extends MiniGame {
     private PathXErrorHandler errorHandler;
     private PathXEventHandler eventHandler;
     private PathXFileManager fileManager;
-    
     private int level;
     
     // THE SCREEN CURRENTLY BEING PLAYED
@@ -1101,8 +1099,9 @@ public class PathXMiniGame extends MiniGame {
     @Override
     public void initData() {
         errorHandler = new PathXErrorHandler(window);
-        fileManager = new PathXFileManager(this);
+       
         data = new PathXDataModel(this);
+        fileManager = new PathXFileManager(this, (PathXDataModel)data);
     }
 
     @Override
@@ -1546,5 +1545,9 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setY(LEVEL_20_Y);
         updateGUI();
     }
-
+    
+    //use this to use the repaint method
+  public PathXPanel getCanvas(){
+        return (PathXPanel)canvas;
+    }
 }

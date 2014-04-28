@@ -41,6 +41,9 @@ public class PathXConstants {
     public static final int ONE_WAY_TRIANGLE_HEIGHT = 40;
     public static final int ONE_WAY_TRIANGLE_WIDTH = 60;
 
+     // FOR SCROLLING THE VIEWPORT
+    public static final int SCROLL_SPEED = 6;
+    
     // INITIAL START/DEST LOCATIONS
     public static final int DEFAULT_START_X = 32;
     public static final int DEFAULT_START_Y = 100;
