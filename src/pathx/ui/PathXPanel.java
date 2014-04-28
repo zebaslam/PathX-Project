@@ -115,7 +115,7 @@ public class PathXPanel extends JPanel {
               // RENDER THE BACKGROUND IMAGE
              if(game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(INVISIBLE_STATE.toString())){
                  renderLevelBackground(g2);
-                  renderRoads(g2);
+                  //renderRoads(g2);
              }
             
 

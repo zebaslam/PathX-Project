@@ -219,11 +219,11 @@ public class PathXDataModel extends MiniGameDataModel {
     {
         // UPDATE THE LEVEL TO FIT THE BACKGROUDN IMAGE SIZE
         level.backgroundImageFileName = newBgImage;
-        backgroundImage = view.loadImage(LEVELS_PATH + level.backgroundImageFileName);
+        backgroundImage = miniGame.loadImage(PATH_DATA + level.backgroundImageFileName);
         int levelWidth = backgroundImage.getWidth(null);
         int levelHeight = backgroundImage.getHeight(null);
         //viewport.setLevelDimensions(levelWidth, levelHeight);
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }
 
     /**
@@ -232,8 +232,8 @@ public class PathXDataModel extends MiniGameDataModel {
     public void updateStartingLocationImage(String newStartImage)
     {
         level.startingLocationImageFileName = newStartImage;
-        startingLocationImage = view.loadImage(LEVELS_PATH + level.startingLocationImageFileName);
-        view.getCanvas().repaint();
+        startingLocationImage = miniGame.loadImage(PATH_DATA + level.startingLocationImageFileName);
+        miniGame.getCanvas().repaint();
     }
 
     /**
@@ -242,15 +242,15 @@ public class PathXDataModel extends MiniGameDataModel {
     public void updateDestinationImage(String newDestImage)
     {
         level.destinationImageFileName = newDestImage;
-        destinationImage = view.loadImage(LEVELS_PATH + level.destinationImageFileName);
-        view.getCanvas().repaint();
+        destinationImage = miniGame.loadImage(PATH_DATA + level.destinationImageFileName);
+        miniGame.getCanvas().repaint();
     }
 
      public void addIntersection(Intersection intToAdd)
     {
         ArrayList<Intersection> intersections = level.getIntersections();
         intersections.add(intToAdd);
-        view.getCanvas().repaint();
+        miniGame.getCanvas().repaint();
     }
 
     /**
