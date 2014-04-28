@@ -16,9 +16,85 @@ public class PathXConstants {
     public static String PROPERTIES_FILE_NAME = "properties.xml";
     public static String PROPERTIES_SCHEMA_FILE_NAME = "properties_schema.xsd";    
     public static String PATH_DATA = "./data/";
+    public static final String  LEVELS_PATH = PATH_DATA + "levels/";
     
-    
+    //From pathxleveleditor
+        
+    // WE'LL NEED THESE TO DYNAMICALLY BUILD TEXT
+    public static final String TITLE                        = "pathX Level Editor";
+    public static final String EMPTY_TEXT                   = "";
+    public static final String XML_LEVEL_FILE_EXTENSION         = ".xml";
+    public static final String BIN_LEVEL_FILE_EXTENSION         = ".bin";
+    public static final String APP_NAME                     = "PathX Level Editor";
+    public static final String APP_NAME_FILE_NAME_SEPARATOR = " - ";
+    public static final String PNG_FORMAT_NAME              = "png";
+    public static final String PNG_FILE_EXTENSION           = "." + PNG_FORMAT_NAME;  
     public static final String LEVEL_SELECT_BUTTON_TYPE = "LEVEL_SELECT_BUTTON_TYPE";
+    
+    public static final String DEFAULT_BG_IMG       = "PortlandBackground.png";
+    public static final String DEFAULT_START_IMG    = "DefaultStartLocation.png";
+    public static final String DEFAULT_DEST_IMG     = "DefaultDestination.png";
+    
+    // RENDERING SETTINGS
+    public static final int INTERSECTION_RADIUS = 20;
+    public static final int INT_STROKE = 3;
+    public static final int ONE_WAY_TRIANGLE_HEIGHT = 40;
+    public static final int ONE_WAY_TRIANGLE_WIDTH = 60;
+
+    // INITIAL START/DEST LOCATIONS
+    public static final int DEFAULT_START_X = 32;
+    public static final int DEFAULT_START_Y = 100;
+    public static final int DEFAULT_DEST_X = 650;
+    public static final int DEFAULT_DEST_Y = 100;
+    
+     // AND FOR THE ROAD SPEED LIMITS
+    public static final int DEFAULT_SPEED_LIMIT = 30;
+    public static final int MIN_SPEED_LIMIT = 10;
+    public static final int MAX_SPEED_LIMIT = 100;
+    public static final int SPEED_LIMIT_STEP = 10;
+    
+    // DEFAULT COLORS
+    public static final Color   INT_OUTLINE_COLOR   = Color.BLACK;
+    public static final Color   HIGHLIGHTED_COLOR = Color.YELLOW;
+    public static final Color   OPEN_INT_COLOR      = Color.GREEN;
+    public static final Color   CLOSED_INT_COLOR    = Color.RED;
+    
+        // FOR LOADING STUFF FROM OUR LEVEL XML FILES    
+    // THIS IS THE NAME OF THE SCHEMA
+    public static final String  LEVEL_SCHEMA = "PathXLevelSchema.xsd";
+    
+    // CONSTANTS FOR LOADING DATA FROM THE XML FILES
+    // THESE ARE THE XML NODES
+    public static final String LEVEL_NODE = "level";
+    public static final String INTERSECTIONS_NODE = "intersections";
+    public static final String INTERSECTION_NODE = "intersection";
+    public static final String ROADS_NODE = "roads";
+    public static final String ROAD_NODE = "road";
+    public static final String START_INTERSECTION_NODE = "start_intersection";
+    public static final String DESTINATION_INTERSECTION_NODE = "destination_intersection";
+    public static final String MONEY_NODE = "money";
+    public static final String POLICE_NODE = "police";
+    public static final String BANDITS_NODE = "bandits";
+    public static final String ZOMBIES_NODE = "zombies";
+
+    //AND THE ATTRIBUTES FOR THOSE NODES
+    public static final String NAME_ATT = "name";
+    public static final String IMAGE_ATT = "image";
+    public static final String ID_ATT = "id";
+    public static final String X_ATT = "x";
+    public static final String Y_ATT = "y";
+    public static final String OPEN_ATT = "open";
+    public static final String INT_ID1_ATT = "int_id1";
+    public static final String INT_ID2_ATT = "int_id2";
+    public static final String SPEED_LIMIT_ATT = "speed_limit";
+    public static final String ONE_WAY_ATT = "one_way";
+    public static final String AMOUNT_ATT = "amount";
+    public static final String NUM_ATT = "num";
+
+    // FOR NICELY FORMATTED XML OUTPUT
+    public static final String XML_INDENT_PROPERTY = "{http://xml.apache.org/xslt}indent-amount";
+    public static final String XML_INDENT_VALUE = "5";
+    public static final String YES_VALUE = "Yes";
     // THESE ARE THE TYPES OF CONTROLS, WE USE THESE CONSTANTS BECAUSE WE'LL
     // STORE THEM BY TYPE, SO THESE WILL PROVIDE A MEANS OF IDENTIFYING THEM
     
