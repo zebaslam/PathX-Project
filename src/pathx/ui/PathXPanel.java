@@ -101,10 +101,11 @@ public class PathXPanel extends JPanel {
 
             // RENDER THE BACKGROUND, WHICHEVER SCREEN WE'RE ON
             renderBackground(g);
-
             renderGUIControls(g);
 
             renderDialogs(g);
+
+            
 
             if (((PathXMiniGame) game).isCurrentScreenState(LEVEL_SELECT_SCREEN_STATE)) {
                 renderLevelInfo(g);
@@ -115,11 +116,11 @@ public class PathXPanel extends JPanel {
               // RENDER THE BACKGROUND IMAGE
              if(game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(INVISIBLE_STATE.toString())){
                  renderLevelBackground(g2);
-                  renderRoads(g2);
-                   renderIntersections(g2);
+                  renderGUIControls(g);
+                 renderRoads(g2);
+                 renderIntersections(g2);
              }
-            
-
+         
             // RENDER THE ROADS
            
 
@@ -596,7 +597,7 @@ public class PathXPanel extends JPanel {
     {
         data = (PathXDataModel)game.getDataModel();
         // GO THROUGH THE ROADS AND RENDER ALL OF THEM
-        Viewport viewport = data.getViewport();
+        //Viewport viewport = data.getViewport();
         Iterator<Road> it = data.roadsIterator();
         g2.setStroke(recyclableStrokes.get(INT_STROKE));
         while (it.hasNext())

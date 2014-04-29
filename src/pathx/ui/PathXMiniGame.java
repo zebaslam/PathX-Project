@@ -31,8 +31,11 @@ import mini_game.Viewport;
 import properties_manager.PropertiesManager;
 import pathx.PathXConstants;
 import pathx.PathX.PathXPropertyType;
+import pathx.data.Intersection;
+import pathx.data.Road;
 import pathx.file.PathXFileManager;
 import pathx.ui.PathXCarState;
+//import mini_game.Viewport1;
 
 
 /**
@@ -57,6 +60,7 @@ public class PathXMiniGame extends MiniGame {
     //used for making sure the button doesnt move too much
     private int scrollNum = 0;
     private boolean scroll;
+    
 
     public int getLevel(){
         return level;
@@ -423,6 +427,15 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, LEVEL_20_X, LEVEL_20_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(LEVEL_20_BUTTON_TYPE, s);
         
+        String pausebutton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PAUSE);
+        sT = new SpriteType(PAUSE_BUTTON_TYPE);
+        img = loadImage(imgPath + pausebutton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String pauseButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BUTTON_PAUSE_MOUSE_OVER);
+        img = loadImage(imgPath + pauseButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PAUSE_X, PAUSE_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(PAUSE_BUTTON_TYPE, s);
         //Dialogs
         String settingsDialog = props.getProperty(PathXPropertyType.IMAGE_DIALOG_SETTINGS);
         sT = new SpriteType(SETTINGS_DIALOG_TYPE);
@@ -524,6 +537,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
         currentScreenState = HELP_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true);
@@ -607,6 +622,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
         currentScreenState = SETTINGS_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true);
@@ -635,14 +652,14 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(SETTINGS_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(HOME_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(HOME_BUTTON_TYPE).setEnabled(true);
-        guiButtons.get(UP_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get(UP_BUTTON_TYPE).setEnabled(false);
-        guiButtons.get(DOWN_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get(DOWN_BUTTON_TYPE).setEnabled(false);
-        guiButtons.get(LEFT_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get(LEFT_BUTTON_TYPE).setEnabled(false);
-        guiButtons.get(RIGHT_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(UP_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(UP_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(DOWN_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(DOWN_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(LEFT_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(LEFT_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(RIGHT_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(RIGHT_BUTTON_TYPE).setEnabled(true);
         guiButtons.get(LEVEL_1_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_1_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_2_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
@@ -683,6 +700,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(PAUSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(true);
         currentScreenState = GAME_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString(), true);
@@ -697,7 +716,7 @@ public class PathXMiniGame extends MiniGame {
         float x = getX();
         float y = getY();
         resetBackground(x, y);
-        setScroll(true);
+        setScroll(false);
         
         
         
@@ -766,6 +785,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_19_BUTTON_TYPE).setEnabled(true);
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
         
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
@@ -847,7 +868,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
-
+        guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
         
         currentScreenState = MENU_SCREEN_STATE;
         data.setGameState(MiniGameState.NOT_STARTED);
@@ -1172,6 +1194,16 @@ public class PathXMiniGame extends MiniGame {
        */
 
     public void ScrollUp() {
+        if(currentScreenState.equals(GAME_SCREEN_STATE)){
+          PathXDataModel d = (PathXDataModel) data;
+            //System.out.println(d.getLevel().getIntersections());
+            ArrayList<Intersection> intersections = d.getLevel().getIntersections();
+//      
+            for (Intersection i: intersections) {
+                i.setY(i.getY() - 15);
+            }
+        
+        }
         scrollNum = 0;
         boolean scrollvalue = getScroll();
         if (scrollvalue == true) {
@@ -1423,6 +1455,15 @@ public class PathXMiniGame extends MiniGame {
     }
 
     public void ScrollDown() {
+        if(currentScreenState.equals(GAME_SCREEN_STATE)){
+       PathXDataModel d = (PathXDataModel) data;
+            //System.out.println(d.getLevel().getIntersections());
+            ArrayList<Intersection> intersections = d.getLevel().getIntersections();
+//      
+            for (Intersection i: intersections) {
+                i.setY(i.getY() +15);
+            }
+        }
         scrollNum = 1;
         boolean scrollvalue = getScroll();
         if (scrollvalue == true) {
@@ -1440,6 +1481,16 @@ public class PathXMiniGame extends MiniGame {
     }
 
     public void ScrollLeft() {
+        if (currentScreenState.equals(GAME_SCREEN_STATE)){
+   
+        PathXDataModel d = (PathXDataModel) data;
+            
+            ArrayList<Intersection> intersections = d.getLevel().getIntersections();
+
+            for (Intersection i: intersections) {
+                i.setX(i.getX() - 15);
+            }
+        }
         scrollNum = 2;
         boolean scrollvalue = getScroll();
         if (scrollvalue == true) {
@@ -1457,6 +1508,14 @@ public class PathXMiniGame extends MiniGame {
     }
 
     public void ScrollRight() {
+        if(currentScreenState.equals(GAME_SCREEN_STATE)){
+             PathXDataModel d = (PathXDataModel) data;
+            //System.out.println(d.getLevel().getIntersections());
+            ArrayList<Intersection> intersections = d.getLevel().getIntersections();
+            for (Intersection i: intersections) {
+                i.setX(i.getX() + 15);
+            }
+        }
         scrollNum = 3;
         boolean scrollvalue = getScroll();
         if (scrollvalue == true) {

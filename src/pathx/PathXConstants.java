@@ -117,7 +117,7 @@ public class PathXConstants {
     public static final String LEFT_BUTTON_TYPE="LEFT_BUTTON_TYPE";
     public static final String RIGHT_BUTTON_TYPE="RIGHT_BUTTON_TYPE";
     public static final String CLOSE_DIALOG_BUTTON_TYPE="CLOSE_DIALOG_BUTTON_TYPE";
-    
+    public static final String PAUSE_BUTTON_TYPE="PAUSE_BUTTON_TYPE";    
     public static final String LEVEL_1_BUTTON_TYPE="LEVEL_1_BUTTON_TYPE";
     public static final String LEVEL_2_BUTTON_TYPE="LEVEL_2_BUTTON_TYPE";
     public static final String LEVEL_3_BUTTON_TYPE="LEVEL_3_BUTTON_TYPE";
@@ -184,6 +184,8 @@ public class PathXConstants {
     public static final int HOME_X= EXIT_X-43;
     public static final int HOME_Y=0;
     
+    public static final int PAUSE_X=HOME_X-40;
+    public static final int PAUSE_Y=0;
     public static final int UP_X=85;
     public static final int UP_Y=499;
     
@@ -196,6 +198,7 @@ public class PathXConstants {
     public static final int RIGHT_X=115;
     public static final int RIGHT_Y=520;
     
+
     //Level locations for dots 
     
     //portland, oregon

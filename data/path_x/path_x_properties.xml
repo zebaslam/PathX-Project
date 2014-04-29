@@ -25,7 +25,8 @@
         <property name="IMAGE_BUTTON_SETTINGS"              value="./path_x/ButtonSettings.png"></property>
         <property name="IMAGE_BUTTON_SETTINGS_MOUSE_OVER"   value="./path_x/SettingsButtonMouseOver.png"></property>
         <property name="IMAGE_WINDOW_ICON"                  value="./path_x/WindowIcon.png"></property>
- 
+        <property name="IMAGE_BUTTON_PAUSE"                 value="./path_x/PauseButton.png"></property>
+        <property name="IMAGE_BUTTON_PAUSE_MOUSE_OVER"      value="./path_x/PauseButtonMouseOver.png"></property>
         <property name="HELP_FILE_NAME"                     value="Help.html"></property>
         
         <!-- Dialog stuff -->

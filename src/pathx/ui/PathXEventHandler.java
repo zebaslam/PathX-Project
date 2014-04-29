@@ -82,6 +82,15 @@ public class PathXEventHandler {
         if(level==1){
             name="Portland.xml";
         }
+        if (level==2){
+            name="Sacremento.xml";
+        }
+        if(level==3){
+            name="San Jose.xml";
+        }
+        if (level==4){
+            name="Boise.xml";
+        }
         game.switchToGameScreen();
         filemanager.promptToOpen(name);
     }

@@ -80,6 +80,8 @@ public class PathX {
         IMAGE_BUTTON_RESET_MOUSE_OVER,
         IMAGE_BUTTON_SETTINGS,
         IMAGE_BUTTON_SETTINGS_MOUSE_OVER,
+        IMAGE_BUTTON_PAUSE,
+        IMAGE_BUTTON_PAUSE_MOUSE_OVER,  
         IMAGE_WINDOW_ICON,
      
         /*Direction Buttons*/

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<level image="PortlandBackground.png" name="Sacremento">
+     <intersections>
+          <intersection id="0" open="true" x="104" y="301"/>
+          <intersection id="0" open="true" x="612" y="340"/>
+          <intersection id="0" open="true" x="134" y="131"/>
+          <intersection id="0" open="true" x="276" y="166"/>
+          <intersection id="0" open="true" x="424" y="203"/>
+          <intersection id="0" open="true" x="573" y="162"/>
+          <intersection id="0" open="true" x="309" y="372"/>
+          <intersection id="0" open="false" x="422" y="421"/>
+     </intersections>
+     <roads>
+          <road int_id1="2" int_id2="3" one_way="false" speed_limit="30"/>
+          <road int_id1="2" int_id2="0" one_way="false" speed_limit="30"/>
+          <road int_id1="0" int_id2="6" one_way="true" speed_limit="30"/>
+          <road int_id1="6" int_id2="7" one_way="false" speed_limit="30"/>
+          <road int_id1="3" int_id2="4" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="5" one_way="false" speed_limit="30"/>
+          <road int_id1="6" int_id2="3" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="7" one_way="false" speed_limit="30"/>
+          <road int_id1="5" int_id2="1" one_way="false" speed_limit="30"/>
+          <road int_id1="1" int_id2="7" one_way="false" speed_limit="30"/>
+     </roads>
+     <start_intersection id="0" image="DefaultStartLocation.png"/>
+     <destination_intersection id="1" image="DefaultDestination.png"/>
+     <money amount="40"/>
+     <police num="2"/>
+     <bandits num="2"/>
+     <zombies num="2"/>
+</level>

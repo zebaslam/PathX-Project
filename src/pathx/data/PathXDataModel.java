@@ -19,6 +19,7 @@ import pathx.PathX.PathXPropertyType;
 import mini_game.MiniGame;
 import mini_game.MiniGameDataModel;
 import mini_game.SpriteType;
+//import mini_game.Viewport1;
 import properties_manager.PropertiesManager;
 import static pathx.PathXConstants.*;
 import pathx.ui.PathXMiniGame;
@@ -79,7 +80,7 @@ public class PathXDataModel extends MiniGameDataModel {
     //POSSIBLE SOURCE OF ERROR!!!
    // public PathXMiniGame    getView()                   {   return view;                    }
 
-    //public Viewport         getViewport()             {   return viewport;                }
+    //public Viewport1    getViewport1()             {   return viewport;                }
     public boolean          isLevelBeingEdited()        {   return levelBeingEdited;        }
     public Image            getBackgroundImage()        {   return backgroundImage;         }
     public Image            getStartingLocationImage()  {   return startingLocationImage;   }

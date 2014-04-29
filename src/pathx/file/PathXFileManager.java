@@ -139,7 +139,7 @@ public class PathXFileManager {
 
         // ONLY OPEN A NEW FILE IF THE USER SAYS OK
             String test=LEVELS_PATH+name;
-            System.out.println(test);
+            //System.out.println(test);
             // GET THE FILE THE USER ENTERED
             File testFile = new File(test);
             if (testFile == null)
@@ -199,7 +199,7 @@ public class PathXFileManager {
             // WE'LL FILL IN SOME OF THE LEVEL OURSELVES
            //PathXDataModel theData = (PathXDataModel)minigame.getDataModel();
             File fileToOpen = new File(levelFile);
-          model = (PathXDataModel)minigame.getDataModel();
+            model = (PathXDataModel)minigame.getDataModel();
             PathXLevel levelToLoad = model.getLevel();
             levelSchema= new File(PATH_DATA+"PathXLevelSchema.xsd");
             levelToLoad.reset();
