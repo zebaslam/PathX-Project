@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <level image="DeathValleyBackground.png" name="Boise">
      <intersections>
-          <intersection id="0" open="true" x="97" y="306"/>
+          <intersection id="0" open="true" x="56" y="221"/>
           <intersection id="0" open="true" x="567" y="258"/>
-          <intersection id="0" open="true" x="129" y="149"/>
+          <intersection id="0" open="true" x="170" y="222"/>
           <intersection id="0" open="true" x="249" y="110"/>
           <intersection id="0" open="true" x="364" y="159"/>
           <intersection id="0" open="true" x="211" y="423"/>
-          <intersection id="0" open="false" x="275" y="234"/>
+          <intersection id="0" open="false" x="322" y="214"/>
      </intersections>
      <roads>
           <road int_id1="2" int_id2="0" one_way="false" speed_limit="40"/>

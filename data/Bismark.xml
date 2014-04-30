@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <level image="SANTAFE.jpg" name="Santa Fe">
      <intersections>
-          <intersection id="0" open="true" x="141" y="265"/>
+          <intersection id="0" open="true" x="72" y="203"/>
           <intersection id="0" open="true" x="89" y="455"/>
-          <intersection id="0" open="true" x="132" y="106"/>
+          <intersection id="0" open="true" x="73" y="94"/>
           <intersection id="0" open="true" x="189" y="453"/>
           <intersection id="0" open="true" x="343" y="255"/>
           <intersection id="0" open="false" x="299" y="36"/>
-          <intersection id="0" open="true" x="489" y="69"/>
+          <intersection id="0" open="true" x="487" y="203"/>
           <intersection id="0" open="true" x="499" y="392"/>
           <intersection id="0" open="true" x="643" y="58"/>
           <intersection id="0" open="true" x="652" y="405"/>
@@ -34,7 +34,7 @@
           <road int_id1="2" int_id2="6" one_way="false" speed_limit="10"/>
           <road int_id1="10" int_id2="12" one_way="true" speed_limit="100"/>
           <road int_id1="9" int_id2="13" one_way="true" speed_limit="100"/>
-          <road int_id1="6" int_id2="0" one_way="true" speed_limit="30"/>
+          <road int_id1="6" int_id2="0" one_way="false" speed_limit="30"/>
           <road int_id1="8" int_id2="7" one_way="false" speed_limit="10"/>
           <road int_id1="7" int_id2="14" one_way="false" speed_limit="10"/>
           <road int_id1="1" int_id2="3" one_way="false" speed_limit="30"/>
@@ -43,7 +43,7 @@
      <start_intersection id="0" image="DefaultStartLocation.png"/>
      <destination_intersection id="1" image="DefaultDestination.png"/>
      <money amount="220"/>
-     <police num="9"/>
-     <bandits num="7"/>
-     <zombies num="8"/>
+     <police num="3"/>
+     <bandits num="3"/>
+     <zombies num="3"/>
 </level>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<level image="TEXAS.JPG" name="San antonio">
+     <intersections>
+          <intersection id="0" open="true" x="283" y="213"/>
+          <intersection id="0" open="true" x="702" y="214"/>
+          <intersection id="0" open="true" x="488" y="211"/>
+          <intersection id="0" open="true" x="480" y="72"/>
+          <intersection id="0" open="true" x="169" y="97"/>
+          <intersection id="0" open="true" x="40" y="104"/>
+          <intersection id="0" open="true" x="37" y="205"/>
+          <intersection id="0" open="true" x="129" y="207"/>
+          <intersection id="0" open="true" x="51" y="295"/>
+          <intersection id="0" open="true" x="120" y="295"/>
+          <intersection id="0" open="true" x="45" y="389"/>
+          <intersection id="0" open="true" x="117" y="384"/>
+          <intersection id="0" open="true" x="44" y="501"/>
+          <intersection id="0" open="true" x="97" y="497"/>
+          <intersection id="0" open="true" x="184" y="491"/>
+          <intersection id="0" open="true" x="294" y="479"/>
+          <intersection id="0" open="true" x="408" y="468"/>
+          <intersection id="0" open="true" x="550" y="514"/>
+          <intersection id="0" open="true" x="726" y="428"/>
+          <intersection id="0" open="false" x="849" y="414"/>
+          <intersection id="0" open="true" x="825" y="148"/>
+          <intersection id="0" open="true" x="645" y="97"/>
+     </intersections>
+     <roads>
+          <road int_id1="0" int_id2="2" one_way="true" speed_limit="30"/>
+          <road int_id1="2" int_id2="3" one_way="false" speed_limit="30"/>
+          <road int_id1="3" int_id2="4" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="5" one_way="false" speed_limit="30"/>
+          <road int_id1="5" int_id2="7" one_way="false" speed_limit="30"/>
+          <road int_id1="7" int_id2="9" one_way="false" speed_limit="30"/>
+          <road int_id1="9" int_id2="8" one_way="false" speed_limit="30"/>
+          <road int_id1="8" int_id2="6" one_way="false" speed_limit="30"/>
+          <road int_id1="6" int_id2="7" one_way="false" speed_limit="30"/>
+          <road int_id1="9" int_id2="11" one_way="false" speed_limit="30"/>
+          <road int_id1="8" int_id2="10" one_way="false" speed_limit="30"/>
+          <road int_id1="10" int_id2="13" one_way="false" speed_limit="30"/>
+          <road int_id1="11" int_id2="12" one_way="false" speed_limit="30"/>
+          <road int_id1="12" int_id2="13" one_way="false" speed_limit="30"/>
+          <road int_id1="13" int_id2="14" one_way="false" speed_limit="30"/>
+          <road int_id1="14" int_id2="15" one_way="false" speed_limit="30"/>
+          <road int_id1="15" int_id2="16" one_way="false" speed_limit="30"/>
+          <road int_id1="16" int_id2="17" one_way="false" speed_limit="30"/>
+          <road int_id1="17" int_id2="18" one_way="false" speed_limit="30"/>
+          <road int_id1="18" int_id2="20" one_way="false" speed_limit="30"/>
+          <road int_id1="18" int_id2="19" one_way="false" speed_limit="30"/>
+          <road int_id1="19" int_id2="20" one_way="false" speed_limit="30"/>
+          <road int_id1="20" int_id2="21" one_way="false" speed_limit="30"/>
+          <road int_id1="21" int_id2="1" one_way="false" speed_limit="30"/>
+          <road int_id1="15" int_id2="4" one_way="true" speed_limit="30"/>
+          <road int_id1="16" int_id2="2" one_way="true" speed_limit="40"/>
+          <road int_id1="16" int_id2="18" one_way="false" speed_limit="30"/>
+          <road int_id1="21" int_id2="16" one_way="true" speed_limit="30"/>
+     </roads>
+     <start_intersection id="0" image="DefaultStartLocation.png"/>
+     <destination_intersection id="1" image="DefaultDestination.png"/>
+     <money amount="340"/>
+     <police num="5"/>
+     <bandits num="5"/>
+     <zombies num="5"/>
+</level>

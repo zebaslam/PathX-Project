@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <level image="GrandCanyon.jpg" name="Phoenix">
      <intersections>
-          <intersection id="0" open="true" x="282" y="228"/>
+          <intersection id="0" open="true" x="54" y="123"/>
           <intersection id="0" open="true" x="681" y="78"/>
-          <intersection id="0" open="true" x="282" y="72"/>
-          <intersection id="0" open="true" x="147" y="156"/>
-          <intersection id="0" open="true" x="160" y="286"/>
+          <intersection id="0" open="true" x="280" y="125"/>
+          <intersection id="0" open="true" x="170" y="211"/>
+          <intersection id="0" open="true" x="174" y="327"/>
           <intersection id="0" open="true" x="282" y="335"/>
           <intersection id="0" open="true" x="391" y="145"/>
           <intersection id="0" open="true" x="570" y="144"/>
@@ -32,7 +32,7 @@
      <start_intersection id="0" image="DefaultStartLocation.png"/>
      <destination_intersection id="1" image="DefaultDestination.png"/>
      <money amount="160"/>
-     <police num="6"/>
-     <bandits num="5"/>
-     <zombies num="5"/>
+     <police num="3"/>
+     <bandits num="2"/>
+     <zombies num="2"/>
 </level>
