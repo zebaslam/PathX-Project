@@ -83,6 +83,7 @@ public class PathX {
         IMAGE_BUTTON_PAUSE,
         IMAGE_BUTTON_PAUSE_MOUSE_OVER,  
         IMAGE_WINDOW_ICON,
+        IMAGE_PLAYER,
      
         /*Direction Buttons*/
         IMAGE_BUTTON_UP,

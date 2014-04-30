@@ -48,6 +48,10 @@ public class PathXPanel extends JPanel {
 
     private PathXMiniGame game1;
     Viewport viewport;
+    
+    
+    // WE'LL USE THIS AS THE BASE IMAGE FOR RENDERING OUR PLAYER
+    private BufferedImage playerImage;
 
     // WE'LL USE THIS TO FORMAT SOME TEXT FOR DISPLAY PURPOSES
     private NumberFormat numberFormatter;
@@ -119,6 +123,7 @@ public class PathXPanel extends JPanel {
                   renderGUIControls(g);
                  renderRoads(g2);
                  renderIntersections(g2);
+                 renderPlayer(g);
              }
          
             // RENDER THE ROADS
@@ -138,8 +143,13 @@ public class PathXPanel extends JPanel {
         // GET EACH DECOR IMAGE ONE AT A TIME
         Collection<Sprite> decorSprites = game.getGUIDecor().values();
         for (Sprite s : decorSprites) {
-            if (s.getSpriteType().getSpriteTypeID() != BACKGROUND_TYPE) {
+            if (s.getSpriteType().getSpriteTypeID() != BACKGROUND_TYPE ) {
+                if(s.getSpriteType().getSpriteTypeID().equals(PLAYER_TYPE)){
+                    
+                }
+                else{
                 renderSprite(g, s);
+                }
             }
         }
 
@@ -165,6 +175,22 @@ public class PathXPanel extends JPanel {
         }
     }
 
+    
+      public void renderPlayer(Graphics g) {
+        // ONLY RENDER THE VISIBLE ONES
+          Sprite s=game.getGUIDecor().get(PLAYER_TYPE);
+        if (!s.getState().equals(INVISIBLE_STATE.toString())) {
+            SpriteType bgST = s.getSpriteType();
+            Image img = bgST.getStateImage(s.getState());
+            Intersection first= data.getStartingLocation();
+            
+            
+            int x= first.getX();
+            int y=first.getY();
+            g.drawImage(img, x+30, y-15, bgST.getWidth(), bgST.getHeight(), null);
+
+        }
+    }
     public void renderSprite(Graphics g, Sprite s) {
         // ONLY RENDER THE VISIBLE ONES
         if (!s.getState().equals(INVISIBLE_STATE.toString())) {
@@ -757,4 +783,13 @@ public class PathXPanel extends JPanel {
         g2.setTransform(oldAt);
     }
 
+      /**
+     * This mutator method sets the base image to use for rendering tiles.
+     * 
+     * @param initBlankTileImage The image to use as the base for rendering tiles.
+     */
+    public void setPlayerImage(BufferedImage initBlankTileImage)
+    {
+        playerImage = initBlankTileImage;
+    }
 }

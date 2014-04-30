@@ -466,6 +466,16 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, LEVEL_CLOSE_X, LEVEL_CLOSE_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(CLOSE_DIALOG_BUTTON_TYPE, s);
 
+        String player = props.getProperty(PathXPropertyType.IMAGE_PLAYER);
+        sT = new SpriteType(PLAYER_TYPE);
+        img = loadImage(imgPath + player);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String playerMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_PLAYER);
+        img = loadImage(imgPath + playerMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(PLAYER_TYPE, s);
+        
         x = guiDecor.get(BACKGROUND_TYPE).getX();
         y = guiDecor.get(BACKGROUND_TYPE).getY();
         setInitialValues(x, y);
@@ -539,6 +549,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(PLAYER_TYPE).setEnabled(false);
         currentScreenState = HELP_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true);
@@ -624,6 +636,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(PLAYER_TYPE).setEnabled(false);
         currentScreenState = SETTINGS_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true);
@@ -702,6 +716,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(true);
+        guiDecor.get(PLAYER_TYPE).setState(VISIBLE_STATE.toString());
+        guiDecor.get(PLAYER_TYPE).setEnabled(true);
         currentScreenState = GAME_SCREEN_STATE;
 
         audio.play(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString(), true);
@@ -787,6 +803,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(true);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+         guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(PLAYER_TYPE).setEnabled(false);
         
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
@@ -870,6 +888,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(PLAYER_TYPE).setEnabled(false);
         
         currentScreenState = MENU_SCREEN_STATE;
         data.setGameState(MiniGameState.NOT_STARTED);

@@ -44,6 +44,8 @@ public class PathXConstants {
      // FOR SCROLLING THE VIEWPORT
     public static final int SCROLL_SPEED = 6;
     
+   public static final int MAX_MOVE_VELOCITY = 20;
+    
     // INITIAL START/DEST LOCATIONS
     public static final int DEFAULT_START_X = 32;
     public static final int DEFAULT_START_Y = 100;
@@ -139,6 +141,7 @@ public class PathXConstants {
     public static final String LEVEL_19_BUTTON_TYPE="LEVEL_19_BUTTON_TYPE";
     public static final String LEVEL_20_BUTTON_TYPE="LEVEL_20_BUTTON_TYPE";
     
+    public static final String PLAYER_TYPE="PLAYER_TYPE";
     
     // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE FIVE SCREENS
     public static final String MENU_SCREEN_STATE = "MENU_SCREEN_STATE";
@@ -296,6 +299,9 @@ public class PathXConstants {
     
     public static final int GOAL_X= 0;
     public static final int GOAL_Y= BALANCE_Y+20;
+    
+    public static final int PLAYER_X=0;
+    public static final int PLAYER_Y=0;
     
     //For dialogs
     public static final String LEVEL_INFO_DIALOG_TYPE = "LEVEL_INFO_DIALOG_TYPE";

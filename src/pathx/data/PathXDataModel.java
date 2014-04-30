@@ -22,6 +22,7 @@ import mini_game.SpriteType;
 //import mini_game.Viewport1;
 import properties_manager.PropertiesManager;
 import static pathx.PathXConstants.*;
+import pathx.ui.PathXCarState;
 import pathx.ui.PathXMiniGame;
 import pathx.ui.PathXPanel;
 
@@ -69,7 +70,7 @@ public class PathXDataModel extends MiniGameDataModel {
     public PathXDataModel(MiniGame initMiniGame){
         miniGame= initMiniGame;
         level = new PathXLevel();
-         levelBeingEdited = false;
+         //levelBeingEdited = false;
         startRoadIntersection = null;
         
       //  view = miniGame
@@ -422,7 +423,7 @@ public class PathXDataModel extends MiniGameDataModel {
 
         // INITIALIZE THE PLAYER RECORD IF NECESSARY
         /**
-        SortingHatRecord playerRecord = ((PathXMiniGame) miniGame).getPlayerRecord();
+        PathXRecord playerRecord = ((PathXMiniGame) miniGame).getPlayerRecord();
         if (!playerRecord.hasLevel(levelName))
         {
             playerRecord.addLevel(levelName, initSortingAlgorithm.name);
@@ -499,6 +500,9 @@ public class PathXDataModel extends MiniGameDataModel {
     public int getGoal(){
         return goal;
     }
+    
+
+
     /**
      * This method is for updating any debug text to present to the screen. In a
      * graphical application like this it's sometimes useful to display data in

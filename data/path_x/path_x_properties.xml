@@ -27,6 +27,7 @@
         <property name="IMAGE_WINDOW_ICON"                  value="./path_x/WindowIcon.png"></property>
         <property name="IMAGE_BUTTON_PAUSE"                 value="./path_x/PauseButton.png"></property>
         <property name="IMAGE_BUTTON_PAUSE_MOUSE_OVER"      value="./path_x/PauseButtonMouseOver.png"></property>
+        <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
         <property name="HELP_FILE_NAME"                     value="Help.html"></property>
         
         <!-- Dialog stuff -->

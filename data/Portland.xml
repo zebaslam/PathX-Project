@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <level image="PortlandBackground.png" name="Portland">
      <intersections>
-          <intersection id="0" open="true" x="190" y="294"/>
+          <intersection id="0" open="true" x="139" y="190"/>
           <intersection id="0" open="true" x="723" y="190"/>
           <intersection id="0" open="true" x="511" y="226"/>
           <intersection id="0" open="true" x="379" y="186"/>
