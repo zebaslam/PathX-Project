@@ -728,14 +728,18 @@ public class PathXMiniGame extends MiniGame {
         guiDialogs.get(LEVEL_INFO_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(true);
-
-        float x = getX();
-        float y = getY();
-        resetBackground(x, y);
+        
+        Sprite player = guiDecor.get(PLAYER_TYPE);
+        Intersection first=((PathXDataModel)getDataModel()).getStartingLocation();
+        int x = first.getX();
+        int y = first.getY();
+        player.setX(x + 30);
+        player.setY(y - 15);
+        
+        float ex = getX();
+        float why = getY();
+        resetBackground(ex, why);
         setScroll(false);
-        
-        
-        
     }
 
     public void switchToLevelSelectScreen() {
@@ -1218,11 +1222,19 @@ public class PathXMiniGame extends MiniGame {
           PathXDataModel d = (PathXDataModel) data;
             //System.out.println(d.getLevel().getIntersections());
             ArrayList<Intersection> intersections = d.getLevel().getIntersections();
-//      
+              Sprite player = guiDecor.get(PLAYER_TYPE);
             for (Intersection i: intersections) {
                 i.setY(i.getY() - 15);
             }
-        
+            player.setY(player.getY()-15);
+            //float x = guiDecor.get(PLAYER_TYPE).getX();
+            //float y = guiDecor.get(PLAYER_TYPE).getY();
+            //guiDecor.get(PLAYER_TYPE).setX(x);
+            //guiDecor.get(PLAYER_TYPE).setY(y + 45);
+           // getCanvas().repaint();
+           //Player player=((PathXDataModel)data).getPlayer();
+           //player.setX(x);
+           //player.setY(y+45);
         }
         scrollNum = 0;
         boolean scrollvalue = getScroll();
@@ -1484,6 +1496,8 @@ public class PathXMiniGame extends MiniGame {
                 i.setY(i.getY() +15);
             }
         }
+        Sprite player = guiDecor.get(PLAYER_TYPE);
+        player.setY(player.getY()+15);
         scrollNum = 1;
         boolean scrollvalue = getScroll();
         if (scrollvalue == true) {
@@ -1506,7 +1520,8 @@ public class PathXMiniGame extends MiniGame {
         PathXDataModel d = (PathXDataModel) data;
             
             ArrayList<Intersection> intersections = d.getLevel().getIntersections();
-
+        Sprite player = guiDecor.get(PLAYER_TYPE);
+        player.setX(player.getX()-15);
             for (Intersection i: intersections) {
                 i.setX(i.getX() - 15);
             }
@@ -1531,6 +1546,8 @@ public class PathXMiniGame extends MiniGame {
         if(currentScreenState.equals(GAME_SCREEN_STATE)){
              PathXDataModel d = (PathXDataModel) data;
             //System.out.println(d.getLevel().getIntersections());
+             Sprite player = guiDecor.get(PLAYER_TYPE);
+             player.setX(player.getX()+15);
             ArrayList<Intersection> intersections = d.getLevel().getIntersections();
             for (Intersection i: intersections) {
                 i.setX(i.getX() + 15);

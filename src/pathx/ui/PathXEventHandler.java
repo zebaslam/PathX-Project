@@ -139,8 +139,9 @@ public class PathXEventHandler {
         if (level==20){
             name="Missouri.xml";
         }
-        game.switchToGameScreen();
         filemanager.promptToOpen(name);
+        game.switchToGameScreen();
+        
     }
     public void respondToKeyPress(int keyCode) {
         PathXDataModel data = (PathXDataModel) game.getDataModel();

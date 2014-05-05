@@ -176,7 +176,7 @@ public class PathXFileManager {
             } 
             else
             {
-                // TELL THE USER ABOUT THE ERROR
+                // The file did not load properly
               System.out.println("ERROR");
                 return false;
             }
@@ -254,6 +254,7 @@ public class PathXFileManager {
             attributes = policeNode.getAttributes();
             String policeText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numPolice = Integer.parseInt(policeText);
+            System.out.println("Police:" +numPolice);
             levelToLoad.setNumPolice(numPolice);
             
             // LOAD THE NUMBER OF BANDITS
@@ -262,13 +263,15 @@ public class PathXFileManager {
             String banditsText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numBandits = Integer.parseInt(banditsText);
             levelToLoad.setNumBandits(numBandits);
+            System.out.println("Bandits:" +numBandits);
             
             // LOAD THE NUMBER OF ZOMBIES
             Node zombiesNode = doc.getElementsByTagName(ZOMBIES_NODE).item(0);
             attributes = zombiesNode.getAttributes();
             String zombiesText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numZombies = Integer.parseInt(zombiesText);
-            levelToLoad.setNumZombies(numZombies);            
+            levelToLoad.setNumZombies(numZombies);    
+            System.out.println("Zombies:" +numZombies);
         }
         catch(Exception e)
         {

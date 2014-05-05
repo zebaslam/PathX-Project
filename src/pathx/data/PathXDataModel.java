@@ -25,6 +25,7 @@ import static pathx.PathXConstants.*;
 import pathx.ui.PathXCarState;
 import pathx.ui.PathXMiniGame;
 import pathx.ui.PathXPanel;
+import pathx.ui.Player;
 
 /**
  *
@@ -36,7 +37,8 @@ public class PathXDataModel extends MiniGameDataModel {
     private int levelNum;
     // THIS IS THE LEVEL CURRENTLY BEING EDITING
     PathXLevel level;
-    
+    //This is for the player
+    Player player;
     // DATA FOR RENDERING
     //Viewport viewport;
 
@@ -72,11 +74,12 @@ public class PathXDataModel extends MiniGameDataModel {
         level = new PathXLevel();
          //levelBeingEdited = false;
         startRoadIntersection = null;
-        
+        player=new Player();
       //  view = miniGame
     }
 
        // ACCESSOR METHODS
+    public Player  getPlayer()                          {return player;}
     public PathXLevel       getLevel()                  {   return level;                   }
     //POSSIBLE SOURCE OF ERROR!!!
    // public PathXMiniGame    getView()                   {   return view;                    }

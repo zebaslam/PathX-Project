@@ -15,9 +15,17 @@ import static pathx.PathXConstants.*;
  *
  * @author zeb
  */
-public class Player extends Sprite {
+public class Player {
+//Where  the is player going    
 private float targetx;
 private float targety;
+//Where the player is currently 
+private float x;
+private float y;
+
+//velocity components
+float vX;
+float vY;
 boolean movingToTarget;
 
  public boolean isMovingToTarget() 
@@ -29,8 +37,20 @@ boolean movingToTarget;
         return targetx;
     }
 
+    public void setX(float ex){
+        x=ex;
+    }
+    public void setY (float why){
+        y=why;
+    }
+    public float getX(){
+        return x;
+    }
+    public float getY(){
+        return y;
+    }
     public void setTargetX(float x) {
-        this.x = x;
+        targetx = x;
     }
 
     public float getTargetY() {
@@ -38,11 +58,16 @@ boolean movingToTarget;
     }
 
     public void setTargetY(float y) {
-        this.y = targety;
+        targety=y ;
     }
 
-    public Player(SpriteType initSpriteType, float initX, float initY, float initVx, float initVy, String initState) {
-        super(initSpriteType, initX, initY, initVx, initVy, initState);
+    public Player() {
+        targetx=0;
+        targety=0;
+        x=0;
+        y=0;
+        vX=0;
+        vY=0;
     }
     
         /**
@@ -107,7 +132,7 @@ boolean movingToTarget;
      * 
      * @param game The Sorting Hat game this tile is part of.
      */
-    @Override
+
     public void update(MiniGame game)
     {
       
@@ -125,7 +150,8 @@ boolean movingToTarget;
         // USING ITS CURRENT VELOCITY.
         else
         {
-            super.update(game);
+            x += vX;
+            y += vY;
         }
     }
 }

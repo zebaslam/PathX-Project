@@ -175,21 +175,35 @@ public class PathXPanel extends JPanel {
         }
     }
 
-    
+     //boolean used=true;
       public void renderPlayer(Graphics g) {
         // ONLY RENDER THE VISIBLE ONES
-          Sprite s=game.getGUIDecor().get(PLAYER_TYPE);
+          Sprite s = game.getGUIDecor().get(PLAYER_TYPE);
+          Intersection first= data.getStartingLocation();
+          Player player= data.getPlayer();  
+            
+//            int x= first.getX();
+//            int y=first.getY();
+            //player.setX(x+90);
+            //player.setY(y-45);
+           
+           // if(used==true){
+//            s.setX(x+30);
+//            s.setY(y-15);
+            
+           // }
+            
         if (!s.getState().equals(INVISIBLE_STATE.toString())) {
             SpriteType bgST = s.getSpriteType();
             Image img = bgST.getStateImage(s.getState());
-            Intersection first= data.getStartingLocation();
             
-            
-            int x= first.getX();
-            int y=first.getY();
-            g.drawImage(img, x+30, y-15, bgST.getWidth(), bgST.getHeight(), null);
-
+            g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null);
+            //used=false;
         }
+       // if(used==false){
+               // s.setX(player.getX());
+                //s.setY(player.getY());
+            //}
     }
     public void renderSprite(Graphics g, Sprite s) {
         // ONLY RENDER THE VISIBLE ONES
