@@ -32,6 +32,7 @@ import properties_manager.PropertiesManager;
 import pathx.PathXConstants;
 import pathx.PathX.PathXPropertyType;
 import pathx.data.Intersection;
+import pathx.data.PathXGameGraph;
 import pathx.data.Road;
 import pathx.file.PathXFileManager;
 import pathx.ui.PathXCarState;
@@ -60,6 +61,7 @@ public class PathXMiniGame extends MiniGame {
     //used for making sure the button doesnt move too much
     private int scrollNum = 0;
     private boolean scroll;
+    private PathXGameGraph graph;
     
 
     public int getLevel(){
@@ -466,6 +468,177 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, LEVEL_CLOSE_X, LEVEL_CLOSE_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(CLOSE_DIALOG_BUTTON_TYPE, s);
 
+        //RENDER THE SPECIALS
+        String greenLightButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_GREEN_LIGHT);
+        sT = new SpriteType(SPECIAL_GREENLIGHT_TYPE);
+        img = loadImage(imgPath + greenLightButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String greenLightButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_GREEN_LIGHT_MOUSE_OVER);
+        img = loadImage(imgPath + greenLightButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, GREEN_LIGHT_X,GREEN_LIGHT_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_GREENLIGHT_TYPE, s);
+        
+        String redLightButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_RED_LIGHT);
+        sT = new SpriteType(SPECIAL_REDLIGHT_TYPE);
+        img = loadImage(imgPath + redLightButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String redLightButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_RED_LIGHT_MOUSE_OVER);
+        img = loadImage(imgPath + redLightButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, RED_LIGHT_X,RED_LIGHT_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_REDLIGHT_TYPE, s);
+        
+        String freezeTimeButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_FREEZE_TIME);
+        sT = new SpriteType(SPECIAL_FREEZETIME_TYPE);
+        img = loadImage(imgPath + freezeTimeButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String freezeTimeButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_FREEZE_TIME_MOUSE_OVER);
+        img = loadImage(imgPath + freezeTimeButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, FREEZE_TIME_X,FREEZE_TIME_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_FREEZETIME_TYPE, s);
+        
+        String decreaseButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_DECREASE_SPEED);
+        sT = new SpriteType(SPECIAL_DECREASE_SPEED_TYPE);
+        img = loadImage(imgPath + decreaseButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String decreaseButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_DECREASE_SPEED_MOUSE_OVER);
+        img = loadImage(imgPath + decreaseButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, DECREASE_SPEED_X,DECREASE_SPEED_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_DECREASE_SPEED_TYPE, s);
+        
+        String increaseButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INCREASE_SPEED);
+        sT = new SpriteType(SPECIAL_INCREASE_SPEED_TYPE);
+        img = loadImage(imgPath + increaseButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String increaseButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INCREASE_SPEED_MOUSE_OVER);
+        img = loadImage(imgPath + increaseButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, INCREASE_SPEED_X,INCREASE_SPEED_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_INCREASE_SPEED_TYPE, s);
+        
+        String increasePlayerButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INCREASE_PLAYER_SPEED);
+        sT = new SpriteType(SPECIAL_PLAYER_INCREASE_SPEED_TYPE);
+        img = loadImage(imgPath + increasePlayerButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String increasePlayerButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INCREASE_PLAYER_SPEED_MOUSE_OVER);
+        img = loadImage(imgPath + increasePlayerButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, INCREASE_PLAYER_SPEED_X,INCREASE_PLAYER_SPEED_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_PLAYER_INCREASE_SPEED_TYPE, s);
+        
+        String flatTireButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_FLAT_TIRE);
+        sT = new SpriteType(SPECIAL_FLAT_TIRE);
+        img = loadImage(imgPath + flatTireButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String flatTireButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_FLAT_TIRE_MOUSE_OVER);
+        img = loadImage(imgPath + flatTireButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, FLAT_TIRE_X,FLAT_TIRE_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_FLAT_TIRE, s);
+        
+        String emptyGasButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_EMPTY_GAS);
+        sT = new SpriteType(SPECIAL_EMPTY_GAS);
+        img = loadImage(imgPath + emptyGasButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String emptyGasButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_EMPTY_GAS_MOUSE_OVER);
+        img = loadImage(imgPath + emptyGasButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, EMPTY_GAS_X,EMPTY_GAS_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_EMPTY_GAS, s);
+        
+        String closeroadButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_CLOSE_ROAD);
+        sT = new SpriteType(SPECIAL_CLOSE_ROAD);
+        img = loadImage(imgPath + closeroadButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String closeroadButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_CLOSE_ROAD_MOUSE_OVER);
+        img = loadImage(imgPath + closeroadButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, CLOSE_ROAD_X,CLOSE_ROAD_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_CLOSE_ROAD, s);
+        
+        String closeintersectionButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_CLOSE_INTERSECTION);
+        sT = new SpriteType(SPECIAL_CLOSE_INTERSECTION);
+        img = loadImage(imgPath + closeintersectionButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String closeintersectionButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_CLOSE_INTERSECTION_MOUSE_OVER);
+        img = loadImage(imgPath + closeintersectionButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, CLOSE_INTERSECTION_X,CLOSE_INTERSECTION_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_CLOSE_INTERSECTION, s);
+        
+        String openintersectionButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_OPEN_INTERSECTION);
+        sT = new SpriteType(SPECIAL_OPEN_INTERSECTION);
+        img = loadImage(imgPath + openintersectionButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String openintersectionButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_OPEN_INTERSECTION_MOUSE_OVER);
+        img = loadImage(imgPath + openintersectionButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, OPEN_INTERSECTION_X,OPEN_INTERSECTION_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_OPEN_INTERSECTION, s);
+        
+        String stealButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_STEAL);
+        sT = new SpriteType(SPECIAL_STEAL);
+        img = loadImage(imgPath + stealButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String stealButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_STEAL_MOUSE_OVER);
+        img = loadImage(imgPath + stealButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, STEAL_X,STEAL_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_STEAL, s);
+        
+        String mindcontrolButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_MIND_CONTROL);
+        sT = new SpriteType(SPECIAL_MIND_CONTROL);
+        img = loadImage(imgPath + mindcontrolButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String mindcontrolButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_MIND_CONTROL_MOUSE_OVER);
+        img = loadImage(imgPath + mindcontrolButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, MIND_CONTROL_X,MIND_CONTROL_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_MIND_CONTROL, s);
+        
+        String intangButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INTANG);
+        sT = new SpriteType(SPECIAL_INTANG);
+        img = loadImage(imgPath + intangButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String intangButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INTANG_MOUSE_OVER);
+        img = loadImage(imgPath + intangButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, INTANG_X,INTANG_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_INTANG, s);
+        
+        String mtButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_MINDLESS_TERROR);
+        sT = new SpriteType(SPECIAL_MINDLESS_TERROR);
+        img = loadImage(imgPath + mtButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String mtButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_MINDLESS_TERROR_MOUSE_OVER);
+        img = loadImage(imgPath + mtButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, MIND_TERROR_X,MIND_TERROR_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_MINDLESS_TERROR, s);
+        
+        String flyButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_FLYING);
+        sT = new SpriteType(SPECIAL_FLYING);
+        img = loadImage(imgPath + flyButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String flyButtonMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_FLYING_MOUSE_OVER);
+        img = loadImage(imgPath + flyButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, FLYING_X,FLYING_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_FLYING, s);
+        
+        String invinButton = props.getProperty(PathXPropertyType.IMAGE_SPECIAL_INVINCIBILITY);
+        sT = new SpriteType(SPECIAL_INVINCIBILITY);
+        img = loadImage(imgPath + invinButton);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String invinButtonMouseOverButton = props.getProperty(PathXPropertyType. IMAGE_SPECIAL_INVINCIBILITY_MOUSE_OVER);
+        img = loadImage(imgPath + invinButtonMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, INVINC_X,INVINC_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SPECIAL_INVINCIBILITY, s);
+        
         String player = props.getProperty(PathXPropertyType.IMAGE_PLAYER);
         sT = new SpriteType(PLAYER_TYPE);
         img = loadImage(imgPath + player);
@@ -549,6 +722,39 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FLAT_TIRE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FLAT_TIRE).setEnabled(false);
+        guiButtons.get(SPECIAL_EMPTY_GAS).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_EMPTY_GAS).setEnabled(false);
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setEnabled(false);
+        guiButtons.get(SPECIAL_CLOSE_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_INTERSECTION).setEnabled(false);
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setEnabled(false);
+        guiButtons.get(SPECIAL_STEAL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_STEAL).setEnabled(false);
+        guiButtons.get(SPECIAL_MIND_CONTROL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MIND_CONTROL).setEnabled(false);
+        guiButtons.get(SPECIAL_INTANG).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INTANG).setEnabled(false);
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setEnabled(false);
+        guiButtons.get(SPECIAL_FLYING).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_FLYING).setEnabled(false);
+        guiButtons.get(SPECIAL_INVINCIBILITY).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(false);
+        
         guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(false);
         currentScreenState = HELP_SCREEN_STATE;
@@ -636,6 +842,41 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FLAT_TIRE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FLAT_TIRE).setEnabled(false);
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setEnabled(false);
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setEnabled(false);
+        guiButtons.get(SPECIAL_CLOSE_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_INTERSECTION).setEnabled(false);
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setEnabled(false);
+         guiButtons.get(SPECIAL_STEAL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_STEAL).setEnabled(false);
+        guiButtons.get(SPECIAL_MIND_CONTROL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MIND_CONTROL).setEnabled(false);
+        guiButtons.get(SPECIAL_INTANG).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INTANG).setEnabled(false);
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setEnabled(false);
+        guiButtons.get(SPECIAL_FLYING).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_FLYING).setEnabled(false);
+        guiButtons.get(SPECIAL_INVINCIBILITY).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(false);
+        
         guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(false);
         currentScreenState = SETTINGS_SCREEN_STATE;
@@ -653,6 +894,7 @@ public class PathXMiniGame extends MiniGame {
         setScroll(false);
     }
     public void switchToGameScreen() {
+        
         guiDecor.get(BACKGROUND_TYPE).setState(GAME_SCREEN_STATE);
         guiButtons.get(PLAY_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PLAY_BUTTON_TYPE).setEnabled(false);
@@ -716,14 +958,89 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setEnabled(false);
+       
         guiDecor.get(PLAYER_TYPE).setState(VISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(true);
         currentScreenState = GAME_SCREEN_STATE;
-
         audio.play(PathXPropertyType.SONG_CUE_GAME_SCREEN.toString(), true);
         audio.stop(PathXPropertyType.SONG_CUE_LEVEL_SCREEN.toString());
         audio.stop(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString());
-
+        
+        if (level>=2){
+            guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(VISIBLE_STATE.toString());
+            guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(true);
+        }
+        if(level>=3){
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setEnabled(true);
+        }
+        if (level>=4){
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setEnabled(true);
+        }
+        if(level>=5){
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setEnabled(true);
+            
+        }
+        if (level>=6){
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setEnabled(true);
+        }
+        if(level>=7){
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setEnabled(true);
+        }
+        if (level>=8){
+        guiButtons.get( SPECIAL_FLAT_TIRE).setState(VISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FLAT_TIRE).setEnabled(true);
+        }
+        if(level>=9){
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setState(VISIBLE_STATE.toString());
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setEnabled(true);
+        }
+        if(level>=10){
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setEnabled(true);
+        }
+        if(level>=11){
+        guiButtons.get(SPECIAL_CLOSE_INTERSECTION).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_INTERSECTION).setEnabled(true);
+       
+        }
+        if(level>=12){
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setEnabled(true);
+        }
+        if(level>=13){
+        guiButtons.get(SPECIAL_STEAL).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_STEAL).setEnabled(true);
+        }
+        if(level>=14){
+        guiButtons.get(SPECIAL_MIND_CONTROL).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MIND_CONTROL).setEnabled(true);
+        }
+        if(level>=15){
+        guiButtons.get(SPECIAL_INTANG).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INTANG).setEnabled(true);
+        }
+        if(level>=16){
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setEnabled(true);
+        }
+       if(level>=17){
+        guiButtons.get(SPECIAL_FLYING).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_FLYING).setEnabled(true);
+       }
+       if(level>18){
+        guiButtons.get(SPECIAL_INVINCIBILITY).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(true);
+       }
+       
         guiDialogs.get(SETTINGS_DIALOG_TYPE).setState(INVISIBLE_STATE.toString());
         guiDialogs.get(LEVEL_INFO_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
@@ -735,7 +1052,8 @@ public class PathXMiniGame extends MiniGame {
         int y = first.getY();
         player.setX(x + 30);
         player.setY(y - 15);
-        
+        //player.setX(511);
+        //player.setY(226);
         float ex = getX();
         float why = getY();
         resetBackground(ex, why);
@@ -812,6 +1130,41 @@ public class PathXMiniGame extends MiniGame {
         
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
+        
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FLAT_TIRE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FLAT_TIRE).setEnabled(false);
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setEnabled(false);
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setEnabled(false);
+        guiButtons.get(  SPECIAL_CLOSE_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(  SPECIAL_CLOSE_INTERSECTION).setEnabled(false);
+        guiButtons.get( SPECIAL_OPEN_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setEnabled(false);
+        guiButtons.get(SPECIAL_STEAL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_STEAL).setEnabled(false);
+        guiButtons.get(SPECIAL_MIND_CONTROL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MIND_CONTROL).setEnabled(false);
+        guiButtons.get(SPECIAL_INTANG).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INTANG).setEnabled(false);
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setEnabled(false);
+        guiButtons.get(SPECIAL_FLYING).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_FLYING).setEnabled(false);
+        guiButtons.get(SPECIAL_INVINCIBILITY).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(false);
         currentScreenState = LEVEL_SELECT_SCREEN_STATE;
 
         guiDialogs.get(SETTINGS_DIALOG_TYPE).setState(INVISIBLE_STATE.toString());
@@ -892,6 +1245,40 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(false);
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_REDLIGHT_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_DECREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setEnabled(false);
+        guiButtons.get( SPECIAL_FLAT_TIRE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get( SPECIAL_FLAT_TIRE).setEnabled(false);
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(  SPECIAL_EMPTY_GAS).setEnabled(false);
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_CLOSE_ROAD).setEnabled(false);
+        guiButtons.get(  SPECIAL_CLOSE_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(  SPECIAL_CLOSE_INTERSECTION).setEnabled(false);
+        guiButtons.get( SPECIAL_OPEN_INTERSECTION).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_OPEN_INTERSECTION).setEnabled(false);
+         guiButtons.get(SPECIAL_STEAL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_STEAL).setEnabled(false);
+        guiButtons.get(SPECIAL_MIND_CONTROL).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MIND_CONTROL).setEnabled(false);
+        guiButtons.get(SPECIAL_INTANG).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INTANG).setEnabled(false);
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_MINDLESS_TERROR).setEnabled(false);
+        guiButtons.get(SPECIAL_FLYING).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_FLYING).setEnabled(false);
+        guiButtons.get(SPECIAL_INVINCIBILITY).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(false);
         guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(false);
         
@@ -1151,6 +1538,9 @@ public class PathXMiniGame extends MiniGame {
        
         data = new PathXDataModel(this);
         fileManager = new PathXFileManager(this, (PathXDataModel)data);
+        graph= new PathXGameGraph(this);
+       ((PathXDataModel)data).setGraph(graph);
+        //System.out.println("no problem");
     }
 
     @Override

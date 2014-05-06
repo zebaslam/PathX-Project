@@ -30,6 +30,44 @@
         <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
         <property name="HELP_FILE_NAME"                     value="Help.html"></property>
         
+        <!--Specials-->
+        <property name="IMAGE_SPECIAL_GREEN_LIGHT"              value="./path_x/specialGreenLight.png"></property>
+        <property name="IMAGE_SPECIAL_GREEN_LIGHT_MOUSE_OVER"   value="./path_x/specialGreenLightMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_RED_LIGHT"                value="./path_x/specialRedLight.png"></property>
+        <property name="IMAGE_SPECIAL_RED_LIGHT_MOUSE_OVER"     value="./path_x/specialRedLightMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_FREEZE_TIME"              value="./path_x/specialFreezeUnfreezeTime.png"></property>
+        <property name="IMAGE_SPECIAL_FREEZE_TIME_MOUSE_OVER"   value="./path_x/specialFreezeUnfreezeTimeMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_DECREASE_SPEED"             value="./path_x/specialDecreaseSpeedLimit.png"></property>
+        <property name="IMAGE_SPECIAL_DECREASE_SPEED_MOUSE_OVER" value="./path_x/specialDecreaseSpeedLimitMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_INCREASE_SPEED"             value="./path_x/specialIncreaseSpeedLimit.png"></property>
+        <property name="IMAGE_SPECIAL_INCREASE_SPEED_MOUSE_OVER" value="./path_x/specialIncreaseSpeedLimitMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_INCREASE_PLAYER_SPEED"             value="./path_x/specialIncreasePlayerSpeed.png"></property>
+        <property name="IMAGE_SPECIAL_INCREASE_PLAYER_SPEED_MOUSE_OVER" value="./path_x/specialIncreasePlayerSpeedMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_FLAT_TIRE"                    value="./path_x/specialFlatTire.png"></property>
+        <property name="IMAGE_SPECIAL_FLAT_TIRE_MOUSE_OVER"      value="./path_x/specialFlatTireMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_EMPTY_GAS"                    value="./path_x/specialEmptyGasTank.png"></property>
+        <property name="IMAGE_SPECIAL_EMPTY_GAS_MOUSE_OVER" value="./path_x/specialEmptyGasTankMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_CLOSE_ROAD"             value="./path_x/specialCloseRoad.png"></property>
+        <property name="IMAGE_SPECIAL_CLOSE_ROAD_MOUSE_OVER" value="./path_x/specialCloseRoadMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_CLOSE_INTERSECTION"             value="./path_x/specialCloseIntersection.png"></property>
+        <property name="IMAGE_SPECIAL_CLOSE_INTERSECTION_MOUSE_OVER" value="./path_x/specialCloseIntersectionMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_OPEN_INTERSECTION"             value="./path_x/specialOpenIntersection.png"></property>
+        <property name="IMAGE_SPECIAL_OPEN_INTERSECTION_MOUSE_OVER" value="./path_x/specialOpenIntersectionMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_STEAL"                        value="./path_x/specialSteal.png"></property>
+        <property name="IMAGE_SPECIAL_STEAL_MOUSE_OVER"             value="./path_x/specialStealMouseOver.png"></property>
+        
+        <property name="IMAGE_SPECIAL_MIND_CONTROL"                 value="./path_x/specialMindControl.png"></property>
+        <property name="IMAGE_SPECIAL_MIND_CONTROL_MOUSE_OVER"      value="./path_x/specialMindControlMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_INTANG"                       value="./path_x/specialIntangibility.png"></property>
+        <property name="IMAGE_SPECIAL_INTANG_MOUSE_OVER"            value="./path_x/specialIntangibilityMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_MINDLESS_TERROR"                 value="./path_x/specialMindlessTerror.png"></property>
+        <property name="IMAGE_SPECIAL_MINDLESS_TERROR_MOUSE_OVER"      value="./path_x/specialMindlessTerrorMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_FLYING"                           value="./path_x/specialFlying.png"></property>
+        <property name="IMAGE_SPECIAL_FLYING_MOUSE_OVER"                value="./path_x/specialFlyingMouseOver.png"></property>
+        <property name="IMAGE_SPECIAL_INVINCIBILITY"                 value="./path_x/specialInvincibility .png"></property>
+        <property name="IMAGE_SPECIAL_INVINCIBILITY_MOUSE_OVER"      value="./path_x/specialInvincibilityMouseOver .png"></property>
+        
+        <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
         <!-- Dialog stuff -->
         <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
         <property name="IMAGE_DIALOG_LEVEL_SELECT"          value="./path_x/LevelDialog.png"></property>

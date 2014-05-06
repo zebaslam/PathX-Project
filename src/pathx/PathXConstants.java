@@ -143,6 +143,23 @@ public class PathXConstants {
     
     public static final String PLAYER_TYPE="PLAYER_TYPE";
     
+    public static final String SPECIAL_GREENLIGHT_TYPE="SPECIAL_GREENLIGHT_TYPE";
+    public static final String SPECIAL_REDLIGHT_TYPE="SPECIAL_REDLIGHT_TYPE";
+    public static final String SPECIAL_FREEZETIME_TYPE="SPECIAL_FREEZETIME_TYPE";
+    public static final String SPECIAL_DECREASE_SPEED_TYPE="SPECIAL_DECREASE_SPEED_TYPE";
+    public static final String SPECIAL_INCREASE_SPEED_TYPE="SPECIAL_INCREASE_SPEED_TYPE";
+    public static final String SPECIAL_PLAYER_INCREASE_SPEED_TYPE="SPECIAL_PLAYER_INCREASE_SPEED_TYPE";
+    public static final String SPECIAL_FLAT_TIRE="SPECIAL_FLAT_TIRE";
+    public static final String SPECIAL_EMPTY_GAS="SPECIAL_EMPTY_GAS";
+    public static final String SPECIAL_CLOSE_INTERSECTION="SPECIAL_CLOSE_INTERSECTION";
+    public static final String SPECIAL_OPEN_INTERSECTION="SPECIAL_OPEN_INTERSECTION";
+    public static final String SPECIAL_CLOSE_ROAD="SPECIAL_CLOSE_ROAD";
+    public static final String SPECIAL_STEAL="SPECIAL_STEAL";
+    public static final String SPECIAL_MIND_CONTROL="SPECIAL_MIND_CONTROL";
+    public static final String SPECIAL_INTANG="SPECIAL_INTANG";
+    public static final String SPECIAL_MINDLESS_TERROR="SPECIAL_MINDLESS_TERROR";
+    public static final String SPECIAL_FLYING="SPECIAL_FLYING";
+    public static final String SPECIAL_INVINCIBILITY="SPECIAL_INVINCIBILITY";
     // WE'LL USE THESE STATES TO CONTROL SWITCHING BETWEEN THE FIVE SCREENS
     public static final String MENU_SCREEN_STATE = "MENU_SCREEN_STATE";
     public static final String LEVEL_SELECT_SCREEN_STATE= "LEVEL_SELECT_STATE";
@@ -303,6 +320,57 @@ public class PathXConstants {
     public static final int PLAYER_X=0;
     public static final int PLAYER_Y=0;
     
+    //specials coordinates
+    public static final int GREEN_LIGHT_X=GAME_LEVEL_NAME_X+180;
+    public static final int GREEN_LIGHT_Y=0;
+    
+    public static final int RED_LIGHT_X=GREEN_LIGHT_X+30;
+    public static final int RED_LIGHT_Y=0;
+    
+    public static final int FREEZE_TIME_X=RED_LIGHT_X+30;
+    public static final int FREEZE_TIME_Y=0;
+    
+    public static final int DECREASE_SPEED_X=FREEZE_TIME_X+30;
+    public static final int DECREASE_SPEED_Y=0;
+    
+    public static final int INCREASE_SPEED_X=DECREASE_SPEED_X+30;
+    public static final int INCREASE_SPEED_Y=0;
+    
+    public static final int INCREASE_PLAYER_SPEED_X=INCREASE_SPEED_X+30;
+    public static final int INCREASE_PLAYER_SPEED_Y=0;
+    
+    public static final int FLAT_TIRE_X=INCREASE_PLAYER_SPEED_X+30;
+    public static final int FLAT_TIRE_Y=0;
+    
+    public static final int EMPTY_GAS_X=FLAT_TIRE_X+30;
+    public static final int EMPTY_GAS_Y=0;
+    
+    public static final int CLOSE_ROAD_X=GREEN_LIGHT_X;
+    public static final int CLOSE_ROAD_Y=32;
+    
+    public static final int CLOSE_INTERSECTION_X=CLOSE_ROAD_X+30;
+    public static final int CLOSE_INTERSECTION_Y=32;
+    
+    public static final int OPEN_INTERSECTION_X=CLOSE_INTERSECTION_X+30;
+    public static final int OPEN_INTERSECTION_Y=32;
+    
+    public static final int STEAL_X=OPEN_INTERSECTION_X+30;
+    public static final int STEAL_Y=32;
+    
+    public static final int MIND_CONTROL_X=STEAL_X+30;
+    public static final int MIND_CONTROL_Y=32;
+    
+    public static final int INTANG_X=MIND_CONTROL_X+30;
+    public static final int INTANG_Y=32;
+    
+    public static final int MIND_TERROR_X=INTANG_X+30;
+    public static final int MIND_TERROR_Y=32;
+    
+    public static final int FLYING_X=MIND_TERROR_X+30;
+    public static final int FLYING_Y=32;
+    
+    public static final int INVINC_X=FLYING_X+30;
+    public static final int INVINC_Y=32;
     //For dialogs
     public static final String LEVEL_INFO_DIALOG_TYPE = "LEVEL_INFO_DIALOG_TYPE";
     public static final String LEVEL_COMPLETE_DIALOG_TYPE = "LEVEL_COMPLETE_DIALOG_TYPE";
