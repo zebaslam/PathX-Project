@@ -6,6 +6,7 @@
 package pathx.ui;
 
 import java.awt.event.KeyEvent;
+import mini_game.MiniGameDataModel;
 import properties_manager.PropertiesManager;
 import static pathx.PathXConstants.GAME_SCREEN_STATE;
 import static pathx.PathXConstants.MENU_SCREEN_STATE;
@@ -22,10 +23,11 @@ public class PathXEventHandler {
 
     private PathXMiniGame game;
  private     PathXFileManager filemanager;
-
+private MiniGameDataModel data;
     public PathXEventHandler(PathXMiniGame initGame) {
         game = initGame;
       filemanager = game.getFileManager();
+      data= game.getDataModel();
     }
 
     public void respondToExitRequest() {
@@ -77,6 +79,68 @@ public class PathXEventHandler {
 
     }
    
+    //all the special event handlers
+    public void respondToGreenLight(){
+        int x=5;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+     public void respondToFreeze(){
+        int x=10;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+      public void respondToSpeedLimit(){
+        int x=15;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToPlayerSpeed(){
+        int x=20;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+        public void respondToFlatTire(){
+        int x=20;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToEmptyGas(){
+        int x=20;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToCloseRoad(){
+        int x=25;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToCloseIntersection(){
+        int x=25;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToOpenIntersection(){
+        int x=25;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+            public void respondToSteal(){
+        int x=30;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+          public void respondToMindControl(){
+        int x=30;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToIntangibility(){
+        int x=30;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToMindlessTerror(){
+        int x=30;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToFlying(){
+        int x=40;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+    }
+         public void respondToInvincibility(){
+        int x=40;
+        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        
+    }
     public void respondToGameScreenSelect(int level){
         String name="";
         if(level==1){
@@ -139,6 +203,7 @@ public class PathXEventHandler {
         if (level==20){
             name="Missouri.xml";
         }
+        ((PathXDataModel)game.getDataModel()).setCurrentLevel(name);
         filemanager.promptToOpen(name);
         game.switchToGameScreen();
         
@@ -153,6 +218,11 @@ public class PathXEventHandler {
             game.ScrollLeft();
         } else if (keyCode == KeyEvent.VK_RIGHT) {
             game.ScrollRight();
+        }
+        else if(keyCode==KeyEvent.VK_1){
+            game.increasePlayerMoney();
+            game.getCanvas().repaint();
+            
         }
        
     }

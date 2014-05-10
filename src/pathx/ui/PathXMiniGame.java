@@ -958,11 +958,6 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(true);
-        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setEnabled(false);
-        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setState(INVISIBLE_STATE.toString());
-        guiButtons.get( SPECIAL_FREEZETIME_TYPE).setEnabled(false);
-       
         guiDecor.get(PLAYER_TYPE).setState(VISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(true);
         currentScreenState = GAME_SCREEN_STATE;
@@ -1036,7 +1031,7 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(SPECIAL_FLYING).setState(VISIBLE_STATE.toString());
         guiButtons.get(SPECIAL_FLYING).setEnabled(true);
        }
-       if(level>18){
+       if(level>=18){
         guiButtons.get(SPECIAL_INVINCIBILITY).setState(VISIBLE_STATE.toString());
         guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(true);
        }
@@ -1313,7 +1308,101 @@ public class PathXMiniGame extends MiniGame {
                 eventHandler.respondToExitRequest();
             }
         });
+          guiButtons.get(SPECIAL_GREENLIGHT_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToGreenLight();
+            }
 
+        });
+           guiButtons.get(SPECIAL_REDLIGHT_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToGreenLight();
+            }
+
+        });
+           guiButtons.get(SPECIAL_FREEZETIME_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToFreeze();
+            }
+
+        });
+              guiButtons.get(SPECIAL_DECREASE_SPEED_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToSpeedLimit();
+            }
+
+        });
+                guiButtons.get(SPECIAL_INCREASE_SPEED_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToSpeedLimit();
+            }
+
+        });
+             guiButtons.get(SPECIAL_PLAYER_INCREASE_SPEED_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToPlayerSpeed();
+            }
+
+        });   
+                guiButtons.get( SPECIAL_FLAT_TIRE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToFlatTire();
+            }
+
+        }); 
+                   guiButtons.get( SPECIAL_EMPTY_GAS).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToEmptyGas();
+            }
+
+        }); 
+                 
+                   guiButtons.get( SPECIAL_CLOSE_ROAD).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToEmptyGas();
+            }
+             }); 
+             
+                       guiButtons.get( SPECIAL_OPEN_INTERSECTION).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToOpenIntersection();
+            }
+             }); 
+                   guiButtons.get( SPECIAL_CLOSE_INTERSECTION).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToCloseIntersection();
+            }
+             }); 
+                 guiButtons.get( SPECIAL_STEAL).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToSteal();
+            }
+             }); 
+                guiButtons.get( SPECIAL_MIND_CONTROL).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToMindControl();
+            }
+             }); 
+                  guiButtons.get(SPECIAL_INTANG).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToIntangibility();
+            }
+             });
+             guiButtons.get( SPECIAL_MINDLESS_TERROR).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToMindlessTerror();
+            }
+             });
+                 guiButtons.get( SPECIAL_FLYING).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToFlying();
+            }
+             });
+               guiButtons.get( SPECIAL_INVINCIBILITY).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                eventHandler.respondToInvincibility();
+            }
+             });
         //Event handler for close button
         guiButtons.get(CLOSE_BUTTON_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
@@ -2040,4 +2129,8 @@ public class PathXMiniGame extends MiniGame {
   public PathXPanel getCanvas(){
         return (PathXPanel)canvas;
     }
+  
+  public void increasePlayerMoney(){
+     ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+500);
+  }
 }

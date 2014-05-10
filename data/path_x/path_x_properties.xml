@@ -134,7 +134,7 @@
         <property name="TEXT_LABEL_LEVEL_13_INFO"               value="Lincoln,NB- $260"></property>
         <property name="TEXT_LABEL_GAME_13_INFO"                value="Lincoln,NB"></property>
         <property name="TEXT_LABEL_LEVEL_14_INFO"               value="Topeka,KS- $280"></property>
-        <property name="TEXT_LABEL_GAME_14_INFO"                value="Topeka,KS-"></property>
+        <property name="TEXT_LABEL_GAME_14_INFO"                value="Topeka,KS"></property>
         <property name="TEXT_LABEL_LEVEL_15_INFO"               value="Oaklahoma- $300"></property>
         <property name="TEXT_LABEL_GAME_15_INFO"                value="Oaklahoma"></property>
         <property name="TEXT_LABEL_LEVEL_16_INFO"               value="Dallas,TX- $320"></property>
