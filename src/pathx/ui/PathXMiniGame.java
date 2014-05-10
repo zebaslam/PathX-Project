@@ -58,8 +58,16 @@ public class PathXMiniGame extends MiniGame {
     private float background_x = 0;
     private float background_y = 0;
     
-    //used for making sure the button doesnt move too much
-    private int scrollNum = 0;
+    private int scrollNum=0;
+    private boolean enableSound=true;
+
+    public boolean getEnableSound() {
+        return enableSound;
+    }
+
+    public void setEnableSound(boolean enableSound) {
+        this.enableSound = enableSound;
+    }
     private boolean scroll;
     private boolean enableMusic=true;
     public boolean getEnableMusic() {
@@ -255,6 +263,26 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, MUSIC_SELECTED_X, MUSIC_SELECTED_Y, 0, 0, INVISIBLE_STATE.toString());
         guiButtons.put(MUSIC_SELECTED_BUTTON_TYPE, s);
         
+        
+        String unselectedSound = props.getProperty(PathXPropertyType.IMAGE_SETTINGS_SOUND_UNSELECTED);
+        sT = new SpriteType(SOUND_UNSELECTED_BUTTON_TYPE);
+        img = loadImage(imgPath + unselectedSound);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String unselectedSoundMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SETTINGS_SOUND_UNSELECTED);
+        img = loadImage(imgPath + unselectedSoundMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, SOUND_SELECTED_X, SOUND_SELECTED_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SOUND_UNSELECTED_BUTTON_TYPE, s);
+        
+        String selectedSound = props.getProperty(PathXPropertyType.IMAGE_SETTINGS_SOUND_SELECTED);
+        sT = new SpriteType(SOUND_SELECTED_BUTTON_TYPE);
+        img = loadImage(imgPath + selectedSound);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String selectedSoundMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_SETTINGS_SOUND_SELECTED);
+        img = loadImage(imgPath + selectedSoundMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, SOUND_SELECTED_X, SOUND_SELECTED_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiButtons.put(SOUND_SELECTED_BUTTON_TYPE, s);
         //level buttons?
         String level1Button = props.getProperty(PathXPropertyType.IMAGE_MAP_AVAILABLE);
         sT = new SpriteType(LEVEL_1_BUTTON_TYPE);
@@ -911,6 +939,19 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(SPECIAL_INVINCIBILITY).setState(INVISIBLE_STATE.toString());
         guiButtons.get(SPECIAL_INVINCIBILITY).setEnabled(false);
         
+        if(enableSound==false){
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setEnabled(true);
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setEnabled(false);
+        }
+        else{
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setEnabled(true);
+        }
+        
         if(enableMusic==false){
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setEnabled(true);
@@ -1014,6 +1055,11 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(MUSIC_SELECTED_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setEnabled(false);
+        
         guiDecor.get(PLAYER_TYPE).setState(VISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(true);
         currentScreenState = GAME_SCREEN_STATE;
@@ -1351,7 +1397,10 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(MUSIC_SELECTED_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setEnabled(false);
-        
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setEnabled(false);
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setEnabled(false);
         currentScreenState = MENU_SCREEN_STATE;
         data.setGameState(MiniGameState.NOT_STARTED);
         
@@ -1398,7 +1447,7 @@ public class PathXMiniGame extends MiniGame {
         });
            guiButtons.get(SPECIAL_REDLIGHT_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                eventHandler.respondToGreenLight();
+                eventHandler.respondToRedLight();
             }
 
         });
@@ -1416,7 +1465,7 @@ public class PathXMiniGame extends MiniGame {
         });
                 guiButtons.get(SPECIAL_INCREASE_SPEED_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                eventHandler.respondToSpeedLimit();
+                eventHandler.respondToIncreaseSpeedLimit();
             }
 
         });
@@ -1441,7 +1490,7 @@ public class PathXMiniGame extends MiniGame {
                  
                    guiButtons.get( SPECIAL_CLOSE_ROAD).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                eventHandler.respondToEmptyGas();
+                eventHandler.respondToCloseRoad();
             }
              }); 
              
@@ -1762,13 +1811,23 @@ public class PathXMiniGame extends MiniGame {
             String audioPath = props.getProperty(PathXPropertyType.PATH_AUDIO);
 
             // LOAD ALL THE AUDIO
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_SELECT_TILE);
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_DESELECT_TILE);
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_GOOD_MOVE);
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_BAD_MOVE);
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_CHEAT);
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_UNDO);
-            loadAudioCue(PathXPropertyType.AUDIO_CUE_WIN);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_INCREASE_SPEED_LIMIT);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_DECREASE_SPEED_LIMIT);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_TIME_FREEZE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_GREEN_LIGHT);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_RED_LIGHT);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_PLAYER_SPEED);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_FLAT_TIRE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_GAS);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_CLOSE_ROAD);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_CLOSE_INTERSECTION);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_OPEN_INTERSECTION);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_STEAL);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_MIND_CONTROL);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_MIND_TERROR);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_INTANGIBILITY);
+             loadAudioCue(PathXPropertyType.AUDIO_CUE_INVINCIBILITY);
+             loadAudioCue(PathXPropertyType.AUDIO_CUE_FLYING);
             loadAudioCue(PathXPropertyType.SONG_CUE_MENU_SCREEN);
             loadAudioCue(PathXPropertyType.SONG_CUE_GAME_SCREEN);
             loadAudioCue(PathXPropertyType.SONG_CUE_LEVEL_SCREEN);

@@ -111,6 +111,8 @@ public class PathXConstants {
     public static final String HELP_BUTTON_TYPE= "HELP_BUTTON_TYPE";
     public static final String MUSIC_SELECTED_BUTTON_TYPE="MUSIC_SELECTED_BUTTON_TYPE";
     public static final String MUSIC_UNSELECTED_BUTTON_TYPE="MUSIC_UNSELECTED_BUTTON_TYPE";
+    public static final String SOUND_SELECTED_BUTTON_TYPE="SOUND_SELECTED_BUTTON_TYPE";
+    public static final String SOUND_UNSELECTED_BUTTON_TYPE="SOUND_UNSELECTED_BUTTON_TYPE";
     public static final String CLOSE_BUTTON_TYPE= "CLOSE_BUTTON_TYPE";
     public static final String HOME_BUTTON_TYPE= "HOME_BUTTON_TYPE";
     public static final String PLAY_BUTTON_TYPE= "PLAY_BUTTON_TYPE";
@@ -222,6 +224,9 @@ public class PathXConstants {
     
     public static final int MUSIC_SELECTED_X=310;
     public static final int MUSIC_SELECTED_Y=255;
+    
+    public static final int SOUND_SELECTED_X=MUSIC_SELECTED_X;
+    public static final int SOUND_SELECTED_Y=MUSIC_SELECTED_Y+70;
     //Level locations for dots 
     
     //portland, oregon

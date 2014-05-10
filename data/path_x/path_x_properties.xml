@@ -30,6 +30,8 @@
         <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
         <property name="IMAGE_SETTINGS_MUSIC_SELECTED"      value="./path_x/Selected.png"></property>
         <property name="IMAGE_SETTINGS_MUSIC_UNSELECTED"    value="./path_x/Unselected.png"></property>
+        <property name="IMAGE_SETTINGS_SOUND_SELECTED"      value="./path_x/Selected.png"></property>
+        <property name="IMAGE_SETTINGS_SOUND_UNSELECTED"    value="./path_x/Unselected.png"></property>
         <property name="HELP_FILE_NAME"                     value="Help.html"></property>
         
         <!--Specials-->
@@ -150,13 +152,23 @@
         <property name="TEXT_LABEL_LEVEL_20_INFO"               value="Missouri- $400"></property>
         <property name="TEXT_LABEL_GAME_20_INFO"                value="Missouri"></property>
         <!-- AUDIO FILES -->
-        <property name="AUDIO_CUE_BAD_MOVE"                 value="./path_x/BadMove.wav"></property>
-        <property name="AUDIO_CUE_CHEAT"                    value="./path_x/Cheat.wav"></property>
-        <property name="AUDIO_CUE_DESELECT_TILE"            value="./path_x/DeselectTile.wav"></property>
-        <property name="AUDIO_CUE_GOOD_MOVE"                value="./path_x/GoodMove.wav"></property>
-        <property name="AUDIO_CUE_SELECT_TILE"              value="./path_x/SelectTile.wav"></property>
-        <property name="AUDIO_CUE_UNDO"                     value="./path_x/Undo.wav"></property>
-        <property name="AUDIO_CUE_WIN"                      value="./path_x/Win.mid"></property>
+        <property name="AUDIO_CUE_GREEN_LIGHT"              value="./path_x/MakeLightGreen.wav"></property>
+        <property name="AUDIO_CUE_RED_LIGHT"                value="./path_x/MakeLightRed.wav"></property>
+        <property name="AUDIO_CUE_DECREASE_SPEED_LIMIT"     value="./path_x/DecreaseSpeedLimit.wav"></property>
+        <property name="AUDIO_CUE_INCREASE_SPEED_LIMIT"     value="./path_x/IncreaseSpeedLimit.wav"></property>
+        <property name="AUDIO_CUE_TIME_FREEZE"              value="./path_x/TimeFreeze.wav"></property>
+        <property name="AUDIO_CUE_PLAYER_SPEED"             value="./path_x/IncreasePlayerSpeed.wav"></property>
+        <property name="AUDIO_CUE_FLAT_TIRE"                value="./path_x/FlatTire.wav"></property>
+        <property name="AUDIO_CUE_GAS"                      value="./path_x/EmptyGas.wav"></property>
+        <property name="AUDIO_CUE_CLOSE_ROAD"               value="./path_x/CloseRoad.wav"></property>
+        <property name="AUDIO_CUE_CLOSE_INTERSECTION"       value="./path_x/CloseIntersection.wav"></property>
+        <property name="AUDIO_CUE_OPEN_INTERSECTION"        value="./path_x/OpenIntersection.wav"></property>
+        <property name="AUDIO_CUE_STEAL"                    value="./path_x/Steal.wav"></property>
+        <property name="AUDIO_CUE_MIND_CONTROL"             value="./path_x/MindControl.wav"></property>
+        <property name="AUDIO_CUE_MIND_TERROR"             value="./path_x/MindlessTerror.wav"></property>
+        <property name="AUDIO_CUE_FLYING"                  value="./path_x/Flying.wav"></property>
+        <property name="AUDIO_CUE_INVINCIBILITY"           value="./path_x/Invincibility.wav"></property>
+        <property name="AUDIO_CUE_INTANGIBILITY"           value="./path_x/Intangibility.wav"></property>
         <property name="SONG_CUE_GAME_SCREEN"               value="./path_x/GameSong.mid"></property>        
         <property name="SONG_CUE_MENU_SCREEN"               value="./path_x/MenuSong.mid"></property>
         <property name="SONG_CUE_LEVEL_SCREEN"              value="./path_x/LevelSong.mid"></property>

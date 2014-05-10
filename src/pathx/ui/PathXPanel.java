@@ -165,6 +165,12 @@ public class PathXPanel extends JPanel {
             if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(MUSIC_SELECTED_BUTTON_TYPE)) {
                 continue;
             }
+            if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(SOUND_SELECTED_BUTTON_TYPE)) {
+                continue;
+            }
+            if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(SOUND_UNSELECTED_BUTTON_TYPE)) {
+                continue;
+            }
             renderSprite(g, s);
         }
     }
@@ -328,6 +334,7 @@ public class PathXPanel extends JPanel {
         }
         if (((PathXMiniGame) game).isCurrentScreenState(SETTINGS_SCREEN_STATE) && game.getGUIDialogs().get(SETTINGS_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())) {
             boolean check= ((PathXMiniGame) game).getEnableMusic();
+            boolean soundcheck= ((PathXMiniGame) game).getEnableSound();
             if (check==true){
                 Sprite blah= game.getGUIButtons().get(MUSIC_SELECTED_BUTTON_TYPE);
                 renderSprite(g, blah);
@@ -335,6 +342,15 @@ public class PathXPanel extends JPanel {
             if (check==false){
                 Sprite blah= game.getGUIButtons().get(MUSIC_UNSELECTED_BUTTON_TYPE);
                 renderSprite(g, blah);
+            }
+            
+             if (soundcheck==true){
+                Sprite bleh= game.getGUIButtons().get(SOUND_SELECTED_BUTTON_TYPE);
+                renderSprite(g, bleh);
+            }
+            if (soundcheck==false){
+                Sprite bleh= game.getGUIButtons().get(SOUND_UNSELECTED_BUTTON_TYPE);
+                renderSprite(g, bleh);
             }
              
         }
