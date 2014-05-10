@@ -28,6 +28,8 @@
         <property name="IMAGE_BUTTON_PAUSE"                 value="./path_x/PauseButton.png"></property>
         <property name="IMAGE_BUTTON_PAUSE_MOUSE_OVER"      value="./path_x/PauseButtonMouseOver.png"></property>
         <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
+        <property name="IMAGE_SETTINGS_MUSIC_SELECTED"      value="./path_x/Selected.png"></property>
+        <property name="IMAGE_SETTINGS_MUSIC_UNSELECTED"    value="./path_x/Unselected.png"></property>
         <property name="HELP_FILE_NAME"                     value="Help.html"></property>
         
         <!--Specials-->

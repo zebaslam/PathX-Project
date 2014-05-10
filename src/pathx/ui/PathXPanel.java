@@ -159,7 +159,12 @@ public class PathXPanel extends JPanel {
             if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(CLOSE_DIALOG_BUTTON_TYPE)) {
                 continue;
             }
-
+            if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(MUSIC_UNSELECTED_BUTTON_TYPE)) {
+                continue;
+            }
+            if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(MUSIC_SELECTED_BUTTON_TYPE)) {
+                continue;
+            }
             renderSprite(g, s);
         }
     }
@@ -321,6 +326,19 @@ public class PathXPanel extends JPanel {
             // RENDER THE DIALOG, NOTE IT WILL ONLY DO IT IF IT'S VISIBLE
             renderSprite(g, s);
         }
+        if (((PathXMiniGame) game).isCurrentScreenState(SETTINGS_SCREEN_STATE) && game.getGUIDialogs().get(SETTINGS_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())) {
+            boolean check= ((PathXMiniGame) game).getEnableMusic();
+            if (check==true){
+                Sprite blah= game.getGUIButtons().get(MUSIC_SELECTED_BUTTON_TYPE);
+                renderSprite(g, blah);
+            }
+            if (check==false){
+                Sprite blah= game.getGUIButtons().get(MUSIC_UNSELECTED_BUTTON_TYPE);
+                renderSprite(g, blah);
+            }
+             
+        }
+        
         if (((PathXMiniGame) game).isCurrentScreenState(GAME_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())) {
             Sprite x = game.getGUIButtons().get(CLOSE_DIALOG_BUTTON_TYPE);
             renderSprite(g, x);

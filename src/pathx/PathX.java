@@ -84,6 +84,8 @@ public class PathX {
         IMAGE_BUTTON_PAUSE_MOUSE_OVER,  
         IMAGE_WINDOW_ICON,
         IMAGE_PLAYER,
+        IMAGE_SETTINGS_MUSIC_SELECTED,
+        IMAGE_SETTINGS_MUSIC_UNSELECTED,
      
         /*
         SPECIALS!!!

@@ -22,7 +22,7 @@ import pathx.file.PathXFileManager;
 public class PathXEventHandler {
 
     private PathXMiniGame game;
- private     PathXFileManager filemanager;
+    private     PathXFileManager filemanager;
 private MiniGameDataModel data;
     public PathXEventHandler(PathXMiniGame initGame) {
         game = initGame;
@@ -46,6 +46,14 @@ private MiniGameDataModel data;
     
     public void respondToCloseDialog(){
         game.makeDialogInvisible();
+    }
+    public void respondToMusicSelected(){
+        game.setEnableMusic(false);
+         game.update();
+    }
+     public void respondToMusicUnSelected(){
+        game.setEnableMusic(true);
+        game.update();
     }
     public void respondToHomeRequest() {
         // IF A GAME IS IN PROGRESS, THE PLAYER LOSES

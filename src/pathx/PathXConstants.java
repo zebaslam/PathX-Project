@@ -109,6 +109,8 @@ public class PathXConstants {
     // THIS REPRESENTS THE BUTTONS ON THE MENU SCREEN FOR LEVEL SELECTION
     //public static final String LEVEL_SELECT_BUTTON_TYPE = "LEVEL_SELECT_BUTTON_TYPE";
     public static final String HELP_BUTTON_TYPE= "HELP_BUTTON_TYPE";
+    public static final String MUSIC_SELECTED_BUTTON_TYPE="MUSIC_SELECTED_BUTTON_TYPE";
+    public static final String MUSIC_UNSELECTED_BUTTON_TYPE="MUSIC_UNSELECTED_BUTTON_TYPE";
     public static final String CLOSE_BUTTON_TYPE= "CLOSE_BUTTON_TYPE";
     public static final String HOME_BUTTON_TYPE= "HOME_BUTTON_TYPE";
     public static final String PLAY_BUTTON_TYPE= "PLAY_BUTTON_TYPE";
@@ -218,7 +220,8 @@ public class PathXConstants {
     public static final int RIGHT_X=115;
     public static final int RIGHT_Y=520;
     
-
+    public static final int MUSIC_SELECTED_X=310;
+    public static final int MUSIC_SELECTED_Y=255;
     //Level locations for dots 
     
     //portland, oregon
