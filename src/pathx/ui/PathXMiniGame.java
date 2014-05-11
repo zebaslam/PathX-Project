@@ -60,6 +60,15 @@ public class PathXMiniGame extends MiniGame {
     
     private int scrollNum=0;
     private boolean enableSound=true;
+    private boolean win;
+
+    public boolean isWin() {
+        return win;
+    }
+
+    public void setWin(boolean win) {
+        this.win = win;
+    }
 
     public boolean getEnableSound() {
         return enableSound;
@@ -1880,11 +1889,11 @@ public class PathXMiniGame extends MiniGame {
             //float x = guiDecor.get(PLAYER_TYPE).getX();
             //float y = guiDecor.get(PLAYER_TYPE).getY();
             //guiDecor.get(PLAYER_TYPE).setX(x);
-            //guiDecor.get(PLAYER_TYPE).setY(y + 45);
-           // getCanvas().repaint();
-           //Player player=((PathXDataModel)data).getPlayer();
-           //player.setX(x);
-           //player.setY(y+45);
+           //guiDecor.get(PLAYER_TYPE).setY(y + 45);
+            getCanvas().repaint();
+           //Player playa=((PathXDataModel)data).getPlayer();
+           //playa.setX(x);
+           //playa.setY(y+45);
         }
         scrollNum = 0;
         boolean scrollvalue = getScroll();
@@ -2303,5 +2312,81 @@ public class PathXMiniGame extends MiniGame {
   
   public void increasePlayerMoney(){
      ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+500);
+  }
+  
+  public void setWinMoney(){
+      if (level==1){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+20);
+      }
+      if (level==2){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+40);
+      }
+      if (level==3){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+60);
+      }
+      if (level==4){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+80);
+      }
+      if (level==5){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+100);
+      }
+      if (level==6){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+120);
+      }
+      if (level==7){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+140);
+      }
+      if (level==8){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+160);
+      }
+      if (level==9){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+180);
+      }
+       if (level==10){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+200);
+      }
+       if (level==11){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+220);
+      }
+       if (level==12){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+240);
+      }
+        if (level==13){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+260);
+      }
+        if (level==14){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+280);
+      }
+       if (level==15){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+300);
+      }
+       if (level==16){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+320);
+      }
+       if (level==17){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+340);
+      }
+       if (level==18){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+360);
+      }
+       if (level==19){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+380);
+      }
+       if (level==20){
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()+400);
+      }
+  }
+  public void winLevel(){
+     int x= ((PathXDataModel)data).getDestination().getX();
+     int y= ((PathXDataModel)data).getDestination().getY();
+      Sprite player = guiDecor.get(PLAYER_TYPE);
+     player.setX(x);
+     player.setY(y);
+      getCanvas().repaint();
+      Player playa=((PathXDataModel)data).getPlayer();
+       playa.setX(x);
+       playa.setY(y);
+       win=true;
+      setWinMoney(); 
   }
 }
