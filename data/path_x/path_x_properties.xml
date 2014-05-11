@@ -32,6 +32,10 @@
         <property name="IMAGE_SETTINGS_MUSIC_UNSELECTED"    value="./path_x/Unselected.png"></property>
         <property name="IMAGE_SETTINGS_SOUND_SELECTED"      value="./path_x/Selected.png"></property>
         <property name="IMAGE_SETTINGS_SOUND_UNSELECTED"    value="./path_x/Unselected.png"></property>
+        <property name="IMAGE_TRY_AGAIN"                    value="./path_x/RetryLevel.png"></property>
+        <property name="IMAGE_TRY_AGAIN_MOUSE_OVER"         value="./path_x/RetryLevelMouseOver.png"></property>
+        <property name="IMAGE_QUIT_LEVEL"                    value="./path_x/QuitLevel.png"></property>
+        <property name="IMAGE_QUIT_LEVEL_MOUSE_OVER"         value="./path_x/QuitLevelMouseOver.png"></property>
         <property name="HELP_FILE_NAME"                     value="Help.html"></property>
         
         <!--Specials-->
@@ -75,6 +79,7 @@
         <!-- Dialog stuff -->
         <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
         <property name="IMAGE_DIALOG_LEVEL_SELECT"          value="./path_x/LevelDialog.png"></property>
+        <property name="IMAGE_DIALOG_WIN_LEVEL"             value="./path_x/WinDialog.png"></property>
         <property name="LEVEL_CLOSE_BUTTON"                 value="./path_x/LevelCloseButton.png"></property>
         <property name="LEVEL_CLOSE_BUTTON_MOUSE_OVER"      value="./path_x/LevelCloseButtonMouseOver.png"></property>
         

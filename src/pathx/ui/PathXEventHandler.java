@@ -48,6 +48,19 @@ private MiniGameDataModel data;
     
     public void respondToCloseDialog(){
         game.makeDialogInvisible();
+        data.beginGame();
+        
+    }
+    public void respondToTryAgain(){
+        int lvl =game.getLevel();
+        game.setWin(false);
+        game.MakeWinDialogInvisible();
+        respondToGameScreenSelect(lvl);
+    }
+    public void respondToQuitLevel(){
+        game.setWin(false);
+        game.MakeWinDialogInvisible();
+        game.switchToLevelSelectScreen();
     }
     public void respondToMusicSelected(){
         game.setEnableMusic(false);
@@ -212,6 +225,73 @@ private MiniGameDataModel data;
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_INVINCIBILITY.toString(), false);
         
     }
+     public void respondToWinSelect(int level){
+        String name="";
+        if(level==1){
+            name="Portland.xml";
+        }
+        if (level==2){
+            name="Sacremento.xml";
+        }
+        if(level==3){
+            name="San Jose.xml";
+        }
+        if (level==4){
+            name="Boise.xml";
+        }
+        if (level==5){
+            name="Las Vegas.xml";
+        }
+        if (level==6){
+            name="Wyoming.xml";
+        }
+        if (level==7){
+            name="Salt Lake City.xml";
+        }
+        if (level==8){
+            name="Phoenix.xml";
+        }
+        if (level==9){
+            name="Denver.xml";
+        }
+        if (level==10){
+            name="Santa Fe.xml";
+        }
+        if (level==11){
+            name="Bismark.xml";
+        }
+        if (level==12){
+            name="Pierre.xml";
+        }
+        if (level==13){
+            name="Lincoln.xml";
+        }
+        if (level==14){
+            name="Topeka.xml";
+        }
+        if(level==15){
+            name="oaklahoma.xml";
+        }
+        if (level==16){
+            name="Dallas.xml";
+        }
+        if(level==17){
+            name="San antonio.xml";
+        }
+        if(level==18){
+            name="Minnesota.xml";
+        }
+        if(level==19){
+            name="iowa.xml";
+        }
+        if (level==20){
+            name="Missouri.xml";
+        }
+        ((PathXDataModel)game.getDataModel()).setCurrentLevel(name);
+        filemanager.promptToOpen(name);
+        game.switchToWinScreen();
+        
+    }     
     public void respondToGameScreenSelect(int level){
         String name="";
         if(level==1){
@@ -340,6 +420,11 @@ private MiniGameDataModel data;
         }
         else if(keyCode==KeyEvent.VK_1){
             game.increasePlayerMoney();
+            game.getCanvas().repaint();
+            
+        }
+          else if(keyCode==KeyEvent.VK_2){
+            game.winLevel();
             game.getCanvas().repaint();
             
         }

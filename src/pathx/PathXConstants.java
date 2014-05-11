@@ -144,7 +144,8 @@ public class PathXConstants {
     public static final String LEVEL_18_BUTTON_TYPE="LEVEL_18_BUTTON_TYPE";
     public static final String LEVEL_19_BUTTON_TYPE="LEVEL_19_BUTTON_TYPE";
     public static final String LEVEL_20_BUTTON_TYPE="LEVEL_20_BUTTON_TYPE";
-    
+    public static final String TRY_AGAIN_TYPE="TRY_AGAIN_TYPE";
+    public static final String QUIT_LEVEL_TYPE="QUIT_LEVEL_TYPE";
     public static final String PLAYER_TYPE="PLAYER_TYPE";
     
     public static final String SPECIAL_GREENLIGHT_TYPE="SPECIAL_GREENLIGHT_TYPE";
@@ -170,7 +171,7 @@ public class PathXConstants {
     public static final String GAME_SCREEN_STATE = "GAME_SCREEN_STATE";   
     public static final String SETTINGS_SCREEN_STATE= "SETTINGS_SCREEN_STATE";
     public static final String HELP_SCREEN_STATE="HELP_SCREEN_STATE";
-    
+    public static final String WIN_SCREEN_STATE="WIN_SCREEN_STATE";
     public static final String INVISIBLE_STATE="INVISIBLE_STATE";
     public static final String VISIBLE_STATE="VISIBLE_STATE";
     public static final int FPS = 30;
@@ -379,6 +380,8 @@ public class PathXConstants {
     
     public static final int INVINC_X=FLYING_X+30;
     public static final int INVINC_Y=32;
+    
+
     //For dialogs
     public static final String LEVEL_INFO_DIALOG_TYPE = "LEVEL_INFO_DIALOG_TYPE";
     public static final String LEVEL_COMPLETE_DIALOG_TYPE = "LEVEL_COMPLETE_DIALOG_TYPE";
@@ -388,6 +391,12 @@ public class PathXConstants {
     //close values for the close button on the level info diaglog
     public static final int LEVEL_CLOSE_X=300;
     public static final int LEVEL_CLOSE_Y=400;
+    
+    public static final int TRY_AGAIN_X=LEVEL_CLOSE_X-80;
+    public static final int TRY_AGAIN_Y=LEVEL_CLOSE_Y;
+    
+    public static final int QUIT_LEVEL_X=TRY_AGAIN_X+175;
+    public static final int QUIT_LEVEL_Y=LEVEL_CLOSE_Y;
     
     //values for rendering text on the level info dialog
     public static final int LEVEL_INFO_TEXT_X=LEVEL_CLOSE_X-100;

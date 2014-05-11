@@ -171,6 +171,12 @@ public class PathXPanel extends JPanel {
             if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(SOUND_UNSELECTED_BUTTON_TYPE)) {
                 continue;
             }
+            if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(TRY_AGAIN_TYPE)) {
+                continue;
+            }
+            if (s.getSpriteType().getSpriteTypeID().equalsIgnoreCase(QUIT_LEVEL_TYPE)) {
+                continue;
+            }
             renderSprite(g, s);
         }
     }
@@ -227,13 +233,14 @@ public class PathXPanel extends JPanel {
     }
 
     public void renderLevelDialog(Graphics g, Sprite s) {
-        if (((PathXMiniGame) game).isCurrentScreenState(GAME_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())) {
+        if (((PathXMiniGame) game).isCurrentScreenState(GAME_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString()) && ((PathXMiniGame)game).isWin()==false) {
             SpriteType bgST = s.getSpriteType();
             Image img = bgST.getStateImage(s.getState());
             g.drawImage(img, (int) s.getX(), (int) s.getY(), bgST.getWidth(), bgST.getHeight(), null);
 
         }
     }
+
     public void renderGameHeader(Graphics g){
         PropertiesManager props = PropertiesManager.getPropertiesManager();
         int level = ((PathXMiniGame) game).getLevel();
@@ -330,7 +337,10 @@ public class PathXPanel extends JPanel {
         Collection<Sprite> dialogSprites = game.getGUIDialogs().values();
         for (Sprite s : dialogSprites) {
             // RENDER THE DIALOG, NOTE IT WILL ONLY DO IT IF IT'S VISIBLE
-            renderSprite(g, s);
+     
+                renderSprite(g, s);
+            
+            
         }
         if (((PathXMiniGame) game).isCurrentScreenState(SETTINGS_SCREEN_STATE) && game.getGUIDialogs().get(SETTINGS_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())) {
             boolean check= ((PathXMiniGame) game).getEnableMusic();
@@ -355,6 +365,141 @@ public class PathXPanel extends JPanel {
              
         }
         
+        if (((PathXMiniGame) game).isCurrentScreenState(WIN_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_COMPLETE_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())){
+             Sprite x = game.getGUIButtons().get(TRY_AGAIN_TYPE);
+             Sprite y = game.getGUIButtons().get(QUIT_LEVEL_TYPE);
+             
+            renderSprite(g, x);
+            renderSprite(g, y);
+            g.setFont(FONT_STATS);
+            g.setColor(COLOR_RED);
+           
+            int level = ((PathXMiniGame) game).getLevel();
+            PropertiesManager props = PropertiesManager.getPropertiesManager();
+            String levelprompt="";
+            String leveltext="";
+            String leveltext2="";
+            String leveltext3="";
+            if(level==1){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
+            leveltext= "Rednecks have stolen your wallet";
+            leveltext2="Retreive it to earn $20";
+            }
+            if (level==2){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_2_INFO);
+            leveltext= "A gang burned down your home";
+            leveltext2="Burn down theirs and earn $40";   
+            }
+            if (level==3){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_3_INFO);
+            leveltext= "Your Ex-Boss fired you.";
+            leveltext2="Go to his home and take $60";   
+            }
+            if (level==4){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_4_INFO);
+            leveltext= "Haters have burned a farmer's";
+            leveltext2="potato field. Rob $80 from";  
+            leveltext3="them to restore the farmer's honor.";
+            }
+            if (level==5){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_5_INFO);
+            leveltext= "Strippers stole your best";
+            leveltext2="friend's money. Rob $100 from";  
+            leveltext3="them to avenge your friend.";
+            }
+             if (level==6){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_6_INFO);
+            leveltext= "Steal $120 from corrupt politicians";
+            }
+            if (level==7){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_7_INFO);
+            leveltext= "Ex-Olympic officials are taking";
+            leveltext2="children's money for drugs. Rob $140";
+            leveltext3="from them to put the $ to better use.";
+            }
+            if (level==8){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_8_INFO);
+            leveltext= "People are jumping off the ";
+            leveltext2="grand canyon. Stop them and convince";
+            leveltext3="them to give you $160";
+            }
+            if (level==9){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_9_INFO);
+            leveltext= "Give fake skiing lessons to rich";
+            leveltext2="people. Make sure you ask";
+            leveltext3="them to give you $180";
+            }
+            if (level==10){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_10_INFO);
+            leveltext= "Help immigrants cross the border";
+            leveltext2="and collect $200";
+            }
+             if (level==11){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_11_INFO);
+            leveltext= "Rob a coal mine";
+            leveltext2="Don't worry the locals will pay";
+            leveltext3="you $220";
+            }
+             if (level==12){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_12_INFO);
+            leveltext= "A librarian has been mugged.";
+            leveltext2="Avenge her honor and she'll give";
+            leveltext3="you $240";
+            }
+             if (level==13){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_13_INFO);
+            leveltext= "A horse-carriage driver is stealing";
+            leveltext2="tourist's money. Steal $260 from";
+            leveltext3="him to complete this level";
+            }
+              if (level==14){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_14_INFO);
+            leveltext= "The wicked witch stole money from.";
+            leveltext2="Dorothy. Avenge her honor and ask";
+            leveltext3="for $280";
+            }
+                if (level==15){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_15_INFO);
+            leveltext= "A drug cartel is selling crack";
+            leveltext2="Steal $300 from them to complete";
+            leveltext3="this level.";
+            }
+                 if (level==16){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_16_INFO);
+            leveltext= "Your ex-karate teacher is homeless.";
+            leveltext2="Avenge your sensei's honor. You will";
+            leveltext3="earn $320.";
+            }
+                 if (level==17){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_17_INFO);
+            leveltext= "A gambler has stolen money.";
+            leveltext2="Steal the $340 from him for yourself.";
+            }
+              if (level==18){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_18_INFO);
+            leveltext= "A former foe insults your mom.";
+            leveltext2="Steal $360 from him to teach";
+            leveltext3="him a lesson he wont forget.";
+            }
+              if (level==19){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_19_INFO);
+            leveltext= "Your brother is a convict.";
+            leveltext2="Steal $380 to get him out";
+            leveltext3="of prison.";
+            }
+               if (level==20){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_20_INFO);
+            leveltext= "Your chemistry teacher is a";
+            leveltext2="drug tealer. Stop the trade";
+            leveltext3="and collect $400.";
+            }
+            g.drawString(levelprompt, LEVEL_INFO_TEXT_X, LEVEL_INFO_TEXT_Y);
+            g.setFont(TEXT_FONT);
+            g.drawString(leveltext, LEVEL_TEXT_X, LEVEL_TEXT_Y);
+            g.drawString(leveltext2, LEVEL_TEXT_X, LEVEL_TEXT_Y+50);
+            g.drawString(leveltext3, LEVEL_TEXT_X, LEVEL_TEXT_Y+100);
+        
+        }
         if (((PathXMiniGame) game).isCurrentScreenState(GAME_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_INFO_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())) {
             Sprite x = game.getGUIButtons().get(CLOSE_DIALOG_BUTTON_TYPE);
             renderSprite(g, x);

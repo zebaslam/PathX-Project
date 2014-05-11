@@ -174,8 +174,14 @@ public class PathX {
         //dialogs
         IMAGE_DIALOG_SETTINGS,
         IMAGE_DIALOG_LEVEL_SELECT,
+        IMAGE_DIALOG_WIN_LEVEL,
         LEVEL_CLOSE_BUTTON,
         LEVEL_CLOSE_BUTTON_MOUSE_OVER,
+        IMAGE_TRY_AGAIN,
+        IMAGE_TRY_AGAIN_MOUSE_OVER,
+        IMAGE_QUIT_LEVEL_MOUSE_OVER,
+        IMAGE_QUIT_LEVEL,
+        
         
         //map shit
         IMAGE_MAP_AVAILABLE,
