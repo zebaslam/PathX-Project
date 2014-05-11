@@ -252,6 +252,54 @@ private MiniGameDataModel data;
         } else if (keyCode == KeyEvent.VK_RIGHT) {
             game.ScrollRight();
         }
+        else if(keyCode==KeyEvent.VK_G){
+            respondToGreenLight();
+        }
+        else if(keyCode==KeyEvent.VK_R){
+            respondToRedLight();
+        }
+        else if(keyCode==KeyEvent.VK_Z){
+            respondToSpeedLimit();
+        }
+        else if(keyCode==KeyEvent.VK_X){
+            respondToIncreaseSpeedLimit();
+        }
+        else if(keyCode==KeyEvent.VK_P){
+            respondToPlayerSpeed();
+        }
+        else if(keyCode==KeyEvent.VK_T){
+            respondToFlatTire();
+        }
+        else if(keyCode==KeyEvent.VK_E){
+            respondToEmptyGas();
+        }
+        else if(keyCode==KeyEvent.VK_H){
+            respondToCloseRoad();
+        }
+        else if(keyCode==KeyEvent.VK_C){
+            respondToCloseIntersection();
+        }
+        else if(keyCode==KeyEvent.VK_O){
+            respondToOpenIntersection();
+        }
+        else if(keyCode==KeyEvent.VK_Q){
+            respondToSteal();
+        }
+        else if(keyCode==KeyEvent.VK_M){
+            respondToMindControl();
+        }
+        else if(keyCode==KeyEvent.VK_B){
+            respondToIntangibility();
+        }
+        else if(keyCode==KeyEvent.VK_L){
+            respondToMindlessTerror();
+        }
+         else if(keyCode==KeyEvent.VK_Y){
+            respondToFlying();
+        }
+          else if(keyCode==KeyEvent.VK_V){
+            respondToInvincibility();
+        }
         else if(keyCode==KeyEvent.VK_1){
             game.increasePlayerMoney();
             game.getCanvas().repaint();
