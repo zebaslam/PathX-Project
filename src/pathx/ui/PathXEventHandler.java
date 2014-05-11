@@ -23,11 +23,13 @@ public class PathXEventHandler {
 
     private PathXMiniGame game;
     private     PathXFileManager filemanager;
+    boolean sound;
 private MiniGameDataModel data;
     public PathXEventHandler(PathXMiniGame initGame) {
         game = initGame;
       filemanager = game.getFileManager();
       data= game.getDataModel();
+      
     }
 
     public void respondToExitRequest() {
@@ -53,6 +55,14 @@ private MiniGameDataModel data;
     }
      public void respondToMusicUnSelected(){
         game.setEnableMusic(true);
+        game.update();
+    }
+      public void respondToSoundSelected(){
+        game.setEnableSound(false);
+         game.update();
+    }
+     public void respondToSoundUnSelected(){
+        game.setEnableSound(true);
         game.update();
     }
     public void respondToHomeRequest() {
@@ -86,91 +96,119 @@ private MiniGameDataModel data;
         game.switchToLevelSelectScreen();
 
     }
-   
+  
     //all the special event handlers
     public void respondToGreenLight(){
         int x=5;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+         sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_GREEN_LIGHT.toString(), false);
+        
+        
     }
       public void respondToRedLight(){
         int x=5;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_RED_LIGHT.toString(), false);
     }
      public void respondToFreeze(){
         int x=10;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
          game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_TIME_FREEZE.toString(), false);
     }
       public void respondToSpeedLimit(){
         int x=15;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_DECREASE_SPEED_LIMIT.toString(), false);
     }
        public void respondToIncreaseSpeedLimit(){
         int x=15;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_INCREASE_SPEED_LIMIT.toString(), false);
     }
          public void respondToPlayerSpeed(){
         int x=20;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_PLAYER_SPEED.toString(), false);
     }
         public void respondToFlatTire(){
         int x=20;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
          game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_FLAT_TIRE.toString(), false);
     }
          public void respondToEmptyGas(){
         int x=20;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_GAS.toString(), false);
     }
          public void respondToCloseRoad(){
         int x=25;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        sound= game.getEnableSound();
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_CLOSE_ROAD.toString(), false);
     }
          public void respondToCloseIntersection(){
         int x=25;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
-        game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_CLOSE_INTERSECTION.toString(), false);
+         if(sound==true)
+         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_CLOSE_INTERSECTION.toString(), false);
     }
          public void respondToOpenIntersection(){
         int x=25;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+         if(sound==true)
          game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_OPEN_INTERSECTION.toString(), false);
     }
             public void respondToSteal(){
         int x=30;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+          if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_STEAL.toString(), false);
     }
           public void respondToMindControl(){
         int x=30;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+          if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_MIND_CONTROL.toString(), false);
     }
          public void respondToIntangibility(){
         int x=30;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_INTANGIBILITY.toString(), false);
     }
          public void respondToMindlessTerror(){
         int x=30;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+         if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_MIND_TERROR.toString(), false);
     }
          public void respondToFlying(){
         int x=40;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+     if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_FLYING.toString(), false);
     }
          public void respondToInvincibility(){
         int x=40;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
+                if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_INVINCIBILITY.toString(), false);
         
     }

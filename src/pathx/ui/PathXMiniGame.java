@@ -1754,6 +1754,21 @@ public class PathXMiniGame extends MiniGame {
             }
 
         });
+           guiButtons.get(SOUND_SELECTED_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+              eventHandler.respondToSoundSelected();
+              eventHandler.respondToSettingsSelect();
+            }
+
+        });
+        guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+              eventHandler.respondToSoundUnSelected();
+              eventHandler.respondToSettingsSelect();
+              
+            }
+
+        });
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 eventHandler.respondToCloseDialog();
