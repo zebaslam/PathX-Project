@@ -235,6 +235,9 @@ public class PathXPanel extends JPanel {
             //}
     }
       
+//determine max number of police for a level
+//create police_types for that many police
+//render accordingly     
         public void renderPolice(Graphics g) {
         // ONLY RENDER THE VISIBLE ONES
           Sprite s = game.getGUIDecor().get(POLICE_TYPE);
@@ -703,23 +706,59 @@ public class PathXPanel extends JPanel {
         String stateTWO= game.getGUIButtons().get(LEVEL_2_COMPLETE_BUTTON_TYPE).getState();
         String stateTwo=game.getGUIButtons().get(LEVEL_2_AVAILABLE_BUTTON_TYPE).getState();
         String state3 = game.getGUIButtons().get(LEVEL_3_BUTTON_TYPE).getState();
+        String stateTHREE= game.getGUIButtons().get(LEVEL_3_COMPLETE_BUTTON_TYPE).getState();
+        String stateThree=game.getGUIButtons().get(LEVEL_3_AVAILABLE_BUTTON_TYPE).getState();
         String state4 = game.getGUIButtons().get(LEVEL_4_BUTTON_TYPE).getState();
+        String stateFOUR= game.getGUIButtons().get(LEVEL_4_COMPLETE_BUTTON_TYPE).getState();
+        String stateFour=game.getGUIButtons().get(LEVEL_4_AVAILABLE_BUTTON_TYPE).getState();
         String state5 = game.getGUIButtons().get(LEVEL_5_BUTTON_TYPE).getState();
+        String stateFIVE= game.getGUIButtons().get(LEVEL_5_COMPLETE_BUTTON_TYPE).getState();
+        String stateFive=game.getGUIButtons().get(LEVEL_5_AVAILABLE_BUTTON_TYPE).getState();
         String state6 = game.getGUIButtons().get(LEVEL_6_BUTTON_TYPE).getState();
+        String stateSIX= game.getGUIButtons().get(LEVEL_6_COMPLETE_BUTTON_TYPE).getState();
+        String stateSix=game.getGUIButtons().get(LEVEL_6_AVAILABLE_BUTTON_TYPE).getState();
         String state7 = game.getGUIButtons().get(LEVEL_7_BUTTON_TYPE).getState();
+        String stateSEVEN= game.getGUIButtons().get(LEVEL_7_COMPLETE_BUTTON_TYPE).getState();
+        String stateSeven=game.getGUIButtons().get(LEVEL_7_AVAILABLE_BUTTON_TYPE).getState();
         String state8 = game.getGUIButtons().get(LEVEL_8_BUTTON_TYPE).getState();
+        String state88= game.getGUIButtons().get(LEVEL_8_COMPLETE_BUTTON_TYPE).getState();
+        String state888=game.getGUIButtons().get(LEVEL_8_AVAILABLE_BUTTON_TYPE).getState();
         String state9 = game.getGUIButtons().get(LEVEL_9_BUTTON_TYPE).getState();
+        String state99= game.getGUIButtons().get(LEVEL_9_COMPLETE_BUTTON_TYPE).getState();
+        String state999=game.getGUIButtons().get(LEVEL_9_AVAILABLE_BUTTON_TYPE).getState();
         String state10 = game.getGUIButtons().get(LEVEL_10_BUTTON_TYPE).getState();
+        String state100= game.getGUIButtons().get(LEVEL_10_COMPLETE_BUTTON_TYPE).getState();
+        String state1000=game.getGUIButtons().get(LEVEL_10_AVAILABLE_BUTTON_TYPE).getState();
         String state11 = game.getGUIButtons().get(LEVEL_11_BUTTON_TYPE).getState();
+        String state111= game.getGUIButtons().get(LEVEL_11_COMPLETE_BUTTON_TYPE).getState();
+        String state1111=game.getGUIButtons().get(LEVEL_11_AVAILABLE_BUTTON_TYPE).getState();
         String state12 = game.getGUIButtons().get(LEVEL_12_BUTTON_TYPE).getState();
+        String state122= game.getGUIButtons().get(LEVEL_12_COMPLETE_BUTTON_TYPE).getState();
+        String state1222=game.getGUIButtons().get(LEVEL_12_AVAILABLE_BUTTON_TYPE).getState();
         String state13 = game.getGUIButtons().get(LEVEL_13_BUTTON_TYPE).getState();
+        String state133= game.getGUIButtons().get(LEVEL_13_COMPLETE_BUTTON_TYPE).getState();
+        String state1333=game.getGUIButtons().get(LEVEL_13_AVAILABLE_BUTTON_TYPE).getState();
         String state14 = game.getGUIButtons().get(LEVEL_14_BUTTON_TYPE).getState();
+        String state144= game.getGUIButtons().get(LEVEL_14_COMPLETE_BUTTON_TYPE).getState();
+        String state1444=game.getGUIButtons().get(LEVEL_14_AVAILABLE_BUTTON_TYPE).getState();
         String state15 = game.getGUIButtons().get(LEVEL_15_BUTTON_TYPE).getState();
+        String state155= game.getGUIButtons().get(LEVEL_15_COMPLETE_BUTTON_TYPE).getState();
+        String state1555=game.getGUIButtons().get(LEVEL_15_AVAILABLE_BUTTON_TYPE).getState();
         String state16 = game.getGUIButtons().get(LEVEL_16_BUTTON_TYPE).getState();
+        String state166= game.getGUIButtons().get(LEVEL_16_COMPLETE_BUTTON_TYPE).getState();
+        String state1666=game.getGUIButtons().get(LEVEL_16_AVAILABLE_BUTTON_TYPE).getState();
         String state17 = game.getGUIButtons().get(LEVEL_17_BUTTON_TYPE).getState();
+        String state177= game.getGUIButtons().get(LEVEL_17_COMPLETE_BUTTON_TYPE).getState();
+        String state1777=game.getGUIButtons().get(LEVEL_17_AVAILABLE_BUTTON_TYPE).getState();
         String state18 = game.getGUIButtons().get(LEVEL_18_BUTTON_TYPE).getState();
+        String state188= game.getGUIButtons().get(LEVEL_18_COMPLETE_BUTTON_TYPE).getState();
+        String state1888=game.getGUIButtons().get(LEVEL_18_AVAILABLE_BUTTON_TYPE).getState();
         String state19 = game.getGUIButtons().get(LEVEL_19_BUTTON_TYPE).getState();
+        String state199= game.getGUIButtons().get(LEVEL_19_COMPLETE_BUTTON_TYPE).getState();
+        String state1999=game.getGUIButtons().get(LEVEL_19_AVAILABLE_BUTTON_TYPE).getState();
         String state20 = game.getGUIButtons().get(LEVEL_20_BUTTON_TYPE).getState();
+        String state200= game.getGUIButtons().get(LEVEL_20_COMPLETE_BUTTON_TYPE).getState();
+        String state2000=game.getGUIButtons().get(LEVEL_20_AVAILABLE_BUTTON_TYPE).getState();
         if (state1.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateONE.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
@@ -730,92 +769,92 @@ public class PathXPanel extends JPanel {
             g.setColor(FONT_COLOR);
             g.drawString(level2Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state3.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state3.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| stateTHREE.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| stateThree.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level3Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state4.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state4.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateFOUR.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateFour.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level4Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state5.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state5.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateFIVE.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| stateFive.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level5Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state6.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state6.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| stateSIX.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateSix.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level6Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state7.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state7.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| stateSEVEN.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| stateSeven.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level7Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state8.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state8.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state88.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state888.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level8Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state9.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state9.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state99.equals(PathXCarState.MOUSE_OVER_STATE.toString())|| state999.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level9Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state10.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state10.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state100.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1000.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level10Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state11.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state11.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state111.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state111.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level11Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state12.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state12.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state122.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1222.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level12Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state13.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state13.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state133.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1333.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level13Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state14.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state14.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state144.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1444.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level14Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state15.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state15.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state155.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1555.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level15Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state16.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state16.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state166.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1666.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level16Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state17.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state17.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state177.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1777.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level17Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state18.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state18.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state188.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1888.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level18Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state19.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state19.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state199.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || state1999.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level19Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state20.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state20.equals(PathXCarState.MOUSE_OVER_STATE.toString() ) || state200.equals(PathXCarState.MOUSE_OVER_STATE.toString() )  || state2000.equals(PathXCarState.MOUSE_OVER_STATE.toString() )) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level20Info, LEVEL_INFO_X, LEVEL_INFO_Y);
