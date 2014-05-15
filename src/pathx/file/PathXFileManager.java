@@ -273,7 +273,7 @@ public class PathXFileManager {
             String banditsText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numBandits = Integer.parseInt(banditsText);
             levelToLoad.setNumBandits(numBandits);
-            //System.out.println("Bandits:" +numBandits);
+            System.out.println("Bandits:" +numBandits);
             
             // LOAD THE NUMBER OF ZOMBIES
             Node zombiesNode = doc.getElementsByTagName(ZOMBIES_NODE).item(0);

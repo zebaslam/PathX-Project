@@ -197,6 +197,14 @@ public class PathXConstants {
     public static final String POLICE_TYPE_5="POLICE_TYPE_5";
     public static final String POLICE_TYPE_6="POLICE_TYPE_6";
     
+    public static final String BANDIT_TYPE= "BANDIT_TYPE";
+    public static final String BANDIT_TYPE_2= "BANDIT_TYPE_2";
+    public static final String BANDIT_TYPE_3= "BANDIT_TYPE_3";
+    public static final String BANDIT_TYPE_4= "BANDIT_TYPE_4";
+    public static final String BANDIT_TYPE_5= "BANDIT_TYPE_5";
+    public static final String BANDIT_TYPE_6= "BANDIT_TYPE_6";
+    
+    
     public static final String SPECIAL_GREENLIGHT_TYPE="SPECIAL_GREENLIGHT_TYPE";
     public static final String SPECIAL_REDLIGHT_TYPE="SPECIAL_REDLIGHT_TYPE";
     public static final String SPECIAL_FREEZETIME_TYPE="SPECIAL_FREEZETIME_TYPE";

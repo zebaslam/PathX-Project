@@ -63,7 +63,7 @@ public class PathXMiniGame extends MiniGame {
     private int scrollNum=0;
     private boolean enableSound=true;
     private boolean win;
-    static int level1counter=0;
+    
     
     private boolean level1win=false;
     public int getLost(){
@@ -1216,6 +1216,66 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
         guiDecor.put(POLICE_TYPE_6, s);
         
+        String bandit1 = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        sT = new SpriteType(BANDIT_TYPE);
+        img = loadImage(imgPath + bandit1);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String bandit1MouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        img = loadImage(imgPath + bandit1MouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(BANDIT_TYPE, s);
+        
+        String bandit2 = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        sT = new SpriteType(BANDIT_TYPE_2);
+        img = loadImage(imgPath + bandit2);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String bandit2MouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        img = loadImage(imgPath + bandit2MouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(BANDIT_TYPE_2, s);
+        
+        String bandit3 = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        sT = new SpriteType(BANDIT_TYPE_3);
+        img = loadImage(imgPath + bandit3);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String bandit3MouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        img = loadImage(imgPath + bandit3MouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(BANDIT_TYPE_3, s);
+        
+        String bandit4 = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        sT = new SpriteType(BANDIT_TYPE_4);
+        img = loadImage(imgPath + bandit4);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String bandit4MouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        img = loadImage(imgPath + bandit4MouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(BANDIT_TYPE_4, s);
+        
+        String bandit5 = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        sT = new SpriteType(BANDIT_TYPE_5);
+        img = loadImage(imgPath + bandit5);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String bandit5MouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        img = loadImage(imgPath + bandit5MouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(BANDIT_TYPE_5, s);
+        
+        String bandit6 = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        sT = new SpriteType(BANDIT_TYPE_6);
+        img = loadImage(imgPath + bandit6);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String bandit6MouseOverButton = props.getProperty(PathXPropertyType.IMAGE_BANDIT);
+        img = loadImage(imgPath + bandit6MouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(BANDIT_TYPE_6, s);
+        
         x = guiDecor.get(BACKGROUND_TYPE).getX();
         y = guiDecor.get(BACKGROUND_TYPE).getY();
         setInitialValues(x, y);
@@ -1776,6 +1836,7 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(POLICE_TYPE_6).setState(VISIBLE_STATE.toString());
         guiDecor.get(POLICE_TYPE_6).setEnabled(true);
        }
+       ArrayList <Intersection> used= new ArrayList();
         for (int i=0; i<policenum; i++){
             Sprite actual=guiDecor.get(POLICE_TYPE);
             if (i==1){
@@ -1795,7 +1856,7 @@ public class PathXMiniGame extends MiniGame {
             }
             int rando= 1+ (int) (Math.random()* intersections.size()-2);
             Intersection val= intersections.get(rando);
-            ArrayList <Intersection> used= new ArrayList();
+            
             while (val.equals(((PathXDataModel)getDataModel()).getLevel().getDestination())|| val.equals(((PathXDataModel)getDataModel()).getLevel().getStartingLocation()) || (used!=null && used.contains(val)) ){
                 rando= 1+ (int) (Math.random()* intersections.size()-2);
                 val= intersections.get(rando);
@@ -1804,8 +1865,63 @@ public class PathXMiniGame extends MiniGame {
             actual.setX(val.getX());
             actual.setY(val.getY());
             
+            
+           
         }
-        
+         int numBandits= ((PathXDataModel)getDataModel()).getLevel().getNumBandits();
+            if (numBandits>=1){
+         guiDecor.get(BANDIT_TYPE).setState(VISIBLE_STATE.toString());
+         guiDecor.get(BANDIT_TYPE).setEnabled(true);
+            }
+            if (numBandits>=2){
+         guiDecor.get(BANDIT_TYPE_2).setState(VISIBLE_STATE.toString());
+         guiDecor.get(BANDIT_TYPE_2).setEnabled(true);
+            }
+             if (numBandits>=3){
+         guiDecor.get(BANDIT_TYPE_3).setState(VISIBLE_STATE.toString());
+         guiDecor.get(BANDIT_TYPE_3).setEnabled(true);
+            }
+              if (numBandits>=4){
+         guiDecor.get(BANDIT_TYPE_4).setState(VISIBLE_STATE.toString());
+         guiDecor.get(BANDIT_TYPE_4).setEnabled(true);
+            }
+               if (numBandits>=5){
+         guiDecor.get(BANDIT_TYPE_5).setState(VISIBLE_STATE.toString());
+         guiDecor.get(BANDIT_TYPE_5).setEnabled(true);
+            }
+                if (numBandits==6){
+         guiDecor.get(BANDIT_TYPE_6).setState(VISIBLE_STATE.toString());
+         guiDecor.get(BANDIT_TYPE_6).setEnabled(true);
+            }
+            if (numBandits>0){    
+           for (int i=0; i< numBandits; i++){
+            Sprite actual=guiDecor.get(BANDIT_TYPE);
+            if (i==1){
+                actual=guiDecor.get(BANDIT_TYPE_2);
+            }
+            if (i==2){
+                actual=guiDecor.get(BANDIT_TYPE_3);
+            }
+            if (i==3){
+                actual=guiDecor.get(BANDIT_TYPE_4);
+            }
+            if (i==4){
+                actual=guiDecor.get(BANDIT_TYPE_5);
+            }
+            if (i==5){
+                actual=guiDecor.get(BANDIT_TYPE_6);
+            }
+            int rando= 1+ (int) (Math.random()* intersections.size()-2);
+            Intersection val= intersections.get(rando);
+            while (val.equals(((PathXDataModel)getDataModel()).getLevel().getDestination())|| val.equals(((PathXDataModel)getDataModel()).getLevel().getStartingLocation()) || (used!=null && used.contains(val)) ){
+            rando= 1+ (int) (Math.random()* intersections.size()-2);
+            val= intersections.get(rando);
+            }
+            used.add(val);
+            actual.setX(val.getX());
+            actual.setY(val.getY());
+           }     
+            }
         guiDialogs.get(LEVEL_INFO_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
         guiDialogs.get(LEVEL_COMPLETE_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
@@ -1970,8 +2086,8 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(SOUND_UNSELECTED_BUTTON_TYPE).setEnabled(false);
         
-        guiDecor.get(PLAYER_TYPE).setState(VISIBLE_STATE.toString());
-        guiDecor.get(PLAYER_TYPE).setEnabled(true);
+        guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(PLAYER_TYPE).setEnabled(false);
         guiDecor.get(POLICE_TYPE).setState(INVISIBLE_STATE.toString());
         guiDecor.get(POLICE_TYPE).setEnabled(false);
         guiDecor.get(POLICE_TYPE_2).setState(INVISIBLE_STATE.toString());
@@ -1984,6 +2100,18 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(POLICE_TYPE_5).setEnabled(false);
         guiDecor.get(POLICE_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(POLICE_TYPE_6).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_2).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_2).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_3).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_3).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_4).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_4).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_5).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
         currentScreenState = WIN_SCREEN_STATE;
         
         if(enableMusic==true){
@@ -2250,6 +2378,18 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(POLICE_TYPE_5).setEnabled(false);
         guiDecor.get(POLICE_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(POLICE_TYPE_6).setEnabled(false);
+       guiDecor.get(BANDIT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_2).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_2).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_3).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_3).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_4).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_4).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_5).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
         currentScreenState = LOSE_SCREEN_STATE;
         
         if(enableMusic==true){
@@ -2408,6 +2548,18 @@ public class PathXMiniGame extends MiniGame {
         guiButtons.get(LEVEL_20_BUTTON_TYPE).setEnabled(true);
         guiButtons.get(PAUSE_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(PAUSE_BUTTON_TYPE).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_2).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_2).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_3).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_3).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_4).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_4).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_5).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
         
         if (levelwon==1){
           //if(level==levelwon){
@@ -4067,6 +4219,18 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(POLICE_TYPE_5).setEnabled(false);
         guiDecor.get(POLICE_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(POLICE_TYPE_6).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_2).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_2).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_3).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_3).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_4).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_4).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_5).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
+        guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
         guiButtons.get(MUSIC_SELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(MUSIC_SELECTED_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
@@ -4957,6 +5121,12 @@ public class PathXMiniGame extends MiniGame {
               Sprite police4= guiDecor.get(POLICE_TYPE_4);
               Sprite police5= guiDecor.get(POLICE_TYPE_5);
               Sprite police6= guiDecor.get(POLICE_TYPE_6);
+              Sprite bandit1= guiDecor.get(BANDIT_TYPE);
+              Sprite bandit2= guiDecor.get(BANDIT_TYPE_2);
+              Sprite bandit3= guiDecor.get(BANDIT_TYPE_3);
+              Sprite bandit4= guiDecor.get(BANDIT_TYPE_4);
+              Sprite bandit5= guiDecor.get(BANDIT_TYPE_5);
+              Sprite bandit6= guiDecor.get(BANDIT_TYPE_6);
             for (Intersection i: intersections) {
                 i.setY(i.getY() - 15);
             }
@@ -4967,6 +5137,12 @@ public class PathXMiniGame extends MiniGame {
             police4.setY(police4.getY()-15);
             police5.setY(police5.getY()-15);
             police6.setY(police6.getY()-15);
+            bandit1.setY(bandit1.getY()-15);
+            bandit2.setY(bandit2.getY()-15);
+            bandit3.setY(bandit3.getY()-15);
+            bandit4.setY(bandit4.getY()-15);
+            bandit5.setY(bandit5.getY()-15);
+            bandit6.setY(bandit6.getY()-15);
             //float x = guiDecor.get(PLAYER_TYPE).getX();
             //float y = guiDecor.get(PLAYER_TYPE).getY();
             //guiDecor.get(PLAYER_TYPE).setX(x);
@@ -5591,6 +5767,12 @@ public class PathXMiniGame extends MiniGame {
               Sprite police4= guiDecor.get(POLICE_TYPE_4);
               Sprite police5= guiDecor.get(POLICE_TYPE_5);
               Sprite police6= guiDecor.get(POLICE_TYPE_6);
+              Sprite bandit1= guiDecor.get(BANDIT_TYPE);
+              Sprite bandit2= guiDecor.get(BANDIT_TYPE_2);
+              Sprite bandit3= guiDecor.get(BANDIT_TYPE_3);
+              Sprite bandit4= guiDecor.get(BANDIT_TYPE_4);
+              Sprite bandit5= guiDecor.get(BANDIT_TYPE_5);
+              Sprite bandit6= guiDecor.get(BANDIT_TYPE_6);
         player.setY(player.getY()+15);
         police1.setY(police1.getY()+15);
             police2.setY(police2.getY()+15);
@@ -5598,6 +5780,12 @@ public class PathXMiniGame extends MiniGame {
             police4.setY(police4.getY()+15);
             police5.setY(police5.getY()+15);
             police6.setY(police6.getY()+15);
+            bandit1.setY(bandit1.getY()+15);
+            bandit2.setY(bandit2.getY()+15);
+            bandit3.setY(bandit3.getY()+15);
+            bandit4.setY(bandit4.getY()+15);
+            bandit5.setY(bandit5.getY()+15);
+            bandit6.setY(bandit6.getY()+15);
         scrollNum = 1;
         boolean scrollvalue = getScroll();
         if (scrollvalue == true) {
@@ -5627,6 +5815,12 @@ public class PathXMiniGame extends MiniGame {
               Sprite police4= guiDecor.get(POLICE_TYPE_4);
               Sprite police5= guiDecor.get(POLICE_TYPE_5);
               Sprite police6= guiDecor.get(POLICE_TYPE_6);
+              Sprite bandit1= guiDecor.get(BANDIT_TYPE);
+              Sprite bandit2= guiDecor.get(BANDIT_TYPE_2);
+              Sprite bandit3= guiDecor.get(BANDIT_TYPE_3);
+              Sprite bandit4= guiDecor.get(BANDIT_TYPE_4);
+              Sprite bandit5= guiDecor.get(BANDIT_TYPE_5);
+              Sprite bandit6= guiDecor.get(BANDIT_TYPE_6);
             player.setX(player.getX()-15);
             police1.setX(police1.getX()-15);
             police2.setX(police2.getX()-15);
@@ -5634,6 +5828,12 @@ public class PathXMiniGame extends MiniGame {
             police4.setX(police4.getX()-15);
             police5.setX(police5.getX()-15);
             police6.setX(police6.getX()-15);
+            bandit1.setX(bandit1.getX()-15);
+            bandit2.setX(bandit2.getX()-15);
+            bandit3.setX(bandit3.getX()-15);
+            bandit4.setX(bandit4.getX()-15);
+            bandit5.setX(bandit5.getX()-15);
+            bandit6.setX(bandit6.getX()-15);
             for (Intersection i: intersections) {
                 i.setX(i.getX() - 15);
             }
@@ -5665,6 +5865,12 @@ public class PathXMiniGame extends MiniGame {
               Sprite police4= guiDecor.get(POLICE_TYPE_4);
               Sprite police5= guiDecor.get(POLICE_TYPE_5);
               Sprite police6= guiDecor.get(POLICE_TYPE_6);
+              Sprite bandit1= guiDecor.get(BANDIT_TYPE);
+              Sprite bandit2= guiDecor.get(BANDIT_TYPE_2);
+              Sprite bandit3= guiDecor.get(BANDIT_TYPE_3);
+              Sprite bandit4= guiDecor.get(BANDIT_TYPE_4);
+              Sprite bandit5= guiDecor.get(BANDIT_TYPE_5);
+              Sprite bandit6= guiDecor.get(BANDIT_TYPE_6);
              player.setX(player.getX()+15);
             police1.setX(police1.getX()+15);
             police2.setX(police2.getX()+15);
@@ -5672,6 +5878,12 @@ public class PathXMiniGame extends MiniGame {
             police4.setX(police4.getX()+15);
             police5.setX(police5.getX()+15);
             police6.setX(police6.getX()+15);
+            bandit1.setX(bandit1.getX()+15);
+            bandit2.setX(bandit2.getX()+15);
+            bandit3.setX(bandit3.getX()+15);
+            bandit4.setX(bandit4.getX()+15);
+            bandit5.setX(bandit5.getX()+15);
+            bandit6.setX(bandit6.getX()+15);
             ArrayList<Intersection> intersections = d.getLevel().getIntersections();
             for (Intersection i: intersections) {
                 i.setX(i.getX() + 15);

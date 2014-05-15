@@ -135,6 +135,7 @@ public class PathXPanel extends JPanel {
                  renderRoads(g2);
                  renderIntersections(g2);
                  renderPolice(g);
+                 renderBandit(g);
                  renderPlayer(g);
                  
              }
@@ -251,16 +252,16 @@ public class PathXPanel extends JPanel {
                   s= game.getGUIDecor().get(POLICE_TYPE_2);
               }
               if (i==2){
-                  game.getGUIDecor().get(POLICE_TYPE_3);
+                  s=game.getGUIDecor().get(POLICE_TYPE_3);
               }
               if (i==3){
-                  game.getGUIDecor().get(POLICE_TYPE_4);
+                  s= game.getGUIDecor().get(POLICE_TYPE_4);
               }
               if (i==4){
-                  game.getGUIDecor().get(POLICE_TYPE_5);
+                  s= game.getGUIDecor().get(POLICE_TYPE_5);
               }
               if (i==5){
-                  game.getGUIDecor().get(POLICE_TYPE_6);
+                 s= game.getGUIDecor().get(POLICE_TYPE_6);
               }
         if (!s.getState().equals(INVISIBLE_STATE.toString())) {
             SpriteType bgST = s.getSpriteType();
@@ -275,7 +276,36 @@ public class PathXPanel extends JPanel {
                 //s.setY(player.getY());
             //}
     }
+        public void renderBandit(Graphics g){
+           Sprite s = game.getGUIDecor().get(BANDIT_TYPE);
+         
+          int bandits=data.getLevel().getNumBandits();
+          
         
+          for (int i=0; i< bandits; i++) {
+              if(i==1){
+                  s= game.getGUIDecor().get(BANDIT_TYPE_2);
+              }
+              if (i==2){
+                  s=game.getGUIDecor().get(BANDIT_TYPE_3);
+              }
+              if (i==3){
+                  s= game.getGUIDecor().get(BANDIT_TYPE_4);
+              }
+              if (i==4){
+                  s= game.getGUIDecor().get(BANDIT_TYPE_5);
+              }
+              if (i==5){
+                 s= game.getGUIDecor().get(BANDIT_TYPE_6);
+              }
+        if (!s.getState().equals(INVISIBLE_STATE.toString())) {
+            SpriteType bgST = s.getSpriteType();
+            Image img = bgST.getStateImage(s.getState());
+            g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null);
+            //used=false;
+        }
+          }
+        }
         
     public void renderSprite(Graphics g, Sprite s) {
         // ONLY RENDER THE VISIBLE ONES
