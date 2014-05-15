@@ -50,6 +50,7 @@ public class PathXMiniGame extends MiniGame {
     private PathXEventHandler eventHandler;
     private PathXFileManager fileManager;
     private int level;
+    private int lost;
     private int access=1;
     private int levelwon=0;
     // THE SCREEN CURRENTLY BEING PLAYED
@@ -65,6 +66,9 @@ public class PathXMiniGame extends MiniGame {
     static int level1counter=0;
     
     private boolean level1win=false;
+    public int getLost(){
+        return lost;
+    }
     public boolean isWin() {
         return win;
     }
@@ -5943,9 +5947,9 @@ public class PathXMiniGame extends MiniGame {
       
   }
   public void loseLevel(){
-      double percent= .9;
+    
       int bal= (int) ((int)((PathXDataModel)data).getBalance() * .9);
-      
+      lost=((PathXDataModel)data).getBalance()-bal;
       ((PathXDataModel)data).setBalance(bal);
       if(enableSound==true){
           

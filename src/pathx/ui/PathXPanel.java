@@ -430,8 +430,10 @@ public class PathXPanel extends JPanel {
             int level = ((PathXMiniGame) game).getLevel();
             PropertiesManager props = PropertiesManager.getPropertiesManager();
             String levelprompt="";
-            String leveltext="Bad news! You've been caught!";
-            String leveltext2="You lose the level!";
+            String leveltext="The police have captured you!";
+            int balance= ((PathXMiniGame) game).getLost();
+            String bal=Integer.toString(balance);
+            String leveltext2="You lost $"+bal+" this level!";
             
             if(level==1){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
