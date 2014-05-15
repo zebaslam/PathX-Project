@@ -179,6 +179,8 @@
         <property name="AUDIO_CUE_INVINCIBILITY"           value="./path_x/Invincibility.wav"></property>
         <property name="AUDIO_CUE_INTANGIBILITY"           value="./path_x/Intangibility.wav"></property>
         <property name="AUDIO_CUE_POLICE"                    value="./path_x/Police.wav"></property>
+        <property name="AUDIO_CUE_BANDIT"                    value="./path_x/Bandit.wav"></property>
+        <property name="AUDIO_CUE_ZOMBIE"                    value="./path_x/Zombie.wav"></property>
         <property name="SONG_CUE_GAME_SCREEN"               value="./path_x/GameSong.mid"></property>        
         <property name="SONG_CUE_MENU_SCREEN"               value="./path_x/MenuSong.mid"></property>
         <property name="SONG_CUE_LEVEL_SCREEN"              value="./path_x/LevelSong.mid"></property>

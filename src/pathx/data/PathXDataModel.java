@@ -547,7 +547,7 @@ public class PathXDataModel extends MiniGameDataModel {
         Sprite bandit4= miniGame.getGUIDecor().get(BANDIT_TYPE_4);
         Sprite bandit5= miniGame.getGUIDecor().get(BANDIT_TYPE_5);
         Sprite bandit6= miniGame.getGUIDecor().get(BANDIT_TYPE_6);
-          
+        Sprite zombie= miniGame.getGUIDecor().get(ZOMBIE_TYPE);
                     
        if (((PathXMiniGame)miniGame).isCurrentScreenState(GAME_SCREEN_STATE)){         
        
@@ -600,6 +600,9 @@ public class PathXDataModel extends MiniGameDataModel {
         }
         if (((x+30)>=bandit6.getX() && !(x>bandit6.getX()) || x==bandit6.getX())  && ( bandit6.getState().equals(VISIBLE_STATE.toString()))){
               ((PathXMiniGame)miniGame).interactWithBandits();
+        }
+         if (((x+30)>=zombie.getX() && !(x>zombie.getX()) || x==zombie.getX())  && ( zombie.getState().equals(VISIBLE_STATE.toString()))){
+              ((PathXMiniGame)miniGame).interactWithZombies();
         }
           }
         miniGame.getCanvas().repaint();

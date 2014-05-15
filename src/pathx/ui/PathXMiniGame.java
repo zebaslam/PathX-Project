@@ -5125,6 +5125,8 @@ public class PathXMiniGame extends MiniGame {
             loadAudioCue(PathXPropertyType.SONG_CUE_GAME_SCREEN);
             loadAudioCue(PathXPropertyType.SONG_CUE_LEVEL_SCREEN);
             loadAudioCue(PathXPropertyType.AUDIO_CUE_POLICE);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_BANDIT);
+            loadAudioCue(PathXPropertyType.AUDIO_CUE_ZOMBIE);
 
             // PLAY THE WELCOME SCREEN SONG
             audio.play(PathXPropertyType.SONG_CUE_MENU_SCREEN.toString(), true);
@@ -6287,5 +6289,15 @@ public class PathXMiniGame extends MiniGame {
            int money= (int)(.10 * 400);
        ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
       }
+       
+      if (enableSound==true){
+          audio.play(PathXPropertyType.AUDIO_CUE_BANDIT.toString(), false);
+      } 
   }
+  public void interactWithZombies(){
+    if (enableSound==true){
+          audio.play(PathXPropertyType.AUDIO_CUE_ZOMBIE.toString(), false);
+      }   
+  }
+  
 }

@@ -154,6 +154,8 @@ public class PathX {
         
        //Audio stuff
         AUDIO_CUE_POLICE,
+        AUDIO_CUE_BANDIT,
+        AUDIO_CUE_ZOMBIE,
         AUDIO_CUE_GREEN_LIGHT,
         AUDIO_CUE_RED_LIGHT,
         AUDIO_CUE_DECREASE_SPEED_LIMIT,
