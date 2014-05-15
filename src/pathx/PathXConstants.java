@@ -125,28 +125,74 @@ public class PathXConstants {
     public static final String CLOSE_DIALOG_BUTTON_TYPE="CLOSE_DIALOG_BUTTON_TYPE";
     public static final String PAUSE_BUTTON_TYPE="PAUSE_BUTTON_TYPE";    
     public static final String LEVEL_1_BUTTON_TYPE="LEVEL_1_BUTTON_TYPE";
+    public static final String LEVEL_1_COMPLETE_BUTTON_TYPE="LEVEL_1_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_2_BUTTON_TYPE="LEVEL_2_BUTTON_TYPE";
+    public static final String LEVEL_2_AVAILABLE_BUTTON_TYPE="LEVEL_2_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_2_COMPLETE_BUTTON_TYPE="LEVEL_2_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_3_BUTTON_TYPE="LEVEL_3_BUTTON_TYPE";
+    public static final String LEVEL_3_AVAILABLE_BUTTON_TYPE="LEVEL_3_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_3_COMPLETE_BUTTON_TYPE="LEVEL_3_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_4_BUTTON_TYPE="LEVEL_4_BUTTON_TYPE";
+    public static final String LEVEL_4_AVAILABLE_BUTTON_TYPE="LEVEL_4_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_4_COMPLETE_BUTTON_TYPE="LEVEL_4_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_5_BUTTON_TYPE="LEVEL_5_BUTTON_TYPE";
+    public static final String LEVEL_5_AVAILABLE_BUTTON_TYPE="LEVEL_5_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_5_COMPLETE_BUTTON_TYPE="LEVEL_5_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_6_BUTTON_TYPE="LEVEL_6_BUTTON_TYPE";
+    public static final String LEVEL_6_AVAILABLE_BUTTON_TYPE="LEVEL_6_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_6_COMPLETE_BUTTON_TYPE="LEVEL_6_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_7_BUTTON_TYPE="LEVEL_7_BUTTON_TYPE";
+    public static final String LEVEL_7_AVAILABLE_BUTTON_TYPE="LEVEL_7_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_7_COMPLETE_BUTTON_TYPE="LEVEL_7_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_8_BUTTON_TYPE="LEVEL_8_BUTTON_TYPE";
+    public static final String LEVEL_8_AVAILABLE_BUTTON_TYPE="LEVEL_8_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_8_COMPLETE_BUTTON_TYPE="LEVEL_8_COMPLETE_BUTTON_TYPE";
+    public static final String LEVEL_9_AVAILABLE_BUTTON_TYPE="LEVEL_9_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_9_COMPLETE_BUTTON_TYPE="LEVEL_9_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_9_BUTTON_TYPE="LEVEL_9_BUTTON_TYPE";
     public static final String LEVEL_10_BUTTON_TYPE="LEVEL_10_BUTTON_TYPE";
+    public static final String LEVEL_10_AVAILABLE_BUTTON_TYPE="LEVEL_10_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_10_COMPLETE_BUTTON_TYPE="LEVEL_10_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_11_BUTTON_TYPE="LEVEL_11_BUTTON_TYPE";
+    public static final String LEVEL_11_AVAILABLE_BUTTON_TYPE="LEVEL_11_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_11_COMPLETE_BUTTON_TYPE="LEVEL_11_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_12_BUTTON_TYPE="LEVEL_12_BUTTON_TYPE";
+    public static final String LEVEL_12_AVAILABLE_BUTTON_TYPE="LEVEL_12_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_12_COMPLETE_BUTTON_TYPE="LEVEL_12_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_13_BUTTON_TYPE="LEVEL_13_BUTTON_TYPE";
+    public static final String LEVEL_13_AVAILABLE_BUTTON_TYPE="LEVEL_13_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_13_COMPLETE_BUTTON_TYPE="LEVEL_13_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_14_BUTTON_TYPE="LEVEL_14_BUTTON_TYPE";
+    public static final String LEVEL_14_AVAILABLE_BUTTON_TYPE="LEVEL_14_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_14_COMPLETE_BUTTON_TYPE="LEVEL_14_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_15_BUTTON_TYPE="LEVEL_15_BUTTON_TYPE";
+    public static final String LEVEL_15_AVAILABLE_BUTTON_TYPE="LEVEL_15_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_15_COMPLETE_BUTTON_TYPE="LEVEL_15_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_16_BUTTON_TYPE="LEVEL_16_BUTTON_TYPE";
+    public static final String LEVEL_16_AVAILABLE_BUTTON_TYPE="LEVEL_16_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_16_COMPLETE_BUTTON_TYPE="LEVEL_16_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_17_BUTTON_TYPE="LEVEL_17_BUTTON_TYPE";
+    public static final String LEVEL_17_AVAILABLE_BUTTON_TYPE="LEVEL_17_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_17_COMPLETE_BUTTON_TYPE="LEVEL_17_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_18_BUTTON_TYPE="LEVEL_18_BUTTON_TYPE";
+    public static final String LEVEL_18_AVAILABLE_BUTTON_TYPE="LEVEL_18_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_18_COMPLETE_BUTTON_TYPE="LEVEL_18_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_19_BUTTON_TYPE="LEVEL_19_BUTTON_TYPE";
+    public static final String LEVEL_19_AVAILABLE_BUTTON_TYPE="LEVEL_19_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_19_COMPLETE_BUTTON_TYPE="LEVEL_19_COMPLETE_BUTTON_TYPE";
     public static final String LEVEL_20_BUTTON_TYPE="LEVEL_20_BUTTON_TYPE";
+    public static final String LEVEL_20_AVAILABLE_BUTTON_TYPE="LEVEL_20_AVAILABLE_BUTTON_TYPE";
+    public static final String LEVEL_20_COMPLETE_BUTTON_TYPE="LEVEL_20_COMPLETE_BUTTON_TYPE";
+    
+    //rendering dialog related information for the win dialog
     public static final String TRY_AGAIN_TYPE="TRY_AGAIN_TYPE";
     public static final String QUIT_LEVEL_TYPE="QUIT_LEVEL_TYPE";
+    
+    //police and player
     public static final String PLAYER_TYPE="PLAYER_TYPE";
+    public static final String POLICE_TYPE="POLICE_TYPE";
+   
+   
     
     public static final String SPECIAL_GREENLIGHT_TYPE="SPECIAL_GREENLIGHT_TYPE";
     public static final String SPECIAL_REDLIGHT_TYPE="SPECIAL_REDLIGHT_TYPE";

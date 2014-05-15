@@ -63,6 +63,16 @@ public class PathXPanel extends JPanel {
     int triangleYPoints[] = {ONE_WAY_TRIANGLE_WIDTH/2, -ONE_WAY_TRIANGLE_WIDTH/2, 0};
     GeneralPath recyclableTriangle;
     
+    private ArrayList <Sprite> policeSprites;
+
+    public ArrayList<Sprite> getPoliceSprites() {
+        return policeSprites;
+    }
+
+    public void setPoliceSprites(ArrayList<Sprite> policeSprites) {
+        this.policeSprites = policeSprites;
+    }
+    
     public PathXPanel(MiniGame initGame, PathXDataModel initData) {
         game = initGame;
         game1 = (PathXMiniGame) game;
@@ -89,6 +99,7 @@ public class PathXPanel extends JPanel {
             recyclableTriangle.lineTo(triangleXPoints[index], triangleYPoints[index]);
         };
         recyclableTriangle.closePath();
+        policeSprites=new ArrayList();
     // WE'LL RECYCLE THESE DURING RENDERING
 
     }
@@ -124,8 +135,9 @@ public class PathXPanel extends JPanel {
                  renderRoads(g2);
                  renderIntersections(g2);
                  renderPlayer(g);
+                 renderPolice(g);
              }
-         
+              
             // RENDER THE ROADS
            
 
@@ -222,6 +234,29 @@ public class PathXPanel extends JPanel {
                 //s.setY(player.getY());
             //}
     }
+      
+        public void renderPolice(Graphics g) {
+        // ONLY RENDER THE VISIBLE ONES
+          Sprite s = game.getGUIDecor().get(POLICE_TYPE);
+         
+          int police=data.getLevel().getNumPolice();
+        
+          for (int i=0; i< police; i++) {
+        if (!s.getState().equals(INVISIBLE_STATE.toString())) {
+            SpriteType bgST = s.getSpriteType();
+            Image img = bgST.getStateImage(s.getState());
+            policeSprites.add(s);
+            g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null);
+            //used=false;
+        }
+          }
+       // if(used==false){
+               // s.setX(player.getX());
+                //s.setY(player.getY());
+            //}
+    }
+        
+        
     public void renderSprite(Graphics g, Sprite s) {
         // ONLY RENDER THE VISIBLE ONES
         if (!s.getState().equals(INVISIBLE_STATE.toString())) {
@@ -663,7 +698,10 @@ public class PathXPanel extends JPanel {
         String level19Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_19_INFO);
         String level20Info = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_20_INFO);
         String state1 = game.getGUIButtons().get(LEVEL_1_BUTTON_TYPE).getState();
+        String stateONE= game.getGUIButtons().get(LEVEL_1_COMPLETE_BUTTON_TYPE).getState();
         String state2 = game.getGUIButtons().get(LEVEL_2_BUTTON_TYPE).getState();
+        String stateTWO= game.getGUIButtons().get(LEVEL_2_COMPLETE_BUTTON_TYPE).getState();
+        String stateTwo=game.getGUIButtons().get(LEVEL_2_AVAILABLE_BUTTON_TYPE).getState();
         String state3 = game.getGUIButtons().get(LEVEL_3_BUTTON_TYPE).getState();
         String state4 = game.getGUIButtons().get(LEVEL_4_BUTTON_TYPE).getState();
         String state5 = game.getGUIButtons().get(LEVEL_5_BUTTON_TYPE).getState();
@@ -682,12 +720,12 @@ public class PathXPanel extends JPanel {
         String state18 = game.getGUIButtons().get(LEVEL_18_BUTTON_TYPE).getState();
         String state19 = game.getGUIButtons().get(LEVEL_19_BUTTON_TYPE).getState();
         String state20 = game.getGUIButtons().get(LEVEL_20_BUTTON_TYPE).getState();
-        if (state1.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state1.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateONE.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level1Info, LEVEL_INFO_X, LEVEL_INFO_Y);
         }
-        if (state2.equals(PathXCarState.MOUSE_OVER_STATE.toString())) {
+        if (state2.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateTWO.equals(PathXCarState.MOUSE_OVER_STATE.toString()) || stateTwo.equals(PathXCarState.MOUSE_OVER_STATE.toString()) ) {
             g.setFont(FONT_TEXT_DISPLAY);
             g.setColor(FONT_COLOR);
             g.drawString(level2Info, LEVEL_INFO_X, LEVEL_INFO_Y);

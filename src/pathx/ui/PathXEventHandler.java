@@ -221,11 +221,12 @@ private MiniGameDataModel data;
          public void respondToInvincibility(){
         int x=40;
         ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-x);
-                if(sound==true)
+        if(sound==true)
         game.getAudio().play(PathX.PathXPropertyType.AUDIO_CUE_INVINCIBILITY.toString(), false);
         
     }
      public void respondToWinSelect(int level){
+       
         String name="";
         if(level==1){
             name="Portland.xml";
@@ -290,7 +291,7 @@ private MiniGameDataModel data;
         ((PathXDataModel)game.getDataModel()).setCurrentLevel(name);
         filemanager.promptToOpen(name);
         game.switchToWinScreen();
-        
+      
     }     
     public void respondToGameScreenSelect(int level){
         String name="";
@@ -424,9 +425,10 @@ private MiniGameDataModel data;
             
         }
           else if(keyCode==KeyEvent.VK_2){
+              if(game.isCurrentScreenState(GAME_SCREEN_STATE)){
             game.winLevel();
             game.getCanvas().repaint();
-            
+              }
         }
        
     }

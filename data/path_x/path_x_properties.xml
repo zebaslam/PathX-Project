@@ -76,6 +76,7 @@
         <property name="IMAGE_SPECIAL_INVINCIBILITY_MOUSE_OVER"      value="./path_x/specialInvincibilityMouseOver .png"></property>
         
         <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
+        <property name="IMAGE_POLICE"                       value="./path_x/Police.png"></property>
         <!-- Dialog stuff -->
         <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
         <property name="IMAGE_DIALOG_LEVEL_SELECT"          value="./path_x/LevelDialog.png"></property>
@@ -90,7 +91,7 @@
         <property name="IMAGE_MAP_LOCKED"                   value="./path_x/locked.png"></property>
         <property name="IMAGE_MAP_LOCKED_MOUSE_OVER"        value="./path_x/lockedMouseOver.png"></property>
         <property name="IMAGE_MAP_COMPLETED"                value="./path_x/completed.png"></property>
-        <property name="IMAGE_MAP_COMPLETED"                value="./path_x/completedMouseOver.png"></property>
+        <property name="IMAGE_MAP_COMPLETED_MOUSE_OVER"     value="./path_x/completedMouseOver.png"></property>
         <!--Viewport Arrow stuff -->
         <property name="IMAGE_BUTTON_UP"                        value="./path_x/UpArrow.png"></property>
         <property name="IMAGE_BUTTON_UP_MOUSE_OVER"             value="./path_x/UpArrowMouseOver.png"></property>
