@@ -420,116 +420,105 @@ public class PathXPanel extends JPanel {
             String leveltext3="";
             if(level==1){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
-            leveltext= "Rednecks have stolen your wallet";
-            leveltext2="Retreive it to earn $20";
+            leveltext= "YOU WON LEVEL ONE!";
+            leveltext2="You have earned $20!";
             }
             if (level==2){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_2_INFO);
-            leveltext= "A gang burned down your home";
-            leveltext2="Burn down theirs and earn $40";   
+            leveltext= "YOU WON LEVEL TWO!";
+            leveltext2="You have earned $40!";   
             }
             if (level==3){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_3_INFO);
-            leveltext= "Your Ex-Boss fired you.";
-            leveltext2="Go to his home and take $60";   
+            leveltext= "YOU WON LEVEL THREE!";
+            leveltext2="You have earned $60!";   
             }
             if (level==4){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_4_INFO);
-            leveltext= "Haters have burned a farmer's";
-            leveltext2="potato field. Rob $80 from";  
-            leveltext3="them to restore the farmer's honor.";
+            leveltext= "YOU WON LEVEL FOUR!";
+            leveltext2="You've earned $80!";  
             }
             if (level==5){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_5_INFO);
-            leveltext= "Strippers stole your best";
-            leveltext2="friend's money. Rob $100 from";  
-            leveltext3="them to avenge your friend.";
+            leveltext= "YOU WON LEVEL FIVE!";
+            leveltext2="You've earned $100!";  
             }
              if (level==6){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_6_INFO);
-            leveltext= "Steal $120 from corrupt politicians";
+            leveltext= "YOU WON LEVEL SIX!";
+            leveltext2="You've earned $120!";  
             }
             if (level==7){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_7_INFO);
-            leveltext= "Ex-Olympic officials are taking";
-            leveltext2="children's money for drugs. Rob $140";
-            leveltext3="from them to put the $ to better use.";
+            leveltext= "YOU WON LEVEL 7!";
+            leveltext2="You've earned $140!"; 
+           
             }
             if (level==8){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_8_INFO);
-            leveltext= "People are jumping off the ";
-            leveltext2="grand canyon. Stop them and convince";
-            leveltext3="them to give you $160";
+            leveltext= "YOU WON LEVEL 8!";
+            leveltext2="You've earned $160!"; 
             }
             if (level==9){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_9_INFO);
-            leveltext= "Give fake skiing lessons to rich";
-            leveltext2="people. Make sure you ask";
-            leveltext3="them to give you $180";
+            leveltext= "YOU WON LEVEL 9!";
+            leveltext2="You've earned $180!"; 
             }
             if (level==10){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_10_INFO);
-            leveltext= "Help immigrants cross the border";
-            leveltext2="and collect $200";
+            leveltext= "YOU WON LEVEL 10!";
+            leveltext2="You've earned $200!"; 
             }
              if (level==11){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_11_INFO);
-            leveltext= "Rob a coal mine";
-            leveltext2="Don't worry the locals will pay";
-            leveltext3="you $220";
+            leveltext= "YOU WON LEVEL 11!";
+            leveltext2="You've earned $220!"; 
             }
              if (level==12){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_12_INFO);
-            leveltext= "A librarian has been mugged.";
-            leveltext2="Avenge her honor and she'll give";
-            leveltext3="you $240";
+            leveltext= "YOU WON LEVEL 12!";
+            leveltext2="You've earned $240!"; 
             }
              if (level==13){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_13_INFO);
-            leveltext= "A horse-carriage driver is stealing";
-            leveltext2="tourist's money. Steal $260 from";
-            leveltext3="him to complete this level";
+            leveltext= "YOU WON LEVEL 13!";
+            leveltext2="You've earned $260!"; 
             }
               if (level==14){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_14_INFO);
-            leveltext= "The wicked witch stole money from.";
-            leveltext2="Dorothy. Avenge her honor and ask";
-            leveltext3="for $280";
+            leveltext= "YOU WON LEVEL 14!";
+            leveltext2="You've earned $280!"; 
+           
             }
                 if (level==15){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_15_INFO);
-            leveltext= "A drug cartel is selling crack";
-            leveltext2="Steal $300 from them to complete";
-            leveltext3="this level.";
+            leveltext= "YOU WON LEVEL 15!";
+            leveltext2="You've earned $300!"; 
             }
                  if (level==16){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_16_INFO);
-            leveltext= "Your ex-karate teacher is homeless.";
-            leveltext2="Avenge your sensei's honor. You will";
-            leveltext3="earn $320.";
+            leveltext= "YOU WON LEVEL 16!";
+            leveltext2="You've earned $320!"; 
             }
                  if (level==17){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_17_INFO);
-            leveltext= "A gambler has stolen money.";
-            leveltext2="Steal the $340 from him for yourself.";
+            leveltext= "YOU WON LEVEL 17!";
+            leveltext2="You've earned $340!"; 
             }
               if (level==18){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_18_INFO);
-            leveltext= "A former foe insults your mom.";
-            leveltext2="Steal $360 from him to teach";
-            leveltext3="him a lesson he wont forget.";
+            leveltext= "YOU WON LEVEL 18!";
+            leveltext2="You've earned $360!"; 
             }
               if (level==19){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_19_INFO);
-            leveltext= "Your brother is a convict.";
-            leveltext2="Steal $380 to get him out";
-            leveltext3="of prison.";
+            leveltext= "YOU WON LEVEL 19!";
+            leveltext2="You've earned $380!"; 
             }
                if (level==20){
             levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_20_INFO);
-            leveltext= "Your chemistry teacher is a";
-            leveltext2="drug tealer. Stop the trade";
-            leveltext3="and collect $400.";
+            leveltext= "YOU WON LEVEL 20!";
+            leveltext2="You've earned $400!"; 
             }
             g.drawString(levelprompt, LEVEL_INFO_TEXT_X, LEVEL_INFO_TEXT_Y);
             g.setFont(TEXT_FONT);
