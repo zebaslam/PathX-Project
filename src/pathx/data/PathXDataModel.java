@@ -541,7 +541,13 @@ public class PathXDataModel extends MiniGameDataModel {
         Sprite police4= miniGame.getGUIDecor().get(POLICE_TYPE_4);
         Sprite police5= miniGame.getGUIDecor().get(POLICE_TYPE_5);
         Sprite police6= miniGame.getGUIDecor().get(POLICE_TYPE_6);
-         
+        Sprite bandit1= miniGame.getGUIDecor().get(BANDIT_TYPE);
+        Sprite bandit2= miniGame.getGUIDecor().get(BANDIT_TYPE_2);
+        Sprite bandit3= miniGame.getGUIDecor().get(BANDIT_TYPE_3);
+        Sprite bandit4= miniGame.getGUIDecor().get(BANDIT_TYPE_4);
+        Sprite bandit5= miniGame.getGUIDecor().get(BANDIT_TYPE_5);
+        Sprite bandit6= miniGame.getGUIDecor().get(BANDIT_TYPE_6);
+          
                     
        if (((PathXMiniGame)miniGame).isCurrentScreenState(GAME_SCREEN_STATE)){         
        
@@ -561,8 +567,8 @@ public class PathXDataModel extends MiniGameDataModel {
         if (((x+120)> level.getDestination().getX())){
             ((PathXMiniGame)miniGame).winLevel();
         }
-           System.out.println("x: "+ x);
-           System.out.println("police x: "+ police1.getX() );
+           //System.out.println("x: "+ x);
+           //System.out.println("police x: "+ police1.getX() );
         if ((x+30)>=police1.getX() && !(x>police1.getX()) || x==police1.getX()){
             ((PathXMiniGame)miniGame).loseLevel();
         }
@@ -575,15 +581,31 @@ public class PathXDataModel extends MiniGameDataModel {
         if (((x+30)>=police4.getX() && !(x>police4.getX()) || x==police4.getX()) && ( police4.getState().equals(VISIBLE_STATE.toString()))){
             ((PathXMiniGame)miniGame).loseLevel();
         }
-         if (((x+30)>=police5.getX() && !(x>police5.getX()) || x==police5.getX()) &&( police5.getState().equals(VISIBLE_STATE.toString()))){
+        if (((x+30)>=police5.getX() && !(x>police5.getX()) || x==police5.getX()) &&( police5.getState().equals(VISIBLE_STATE.toString()))){
             ((PathXMiniGame)miniGame).loseLevel();
         }
-          if (((x+30)>=police6.getX() && !(x>police6.getX()) || x==police6.getX())  && ( police6.getState().equals(VISIBLE_STATE.toString()))){
+        if (((x+30)>=police6.getX() && !(x>police6.getX()) || x==police6.getX())  && ( police6.getState().equals(VISIBLE_STATE.toString()))){
             ((PathXMiniGame)miniGame).loseLevel();
         }
-        //if (police2.getState().equals(VISIBLE_STATE.toString()) && ((x+20)> police2.getX())){
-           // ((PathXMiniGame)miniGame).loseLevel();
-        //}
+        
+        if ((x+30)>=bandit1.getX() && !(x>bandit1.getX()) || x==bandit1.getX()){
+            ((PathXMiniGame)miniGame).interactWithBandits();
+        }
+        if (((x+30)>=bandit2.getX() && !(x>bandit2.getX()) || x==bandit2.getX()) && ( bandit2.getState().equals(VISIBLE_STATE.toString())) ){
+             ((PathXMiniGame)miniGame).interactWithBandits();
+        }
+        if (((x+30)>=bandit3.getX() && !(x>bandit3.getX()) || x==bandit3.getX() ) && ( bandit3.getState().equals(VISIBLE_STATE.toString()))){
+              ((PathXMiniGame)miniGame).interactWithBandits();
+        }
+        if (((x+30)>=bandit4.getX() && !(x>bandit4.getX()) || x==bandit4.getX()) && ( bandit4.getState().equals(VISIBLE_STATE.toString()))){
+             ((PathXMiniGame)miniGame).interactWithBandits();
+        }
+        if (((x+30)>=bandit5.getX() && !(x>bandit5.getX()) || x==bandit5.getX()) &&( bandit5.getState().equals(VISIBLE_STATE.toString()))){
+              ((PathXMiniGame)miniGame).interactWithBandits();
+        }
+        if (((x+30)>=bandit6.getX() && !(x>bandit6.getX()) || x==bandit6.getX())  && ( bandit6.getState().equals(VISIBLE_STATE.toString()))){
+              ((PathXMiniGame)miniGame).interactWithBandits();
+        }
           }
         miniGame.getCanvas().repaint();
     }

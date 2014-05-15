@@ -6169,4 +6169,86 @@ public class PathXMiniGame extends MiniGame {
       }
       eventHandler.respondToLoseSelect(level);
   }
+  public void interactWithBandits(){
+       if (level==1){
+       int money=(int)(.10 * 20);    
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==2){
+        int money=(int)(.10 * 40); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==3){
+        int money=(int)(.10 * 60); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==4){
+        int money=(int)(.10 * 80); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==5){
+       int money=(int)(.10 * 100); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==6){
+          int money = (int) (.10 * 120); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==7){
+        int money = (int) (.10 * 140); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+      if (level==8){
+          int money = (int) (.10 * 160); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()- money);
+      }
+      if (level==9){
+           int money = (int) (.10 * 180); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==10){
+           int money = (int) (.10 * 200); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==11){
+            int money = (int) (.10 * 220); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==12){
+           int money = (int) (.10 * 240); 
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+        if (level==13){
+            int money=(int) (.10 * 260);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+        if (level==14){
+            int money=(int) (.10 * 280);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==15){
+           int money=(int) (.10 * 300);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==16){
+           int money=(int) (.10 * 320);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==17){
+           int money= (int) (.10 *340);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==18){
+           int money= (int)(.10 * 360);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==19){
+           int money= (int)(.10 * 380);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+       if (level==20){
+           int money= (int)(.10 * 400);
+       ((PathXDataModel)data).setBalance(((PathXDataModel)data).getBalance()-money);
+      }
+  }
 }
