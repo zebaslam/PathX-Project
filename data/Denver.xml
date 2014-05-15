@@ -2,7 +2,7 @@
 <level image="GrandCanyon.jpg" name="Denver">
      <intersections>
           <intersection id="0" open="true" x="331" y="394"/>
-          <intersection id="0" open="true" x="930" y="251"/>
+          <intersection id="0" open="true" x="866" y="264"/>
           <intersection id="0" open="true" x="78" y="167"/>
           <intersection id="0" open="true" x="98" y="313"/>
           <intersection id="0" open="true" x="132" y="394"/>
@@ -12,7 +12,7 @@
           <intersection id="0" open="true" x="460" y="249"/>
           <intersection id="0" open="true" x="463" y="394"/>
           <intersection id="0" open="false" x="643" y="189"/>
-          <intersection id="0" open="true" x="845" y="170"/>
+          <intersection id="0" open="true" x="748" y="210"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="4" one_way="true" speed_limit="10"/>

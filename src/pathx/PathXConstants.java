@@ -191,8 +191,11 @@ public class PathXConstants {
     //police and player
     public static final String PLAYER_TYPE="PLAYER_TYPE";
     public static final String POLICE_TYPE="POLICE_TYPE";
-   
-   
+    public static final String POLICE_TYPE_2="POLICE_TYPE_2";
+    public static final String POLICE_TYPE_3="POLICE_TYPE_3";
+    public static final String POLICE_TYPE_4="POLICE_TYPE_4";
+    public static final String POLICE_TYPE_5="POLICE_TYPE_5";
+    public static final String POLICE_TYPE_6="POLICE_TYPE_6";
     
     public static final String SPECIAL_GREENLIGHT_TYPE="SPECIAL_GREENLIGHT_TYPE";
     public static final String SPECIAL_REDLIGHT_TYPE="SPECIAL_REDLIGHT_TYPE";
@@ -218,6 +221,7 @@ public class PathXConstants {
     public static final String SETTINGS_SCREEN_STATE= "SETTINGS_SCREEN_STATE";
     public static final String HELP_SCREEN_STATE="HELP_SCREEN_STATE";
     public static final String WIN_SCREEN_STATE="WIN_SCREEN_STATE";
+    public static final String LOSE_SCREEN_STATE="LOSE_SCREEN_STATE";
     public static final String INVISIBLE_STATE="INVISIBLE_STATE";
     public static final String VISIBLE_STATE="VISIBLE_STATE";
     public static final int FPS = 30;

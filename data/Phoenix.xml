@@ -2,7 +2,7 @@
 <level image="GrandCanyon.jpg" name="Phoenix">
      <intersections>
           <intersection id="0" open="true" x="54" y="123"/>
-          <intersection id="0" open="true" x="681" y="78"/>
+          <intersection id="0" open="true" x="877" y="134"/>
           <intersection id="0" open="true" x="280" y="125"/>
           <intersection id="0" open="true" x="170" y="211"/>
           <intersection id="0" open="true" x="174" y="327"/>
@@ -11,8 +11,8 @@
           <intersection id="0" open="true" x="570" y="144"/>
           <intersection id="0" open="true" x="576" y="250"/>
           <intersection id="0" open="true" x="675" y="316"/>
-          <intersection id="0" open="false" x="776" y="258"/>
-          <intersection id="0" open="true" x="779" y="135"/>
+          <intersection id="0" open="false" x="735" y="247"/>
+          <intersection id="0" open="true" x="670" y="135"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="true" speed_limit="20"/>

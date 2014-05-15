@@ -2,7 +2,7 @@
 <level image="TEXAS.JPG" name="Dallas">
      <intersections>
           <intersection id="0" open="true" x="45" y="258"/>
-          <intersection id="0" open="true" x="754" y="286"/>
+          <intersection id="0" open="true" x="887" y="315"/>
           <intersection id="0" open="true" x="68" y="59"/>
           <intersection id="0" open="true" x="160" y="76"/>
           <intersection id="0" open="false" x="293" y="113"/>
@@ -16,11 +16,11 @@
           <intersection id="0" open="true" x="225" y="190"/>
           <intersection id="0" open="true" x="603" y="328"/>
           <intersection id="0" open="true" x="502" y="248"/>
-          <intersection id="0" open="true" x="887" y="392"/>
-          <intersection id="0" open="true" x="873" y="143"/>
-          <intersection id="0" open="true" x="974" y="256"/>
-          <intersection id="0" open="true" x="985" y="152"/>
-          <intersection id="0" open="true" x="769" y="135"/>
+          <intersection id="0" open="true" x="671" y="315"/>
+          <intersection id="0" open="true" x="720" y="102"/>
+          <intersection id="0" open="true" x="766" y="194"/>
+          <intersection id="0" open="true" x="808" y="102"/>
+          <intersection id="0" open="true" x="626" y="104"/>
           <intersection id="0" open="true" x="623" y="182"/>
      </intersections>
      <roads>

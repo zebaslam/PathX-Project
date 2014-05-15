@@ -151,6 +151,7 @@ public class PathX {
         INVALID_URL_ERROR_TEXT,
         
        //Audio stuff
+        AUDIO_CUE_POLICE,
         AUDIO_CUE_GREEN_LIGHT,
         AUDIO_CUE_RED_LIGHT,
         AUDIO_CUE_DECREASE_SPEED_LIMIT,
@@ -176,6 +177,7 @@ public class PathX {
         IMAGE_DIALOG_SETTINGS,
         IMAGE_DIALOG_LEVEL_SELECT,
         IMAGE_DIALOG_WIN_LEVEL,
+        IMAGE_DIALOG_LOSE_LEVEL,
         LEVEL_CLOSE_BUTTON,
         LEVEL_CLOSE_BUTTON_MOUSE_OVER,
         IMAGE_TRY_AGAIN,

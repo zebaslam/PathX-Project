@@ -2,14 +2,14 @@
 <level image="DeathValleyBackground.png" name="Las Vegas">
      <intersections>
           <intersection id="0" open="true" x="147" y="189"/>
-          <intersection id="0" open="true" x="586" y="73"/>
+          <intersection id="0" open="true" x="944" y="167"/>
           <intersection id="0" open="true" x="326" y="189"/>
           <intersection id="0" open="true" x="448" y="189"/>
           <intersection id="0" open="true" x="398" y="314"/>
-          <intersection id="0" open="true" x="935" y="160"/>
+          <intersection id="0" open="true" x="796" y="255"/>
           <intersection id="0" open="true" x="560" y="423"/>
           <intersection id="0" open="true" x="841" y="364"/>
-          <intersection id="0" open="true" x="758" y="73"/>
+          <intersection id="0" open="true" x="621" y="168"/>
           <intersection id="0" open="true" x="676" y="364"/>
      </intersections>
      <roads>

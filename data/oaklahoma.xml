@@ -2,7 +2,7 @@
 <level image="prarie.jpg" name="oaklahoma">
      <intersections>
           <intersection id="0" open="true" x="121" y="201"/>
-          <intersection id="0" open="true" x="606" y="193"/>
+          <intersection id="0" open="true" x="858" y="175"/>
           <intersection id="0" open="true" x="376" y="201"/>
           <intersection id="0" open="true" x="343" y="64"/>
           <intersection id="0" open="true" x="448" y="57"/>
@@ -18,7 +18,7 @@
           <intersection id="0" open="true" x="526" y="68"/>
           <intersection id="0" open="true" x="642" y="288"/>
           <intersection id="0" open="true" x="638" y="99"/>
-          <intersection id="0" open="true" x="742" y="172"/>
+          <intersection id="0" open="true" x="600" y="175"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="true" speed_limit="30"/>

@@ -2,11 +2,11 @@
 <level image="PortlandBackground.png" name="Sacremento">
      <intersections>
           <intersection id="0" open="true" x="99" y="370"/>
-          <intersection id="0" open="true" x="612" y="340"/>
+          <intersection id="0" open="true" x="734" y="261"/>
           <intersection id="0" open="true" x="134" y="131"/>
           <intersection id="0" open="true" x="276" y="166"/>
           <intersection id="0" open="true" x="424" y="203"/>
-          <intersection id="0" open="true" x="573" y="162"/>
+          <intersection id="0" open="true" x="513" y="192"/>
           <intersection id="0" open="true" x="309" y="372"/>
           <intersection id="0" open="false" x="422" y="421"/>
      </intersections>
@@ -25,7 +25,7 @@
      <start_intersection id="0" image="DefaultStartLocation.png"/>
      <destination_intersection id="1" image="DefaultDestination.png"/>
      <money amount="40"/>
-     <police num="2"/>
-     <bandits num="2"/>
-     <zombies num="2"/>
+     <police num="1"/>
+     <bandits num="1"/>
+     <zombies num="0"/>
 </level>

@@ -166,7 +166,17 @@ public class PathXFileManager {
                 
                 //view.enableEditButtons(true);
                 //model.setLevelBeingEdited(true);
-                
+                //System.out.println(model.getCurrentLevel());
+                //System.out.println("Graph:"+model.getGraph());
+                //System.out.println(model.getStartingLocation().toString());
+                /**
+                Intersection print=model.getGraph().findCheapestNeighbor(model.findIntersectionAtCanvasLocation(511, 226));
+                if (print == null) {
+                    System.out.println("It's null");
+                } else {
+                    System.out.println("CHEAPEST NEIGHBOR:"+print.toString());
+                }
+                */
                 minigame.getCanvas().repaint();
 
                 // TELL THE USER ABOUT OUR SUCCESS
@@ -254,7 +264,7 @@ public class PathXFileManager {
             attributes = policeNode.getAttributes();
             String policeText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numPolice = Integer.parseInt(policeText);
-            System.out.println("Police:" +numPolice);
+            //System.out.println("Police:" +numPolice);
             levelToLoad.setNumPolice(numPolice);
             
             // LOAD THE NUMBER OF BANDITS
@@ -263,7 +273,7 @@ public class PathXFileManager {
             String banditsText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numBandits = Integer.parseInt(banditsText);
             levelToLoad.setNumBandits(numBandits);
-            System.out.println("Bandits:" +numBandits);
+            //System.out.println("Bandits:" +numBandits);
             
             // LOAD THE NUMBER OF ZOMBIES
             Node zombiesNode = doc.getElementsByTagName(ZOMBIES_NODE).item(0);
@@ -271,7 +281,9 @@ public class PathXFileManager {
             String zombiesText = attributes.getNamedItem(NUM_ATT).getNodeValue();
             int numZombies = Integer.parseInt(zombiesText);
             levelToLoad.setNumZombies(numZombies);    
-            System.out.println("Zombies:" +numZombies);
+            //System.out.println("Zombies:" +numZombies);
+            
+           
         }
         catch(Exception e)
         {

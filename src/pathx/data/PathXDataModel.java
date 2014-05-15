@@ -18,6 +18,7 @@ import java.util.Iterator;
 import pathx.PathX.PathXPropertyType;
 import mini_game.MiniGame;
 import mini_game.MiniGameDataModel;
+import mini_game.Sprite;
 import mini_game.SpriteType;
 //import mini_game.Viewport1;
 import properties_manager.PropertiesManager;
@@ -35,6 +36,7 @@ public class PathXDataModel extends MiniGameDataModel {
     private MiniGame miniGame;
     private String currentLevel;
     private int levelNum;
+    PathXGameGraph graph;
     // THIS IS THE LEVEL CURRENTLY BEING EDITING
     PathXLevel level;
     //This is for the player
@@ -75,12 +77,17 @@ public class PathXDataModel extends MiniGameDataModel {
          //levelBeingEdited = false;
         startRoadIntersection = null;
         player=new Player();
+        //graph=new PathXGameGraph(initMiniGame);
       //  view = miniGame
     }
 
        // ACCESSOR METHODS
     public Player  getPlayer()                          {return player;}
     public PathXLevel       getLevel()                  {   return level;                   }
+    public PathXGameGraph getGraph()                    {return graph;}
+    public void setGraph (PathXGameGraph gr){
+        graph=gr;
+    }
     //POSSIBLE SOURCE OF ERROR!!!
    // public PathXMiniGame    getView()                   {   return view;                    }
 
@@ -519,8 +526,66 @@ public class PathXDataModel extends MiniGameDataModel {
     }
 
     @Override
+    /**
+     * this doesnt work!!!
+     */
     public void checkMousePressOnSprites(MiniGame game, int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        
+       
+        ArrayList<Intersection> intersections = level.getIntersections();
+        Sprite banana= miniGame.getGUIDecor().get(PLAYER_TYPE);
+        Sprite police1= miniGame.getGUIDecor().get(POLICE_TYPE);
+        Sprite police2= miniGame.getGUIDecor().get(POLICE_TYPE_2);
+        Sprite police3= miniGame.getGUIDecor().get(POLICE_TYPE_3);
+        Sprite police4= miniGame.getGUIDecor().get(POLICE_TYPE_4);
+        Sprite police5= miniGame.getGUIDecor().get(POLICE_TYPE_5);
+        Sprite police6= miniGame.getGUIDecor().get(POLICE_TYPE_6);
+         
+                    
+       if (((PathXMiniGame)miniGame).isCurrentScreenState(GAME_SCREEN_STATE)){         
+       
+            //&& y==intersections.get(i).getY()
+            if ((Math.abs(x-banana.getX())< INTERSECTION_RADIUS || (Math.abs(x+banana.getX())> INTERSECTION_RADIUS)) && (Math.abs(y-banana.getY())< INTERSECTION_RADIUS || (Math.abs(y+banana.getY())> INTERSECTION_RADIUS))){
+         
+                     banana.setX(x);
+                    banana.setY(y);
+            }
+            
+              for (int i=0; i<intersections.size(); i++){
+            if ((intersections.get(i).isOpen()==false) && (intersections.get(i).getX()<=x+40)){
+                banana.setX(x);
+                 banana.setY(y);
+            }
+        }
+        if (((x+120)> level.getDestination().getX())){
+            ((PathXMiniGame)miniGame).winLevel();
+        }
+           System.out.println("x: "+ x);
+           System.out.println("police x: "+ police1.getX() );
+        if ((x+30)>=police1.getX() && !(x>police1.getX()) || x==police1.getX()){
+            ((PathXMiniGame)miniGame).loseLevel();
+        }
+        if (((x+30)>=police2.getX() && !(x>police2.getX()) || x==police2.getX()) && ( police2.getState().equals(VISIBLE_STATE.toString())) ){
+            ((PathXMiniGame)miniGame).loseLevel();
+        }
+        if (((x+30)>=police3.getX() && !(x>police3.getX()) || x==police3.getX() ) && ( police3.getState().equals(VISIBLE_STATE.toString()))){
+            ((PathXMiniGame)miniGame).loseLevel();
+        }
+        if (((x+30)>=police4.getX() && !(x>police4.getX()) || x==police4.getX()) && ( police4.getState().equals(VISIBLE_STATE.toString()))){
+            ((PathXMiniGame)miniGame).loseLevel();
+        }
+         if (((x+30)>=police5.getX() && !(x>police5.getX()) || x==police5.getX()) &&( police5.getState().equals(VISIBLE_STATE.toString()))){
+            ((PathXMiniGame)miniGame).loseLevel();
+        }
+          if (((x+30)>=police6.getX() && !(x>police6.getX()) || x==police6.getX())  && ( police6.getState().equals(VISIBLE_STATE.toString()))){
+            ((PathXMiniGame)miniGame).loseLevel();
+        }
+        //if (police2.getState().equals(VISIBLE_STATE.toString()) && ((x+20)> police2.getX())){
+           // ((PathXMiniGame)miniGame).loseLevel();
+        //}
+          }
+        miniGame.getCanvas().repaint();
     }
 
     @Override

@@ -2,14 +2,14 @@
 <level image="DeathValleyBackground.png" name="Wyoming">
      <intersections>
           <intersection id="0" open="true" x="142" y="222"/>
-          <intersection id="0" open="true" x="714" y="163"/>
+          <intersection id="0" open="true" x="991" y="199"/>
           <intersection id="0" open="true" x="334" y="222"/>
           <intersection id="0" open="true" x="334" y="100"/>
           <intersection id="0" open="true" x="334" y="425"/>
           <intersection id="0" open="true" x="583" y="424"/>
-          <intersection id="0" open="true" x="842" y="424"/>
+          <intersection id="0" open="true" x="745" y="384"/>
           <intersection id="0" open="true" x="471" y="100"/>
-          <intersection id="0" open="false" x="714" y="340"/>
+          <intersection id="0" open="false" x="632" y="315"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="false" speed_limit="30"/>

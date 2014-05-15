@@ -134,8 +134,9 @@ public class PathXPanel extends JPanel {
                   renderGUIControls(g);
                  renderRoads(g2);
                  renderIntersections(g2);
-                 renderPlayer(g);
                  renderPolice(g);
+                 renderPlayer(g);
+                 
              }
               
             // RENDER THE ROADS
@@ -243,8 +244,24 @@ public class PathXPanel extends JPanel {
           Sprite s = game.getGUIDecor().get(POLICE_TYPE);
          
           int police=data.getLevel().getNumPolice();
+          
         
           for (int i=0; i< police; i++) {
+              if(i==1){
+                  s= game.getGUIDecor().get(POLICE_TYPE_2);
+              }
+              if (i==2){
+                  game.getGUIDecor().get(POLICE_TYPE_3);
+              }
+              if (i==3){
+                  game.getGUIDecor().get(POLICE_TYPE_4);
+              }
+              if (i==4){
+                  game.getGUIDecor().get(POLICE_TYPE_5);
+              }
+              if (i==5){
+                  game.getGUIDecor().get(POLICE_TYPE_6);
+              }
         if (!s.getState().equals(INVISIBLE_STATE.toString())) {
             SpriteType bgST = s.getSpriteType();
             Image img = bgST.getStateImage(s.getState());
@@ -402,7 +419,109 @@ public class PathXPanel extends JPanel {
             }
              
         }
+         if (((PathXMiniGame) game).isCurrentScreenState(LOSE_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_FAIL_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())){
+          Sprite x = game.getGUIButtons().get(TRY_AGAIN_TYPE);
+          Sprite y = game.getGUIButtons().get(QUIT_LEVEL_TYPE);
+             
+            renderSprite(g, x);
+            renderSprite(g, y);
+            g.setFont(FONT_STATS);
+            g.setColor(COLOR_RED);
+            int level = ((PathXMiniGame) game).getLevel();
+            PropertiesManager props = PropertiesManager.getPropertiesManager();
+            String levelprompt="";
+            String leveltext="Bad news! You've been caught!";
+            String leveltext2="You lose the level!";
+            
+            if(level==1){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_1_INFO);
+          
+            }
+            if (level==2){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_2_INFO);
+              
+            }
+            if (level==3){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_3_INFO);
+            
+            }
+            if (level==4){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_4_INFO);
+          
+            }
+            if (level==5){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_5_INFO);
+            
+            }
+             if (level==6){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_6_INFO);
+          
+            }
+            if (level==7){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_7_INFO);
+          
+            }
+            if (level==8){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_8_INFO);
         
+            }
+            if (level==9){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_9_INFO);
+            
+            }
+            if (level==10){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_10_INFO);
+        
+            }
+             if (level==11){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_11_INFO);
+            
+            }
+             if (level==12){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_12_INFO);
+         
+            }
+             if (level==13){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_13_INFO);
+          
+            }
+              if (level==14){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_14_INFO);
+          
+           
+            }
+                if (level==15){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_15_INFO);
+            
+            }
+                 if (level==16){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_16_INFO);
+          
+            }
+                 if (level==17){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_17_INFO);
+          
+            }
+              if (level==18){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_18_INFO);
+          
+            }
+              if (level==19){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_19_INFO);
+            
+            }
+               if (level==20){
+            levelprompt = props.getProperty(PathXPropertyType.TEXT_LABEL_LEVEL_20_INFO);
+           
+            }
+            g.drawString(levelprompt, LEVEL_INFO_TEXT_X, LEVEL_INFO_TEXT_Y);
+            g.setFont(TEXT_FONT);
+            g.drawString(leveltext, LEVEL_TEXT_X, LEVEL_TEXT_Y);
+            g.drawString(leveltext2, LEVEL_TEXT_X, LEVEL_TEXT_Y+50);
+    
+            
+         
+         }
         if (((PathXMiniGame) game).isCurrentScreenState(WIN_SCREEN_STATE) && game.getGUIDialogs().get(LEVEL_COMPLETE_DIALOG_TYPE).getState().equals(VISIBLE_STATE.toString())){
              Sprite x = game.getGUIButtons().get(TRY_AGAIN_TYPE);
              Sprite y = game.getGUIButtons().get(QUIT_LEVEL_TYPE);

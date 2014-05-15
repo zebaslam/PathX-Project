@@ -2,7 +2,7 @@
 <level image="TEXAS.JPG" name="Minnesota">
      <intersections>
           <intersection id="0" open="true" x="182" y="208"/>
-          <intersection id="0" open="true" x="657" y="134"/>
+          <intersection id="0" open="true" x="920" y="146"/>
           <intersection id="0" open="true" x="424" y="207"/>
           <intersection id="0" open="true" x="416" y="74"/>
           <intersection id="0" open="true" x="285" y="76"/>
@@ -19,9 +19,9 @@
           <intersection id="0" open="true" x="572" y="478"/>
           <intersection id="0" open="true" x="709" y="469"/>
           <intersection id="0" open="true" x="829" y="433"/>
-          <intersection id="0" open="true" x="907" y="303"/>
-          <intersection id="0" open="true" x="960" y="202"/>
-          <intersection id="0" open="true" x="1026" y="153"/>
+          <intersection id="0" open="true" x="615" y="347"/>
+          <intersection id="0" open="true" x="616" y="252"/>
+          <intersection id="0" open="true" x="609" y="148"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="false" speed_limit="30"/>

@@ -36,15 +36,24 @@ public class PathXGameGraph {
      * @todo implement checks for one way roads and all that jazz
      */
     public ArrayList<Intersection> getNeighbors(Intersection source) {
+        
         ArrayList<Road> roads = data.getLevel().getRoads();
+        //System.out.println("Road size: " + roads.size());
         ArrayList<Intersection> connected = new ArrayList<>();
-
+        //System.out.println("Source: " + source.toString());
         for (int i = 0; i < roads.size(); i++) {
             //get the first node in the road list 
             Intersection one = roads.get(i).getNode1();
             Intersection two = roads.get(i).getNode2();
-            if (one.equals(source)) {
-                connected.set(i, two);
+            //System.out.println(one.getX() + " " + one.getY());
+            //System.out.println(two.getX() + " " + two.getY());
+            if (two.getX() == source.getX() && two.getY() == source.getY()) {
+                //System.out.println("equals");
+                connected.add(one);
+            }
+            if (one.getX() == source.getX() && one.getY() == source.getY()) {
+                //System.out.println("equals");
+                connected.add(two);
             }
         }
         return connected;
@@ -60,28 +69,37 @@ public class PathXGameGraph {
         int speed = 0;
         //a temporary value
         int temp = 0;
-        Intersection answer;
+        Intersection answer=null;
+        System.out.println(neighbors.size());
         for (int i = 0; i < neighbors.size(); i++) {
-            Intersection first = roads.get(i).getNode1();
-            Intersection second = roads.get(i).getNode2();
+            for(int j=0; j<roads.size(); j++){
+            Intersection first = roads.get(j).getNode1();
+            Intersection second = roads.get(j).getNode2();
+              
             if (neighbors.get(i) != null) {
-                /**
-                if (neighbors.get(i).equals(first)) {
-                    temp = roads.get(i).getSpeedLimit();
+                //System.out.println("HEY I GOT HERE!!!!!1111");
+               
+                if (neighbors.get(i).getX()==first.getX() && neighbors.get(i).getY()==first.getY()) {
+                    temp = roads.get(j).getSpeedLimit();
                     if (temp > speed) {
                         speed = temp;
+                    
+                        answer=first;
                     }
                    
                 }
-                */
-                if (neighbors.get(i).equals(second)) {
-                    temp = roads.get(i).getSpeedLimit();
-                    if (temp > speed) {
+                
+                if (neighbors.get(i).getX()==second.getX() && neighbors.get(i).getY()==second.getY()) {
+                    temp = roads.get(j).getSpeedLimit();
+                    if (temp >speed) {
                         speed = temp;
+                        answer=second;
                     }
                 }
             }
+            }
         }
-        return null;
+        System.out.println(speed);
+        return answer;
     }
 }

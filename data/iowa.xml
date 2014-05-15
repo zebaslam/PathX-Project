@@ -2,7 +2,7 @@
 <level image="missouri.jpg" name="iowa">
      <intersections>
           <intersection id="0" open="true" x="38" y="191"/>
-          <intersection id="0" open="true" x="670" y="212"/>
+          <intersection id="0" open="true" x="921" y="209"/>
           <intersection id="0" open="true" x="203" y="191"/>
           <intersection id="0" open="true" x="57" y="361"/>
           <intersection id="0" open="true" x="175" y="297"/>
@@ -23,8 +23,8 @@
           <intersection id="0" open="false" x="464" y="428"/>
           <intersection id="0" open="false" x="595" y="303"/>
           <intersection id="0" open="true" x="721" y="420"/>
-          <intersection id="0" open="true" x="768" y="291"/>
-          <intersection id="0" open="true" x="796" y="212"/>
+          <intersection id="0" open="true" x="679" y="293"/>
+          <intersection id="0" open="true" x="671" y="208"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="false" speed_limit="100"/>

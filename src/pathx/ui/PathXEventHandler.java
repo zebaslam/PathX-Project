@@ -293,6 +293,74 @@ private MiniGameDataModel data;
         game.switchToWinScreen();
       
     }     
+      public void respondToLoseSelect(int level){
+       
+        String name="";
+        if(level==1){
+            name="Portland.xml";
+        }
+        if (level==2){
+            name="Sacremento.xml";
+        }
+        if(level==3){
+            name="San Jose.xml";
+        }
+        if (level==4){
+            name="Boise.xml";
+        }
+        if (level==5){
+            name="Las Vegas.xml";
+        }
+        if (level==6){
+            name="Wyoming.xml";
+        }
+        if (level==7){
+            name="Salt Lake City.xml";
+        }
+        if (level==8){
+            name="Phoenix.xml";
+        }
+        if (level==9){
+            name="Denver.xml";
+        }
+        if (level==10){
+            name="Santa Fe.xml";
+        }
+        if (level==11){
+            name="Bismark.xml";
+        }
+        if (level==12){
+            name="Pierre.xml";
+        }
+        if (level==13){
+            name="Lincoln.xml";
+        }
+        if (level==14){
+            name="Topeka.xml";
+        }
+        if(level==15){
+            name="oaklahoma.xml";
+        }
+        if (level==16){
+            name="Dallas.xml";
+        }
+        if(level==17){
+            name="San antonio.xml";
+        }
+        if(level==18){
+            name="Minnesota.xml";
+        }
+        if(level==19){
+            name="iowa.xml";
+        }
+        if (level==20){
+            name="Missouri.xml";
+        }
+        ((PathXDataModel)game.getDataModel()).setCurrentLevel(name);
+        filemanager.promptToOpen(name);
+        game.switchToLoseScreen();
+      
+    }     
     public void respondToGameScreenSelect(int level){
         String name="";
         if(level==1){

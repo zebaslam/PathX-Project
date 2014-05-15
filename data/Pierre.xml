@@ -2,7 +2,7 @@
 <level image="SANTAFE.jpg" name="Pierre">
      <intersections>
           <intersection id="0" open="true" x="60" y="133"/>
-          <intersection id="0" open="true" x="801" y="210"/>
+          <intersection id="0" open="true" x="835" y="337"/>
           <intersection id="0" open="true" x="281" y="133"/>
           <intersection id="0" open="true" x="263" y="209"/>
           <intersection id="0" open="true" x="183" y="250"/>
@@ -10,12 +10,12 @@
           <intersection id="0" open="false" x="288" y="364"/>
           <intersection id="0" open="false" x="428" y="109"/>
           <intersection id="0" open="true" x="470" y="228"/>
-          <intersection id="0" open="true" x="647" y="295"/>
-          <intersection id="0" open="true" x="801" y="325"/>
-          <intersection id="0" open="true" x="893" y="350"/>
-          <intersection id="0" open="true" x="619" y="435"/>
+          <intersection id="0" open="true" x="553" y="266"/>
+          <intersection id="0" open="true" x="623" y="338"/>
+          <intersection id="0" open="true" x="654" y="474"/>
+          <intersection id="0" open="true" x="424" y="416"/>
           <intersection id="0" open="true" x="325" y="271"/>
-          <intersection id="0" open="false" x="846" y="477"/>
+          <intersection id="0" open="false" x="517" y="425"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="true" speed_limit="100"/>

@@ -81,6 +81,7 @@
         <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
         <property name="IMAGE_DIALOG_LEVEL_SELECT"          value="./path_x/LevelDialog.png"></property>
         <property name="IMAGE_DIALOG_WIN_LEVEL"             value="./path_x/WinDialog.png"></property>
+        <property name="IMAGE_DIALOG_LOSE_LEVEL"             value="./path_x/WinDialog.png"></property>
         <property name="LEVEL_CLOSE_BUTTON"                 value="./path_x/LevelCloseButton.png"></property>
         <property name="LEVEL_CLOSE_BUTTON_MOUSE_OVER"      value="./path_x/LevelCloseButtonMouseOver.png"></property>
         
@@ -175,9 +176,11 @@
         <property name="AUDIO_CUE_FLYING"                  value="./path_x/Flying.wav"></property>
         <property name="AUDIO_CUE_INVINCIBILITY"           value="./path_x/Invincibility.wav"></property>
         <property name="AUDIO_CUE_INTANGIBILITY"           value="./path_x/Intangibility.wav"></property>
+        <property name="AUDIO_CUE_POLICE"                    value="./path_x/Police.wav"></property>
         <property name="SONG_CUE_GAME_SCREEN"               value="./path_x/GameSong.mid"></property>        
         <property name="SONG_CUE_MENU_SCREEN"               value="./path_x/MenuSong.mid"></property>
         <property name="SONG_CUE_LEVEL_SCREEN"              value="./path_x/LevelSong.mid"></property>
+        
         
     </property_list>
     

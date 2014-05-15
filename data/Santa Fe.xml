@@ -2,20 +2,20 @@
 <level image="SANTAFE.jpg" name="Santa Fe">
      <intersections>
           <intersection id="0" open="true" x="83" y="231"/>
-          <intersection id="0" open="true" x="104" y="363"/>
+          <intersection id="0" open="true" x="966" y="432"/>
           <intersection id="0" open="true" x="84" y="101"/>
-          <intersection id="0" open="true" x="102" y="453"/>
-          <intersection id="0" open="true" x="300" y="458"/>
+          <intersection id="0" open="true" x="82" y="439"/>
+          <intersection id="0" open="true" x="238" y="435"/>
           <intersection id="0" open="false" x="292" y="82"/>
           <intersection id="0" open="true" x="481" y="230"/>
-          <intersection id="0" open="true" x="499" y="392"/>
-          <intersection id="0" open="true" x="643" y="58"/>
-          <intersection id="0" open="true" x="652" y="405"/>
-          <intersection id="0" open="true" x="825" y="405"/>
-          <intersection id="0" open="true" x="936" y="337"/>
-          <intersection id="0" open="true" x="888" y="160"/>
-          <intersection id="0" open="true" x="876" y="65"/>
-          <intersection id="0" open="true" x="767" y="54"/>
+          <intersection id="0" open="true" x="309" y="358"/>
+          <intersection id="0" open="true" x="527" y="74"/>
+          <intersection id="0" open="true" x="439" y="339"/>
+          <intersection id="0" open="true" x="570" y="358"/>
+          <intersection id="0" open="true" x="722" y="355"/>
+          <intersection id="0" open="true" x="739" y="245"/>
+          <intersection id="0" open="true" x="762" y="101"/>
+          <intersection id="0" open="true" x="622" y="95"/>
      </intersections>
      <roads>
           <road int_id1="0" int_id2="2" one_way="false" speed_limit="30"/>
@@ -31,11 +31,12 @@
           <road int_id1="9" int_id2="7" one_way="false" speed_limit="30"/>
           <road int_id1="7" int_id2="4" one_way="false" speed_limit="100"/>
           <road int_id1="4" int_id2="3" one_way="false" speed_limit="80"/>
-          <road int_id1="3" int_id2="1" one_way="false" speed_limit="10"/>
           <road int_id1="2" int_id2="6" one_way="false" speed_limit="10"/>
           <road int_id1="10" int_id2="12" one_way="true" speed_limit="100"/>
           <road int_id1="9" int_id2="13" one_way="true" speed_limit="30"/>
           <road int_id1="0" int_id2="6" one_way="false" speed_limit="30"/>
+          <road int_id1="11" int_id2="1" one_way="false" speed_limit="30"/>
+          <road int_id1="4" int_id2="1" one_way="false" speed_limit="30"/>
      </roads>
      <start_intersection id="0" image="DefaultStartLocation.png"/>
      <destination_intersection id="1" image="DefaultDestination.png"/>
