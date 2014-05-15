@@ -86,6 +86,7 @@ public class PathX {
         IMAGE_PLAYER,
         IMAGE_POLICE,
         IMAGE_BANDIT,
+        IMAGE_ZOMBIE,
         IMAGE_SETTINGS_MUSIC_SELECTED,
         IMAGE_SETTINGS_MUSIC_UNSELECTED,
         IMAGE_SETTINGS_SOUND_SELECTED,
@@ -238,10 +239,6 @@ public class PathX {
        TEXT_LABEL_GAME_18_INFO,
        TEXT_LABEL_GAME_19_INFO,
        TEXT_LABEL_GAME_20_INFO,
-        /* TILE LOADING STUFF 
-        LEVEL_OPTIONS,
-        LEVEL_IMAGE_OPTIONS,
-        LEVEL_MOUSE_OVER_IMAGE_OPTIONS 
-        */
+      
    }
 }

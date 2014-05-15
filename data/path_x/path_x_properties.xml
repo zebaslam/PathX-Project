@@ -78,6 +78,7 @@
         <property name="IMAGE_PLAYER"                       value="./path_x/Player.png"></property>
         <property name="IMAGE_POLICE"                       value="./path_x/Police.png"></property>
         <property name="IMAGE_BANDIT"                       value="./path_x/Bandit.png"></property>
+        <property name="IMAGE_ZOMBIE"                       value="./path_x/Zombie.png"></property>
         <!-- Dialog stuff -->
         <property name="IMAGE_DIALOG_SETTINGS"              value="./path_x/DialogSettings.png"></property>
         <property name="IMAGE_DIALOG_LEVEL_SELECT"          value="./path_x/LevelDialog.png"></property>

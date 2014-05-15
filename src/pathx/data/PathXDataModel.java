@@ -558,12 +558,7 @@ public class PathXDataModel extends MiniGameDataModel {
                     banana.setY(y);
             }
             
-              for (int i=0; i<intersections.size(); i++){
-            if ((intersections.get(i).isOpen()==false) && (intersections.get(i).getX()<=x+40)){
-                banana.setX(x);
-                 banana.setY(y);
-            }
-        }
+       
         if (((x+120)> level.getDestination().getX())){
             ((PathXMiniGame)miniGame).winLevel();
         }

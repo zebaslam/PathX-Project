@@ -1276,6 +1276,16 @@ public class PathXMiniGame extends MiniGame {
         s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
         guiDecor.put(BANDIT_TYPE_6, s);
         
+        String zombie1 = props.getProperty(PathXPropertyType.IMAGE_ZOMBIE);
+        sT = new SpriteType(ZOMBIE_TYPE);
+        img = loadImage(imgPath + zombie1);
+        sT.addState(VISIBLE_STATE.toString(), img);
+        String zombieMouseOverButton = props.getProperty(PathXPropertyType.IMAGE_ZOMBIE);
+        img = loadImage(imgPath + zombieMouseOverButton);
+        sT.addState(PathXCarState.MOUSE_OVER_STATE.toString(), img);
+        s = new Sprite(sT, PLAYER_X, PLAYER_Y, 0, 0, INVISIBLE_STATE.toString());
+        guiDecor.put(ZOMBIE_TYPE, s);
+        
         x = guiDecor.get(BACKGROUND_TYPE).getX();
         y = guiDecor.get(BACKGROUND_TYPE).getY();
         setInitialValues(x, y);
@@ -1537,6 +1547,8 @@ public class PathXMiniGame extends MiniGame {
         }
         guiDecor.get(PLAYER_TYPE).setState(INVISIBLE_STATE.toString());
         guiDecor.get(PLAYER_TYPE).setEnabled(false);
+            guiDecor.get(ZOMBIE_TYPE).setState(INVISIBLE_STATE.toString());
+         guiDecor.get(ZOMBIE_TYPE).setEnabled(false);
         currentScreenState = SETTINGS_SCREEN_STATE;
 
         if(enableMusic==true){
@@ -1922,6 +1934,23 @@ public class PathXMiniGame extends MiniGame {
             actual.setY(val.getY());
            }     
             }
+            {
+          int numZombies= ((PathXDataModel)getDataModel()).getLevel().getNumZombies();
+          if (numZombies>=1){
+         guiDecor.get(ZOMBIE_TYPE).setState(VISIBLE_STATE.toString());
+         guiDecor.get(ZOMBIE_TYPE).setEnabled(true);
+            }
+          Sprite actual=guiDecor.get(ZOMBIE_TYPE);
+            int rando= 1+ (int) (Math.random()* intersections.size()-2);
+            Intersection val= intersections.get(rando);
+            while (val.equals(((PathXDataModel)getDataModel()).getLevel().getDestination())|| val.equals(((PathXDataModel)getDataModel()).getLevel().getStartingLocation()) || (used!=null && used.contains(val)) ){
+            rando= 1+ (int) (Math.random()* intersections.size()-2);
+            val= intersections.get(rando);
+            }
+            used.add(val);
+            actual.setX(val.getX());
+            actual.setY(val.getY());
+            }
         guiDialogs.get(LEVEL_INFO_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
         guiDialogs.get(LEVEL_COMPLETE_DIALOG_TYPE).setState(VISIBLE_STATE.toString());
         guiButtons.get(CLOSE_DIALOG_BUTTON_TYPE).setState(VISIBLE_STATE.toString());
@@ -2112,6 +2141,8 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
         guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
+        guiDecor.get(ZOMBIE_TYPE).setState(INVISIBLE_STATE.toString());
+         guiDecor.get(ZOMBIE_TYPE).setEnabled(false);
         currentScreenState = WIN_SCREEN_STATE;
         
         if(enableMusic==true){
@@ -2390,6 +2421,8 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
         guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
+        guiDecor.get(ZOMBIE_TYPE).setState(INVISIBLE_STATE.toString());
+         guiDecor.get(ZOMBIE_TYPE).setEnabled(false);
         currentScreenState = LOSE_SCREEN_STATE;
         
         if(enableMusic==true){
@@ -2560,6 +2593,8 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
         guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
+         guiDecor.get(ZOMBIE_TYPE).setState(INVISIBLE_STATE.toString());
+         guiDecor.get(ZOMBIE_TYPE).setEnabled(false);
         
         if (levelwon==1){
           //if(level==levelwon){
@@ -4231,6 +4266,8 @@ public class PathXMiniGame extends MiniGame {
         guiDecor.get(BANDIT_TYPE_5).setEnabled(false);
         guiDecor.get(BANDIT_TYPE_6).setState(INVISIBLE_STATE.toString());
         guiDecor.get(BANDIT_TYPE_6).setEnabled(false);
+        guiDecor.get(ZOMBIE_TYPE).setState(INVISIBLE_STATE.toString());
+        guiDecor.get(ZOMBIE_TYPE).setEnabled(false);
         guiButtons.get(MUSIC_SELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());
         guiButtons.get(MUSIC_SELECTED_BUTTON_TYPE).setEnabled(false);
         guiButtons.get(MUSIC_UNSELECTED_BUTTON_TYPE).setState(INVISIBLE_STATE.toString());

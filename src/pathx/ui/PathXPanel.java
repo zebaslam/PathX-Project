@@ -136,7 +136,9 @@ public class PathXPanel extends JPanel {
                  renderIntersections(g2);
                  renderPolice(g);
                  renderBandit(g);
+                 renderZombie(g);
                  renderPlayer(g);
+                 
                  
              }
               
@@ -236,7 +238,20 @@ public class PathXPanel extends JPanel {
                 //s.setY(player.getY());
             //}
     }
-      
+      public void renderZombie (Graphics g){
+          Sprite s = game.getGUIDecor().get(ZOMBIE_TYPE);
+          int zombie=data.getLevel().getNumZombies();
+          if (zombie>0){
+           if (!s.getState().equals(INVISIBLE_STATE.toString())) {
+            SpriteType bgST = s.getSpriteType();
+            Image img = bgST.getStateImage(s.getState());
+            
+            g.drawImage(img, (int)s.getX(), (int)s.getY(), bgST.getWidth(), bgST.getHeight(), null);
+          
+        }
+          }
+          
+      }
 //determine max number of police for a level
 //create police_types for that many police
 //render accordingly     

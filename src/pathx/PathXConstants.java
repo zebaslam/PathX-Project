@@ -203,6 +203,7 @@ public class PathXConstants {
     public static final String BANDIT_TYPE_4= "BANDIT_TYPE_4";
     public static final String BANDIT_TYPE_5= "BANDIT_TYPE_5";
     public static final String BANDIT_TYPE_6= "BANDIT_TYPE_6";
+    public static final String ZOMBIE_TYPE= "ZOMBIE_TYPE";
     
     
     public static final String SPECIAL_GREENLIGHT_TYPE="SPECIAL_GREENLIGHT_TYPE";
